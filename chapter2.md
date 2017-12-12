@@ -1333,7 +1333,7 @@ xp: 30
 ```
 
 `@instructions`
-Get the title and release year of all films released in 1990 or released in 2000 that were longer than two hours. Remember, duration is in minutes!
+Get the title and release year of all films released in 1990 or 2000 that were longer than two hours. Remember, duration is in minutes!
 
 `@solution`
 ```{sql}
