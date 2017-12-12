@@ -20,7 +20,7 @@ Congrats on finishing the first chapter! You now know how to select columns and 
 In SQL, the `WHERE` keyword allows you to filter based on both text and numeric values in a table. There are a few different comparison operators you can use:
 
 - `=` equal
-- `<>` not equal 
+- `<>` not equal
 - `<` less than
 - `>` greater than
 - `<=` less than or equal to
@@ -709,9 +709,9 @@ Otherwise, due to SQL's precedence rules, you may not get the results you're exp
 What does the `OR` operator do?
 
 `@instructions`
-- Display rows that meet **one** of the specified conditions.
-- Display rows that meet **all** of the specified conditions.
-- Display rows that meet **none** of the specified conditions.
+- Display only rows that meet at least **one** of the specified conditions.
+- Display only rows that meet **all** of the specified conditions.
+- Display only rows that meet **none** of the specified conditions.
 
 `@hint`
 Think about records that meet condition1 **and** condition2.
@@ -719,7 +719,7 @@ Think about records that meet condition1 **and** condition2.
 `@sct`
 ```{python}
 success_msg = 'Correct!'
-msg1 = 'Incorrect. `OR` does not display rows that meet **all** of the specified conditions.'
+msg1 = 'Incorrect. `OR` does not only display rows that meet **all** of the specified conditions.'
 msg2 = 'Incorrect. `OR` does not display rows that meet **none** of the specified conditions.'
 
 Ex().test_mc(1, [success_msg, msg1, msg2])
