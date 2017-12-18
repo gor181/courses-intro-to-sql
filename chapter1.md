@@ -1,14 +1,11 @@
 ---
 title: Selecting columns
 description: >-
-  This chapter provides a brief introduction to working with relational
-  databases. You'll learn about their structure, how to talk about them using
-  database lingo, and how to begin an analysis by using simple SQL commands to
-  select and summarize columns from database tables.
+  This chapter provides a brief introduction to working with relational databases. You'll learn about their structure, how to talk about them using database lingo, and how to begin an analysis by using simple SQL commands to select and summarize columns from database tables.
+
 
 ---
 ## Welcome to the course!
-
 
 ```yaml
 type: VideoExercise
@@ -38,10 +35,8 @@ For this course, you'll be using a database containing information on almost 500
 
 From looking at the tabs, who is the first person listed in the `people` table?
 
-`@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-```
+
+example edit
 
 `@instructions`
 - Kanye West
@@ -52,6 +47,12 @@ connect('postgresql', 'films')
 `@hint`
 Look at the `people` tab under the editor!
 
+`@pre_exercise_code`
+```{python}
+connect('postgresql', 'films')
+```
+
+
 `@sct`
 ```{python}
 msg1 = 'Nope, look at the `people` table!'
@@ -59,6 +60,8 @@ correct = 'Correct!'
 
 Ex().test_mc(3,[msg1, msg1, correct, msg1])
 ```
+
+
 
 ---
 ## Onboarding | Query Result
@@ -79,16 +82,6 @@ Run the query in the editor and check out the resulting table in the query resul
 
 Who is the second person listed in the query result?
 
-`@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-```
-
-`@sample_code`
-```{sql}
-SELECT name FROM people;
-```
-
 `@instructions`
 - Kanye West
 - A. Michael Baldwin
@@ -98,6 +91,15 @@ SELECT name FROM people;
 `@hint`
 Run the code in the editor and look at the query result tab under the editor!
 
+`@pre_exercise_code`
+```{python}
+connect('postgresql', 'films')
+```
+`@sample_code`
+```{sql}
+SELECT name FROM people;
+```
+
 `@sct`
 ```{python}
 msg1 = 'Nope, look at the query result tab!'
@@ -105,6 +107,8 @@ correct = 'Correct!'
 
 Ex().test_mc(2, [msg1, correct, msg1, msg1])
 ```
+
+
 
 ---
 ## Onboarding | Errors
@@ -141,27 +145,26 @@ In the editor, change line 2 to `SELECT 'DataCamp <3 SQL'`.
 ```{python}
 connect('postgresql', 'films')
 ```
-
 `@sample_code`
 ```{sql}
 -- Try running me!
 'DataCamp <3 SQL'
 AS result;
 ```
-
 `@solution`
 ```{sql}
 -- Try running me!
 SELECT 'DataCamp <3 SQL'
 AS result;
 ```
-
 `@sct`
-```{sql}
+```{python}
 Ex().test_student_typed('SELECT|select', msg='You need to add `SELECT` at the start of line 2!')
 Ex().test_has_columns()
 Ex().test_error()
 ```
+
+
 
 ---
 ## Onboarding | Bullet Exercises
@@ -176,24 +179,34 @@ key: 81eb00a53d
 
 Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 ```
-
 `@sample_code`
 ```{sql}
 SELECT 'SQL'
 AS result;
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 157ee8d1ad
+
 xp: 30
+
+key: 157ee8d1ad
 ```
+
+
 
 `@instructions`
 Submit the query in the editor! Don't worry, you'll learn how it works soon.
@@ -201,30 +214,39 @@ Submit the query in the editor! Don't worry, you'll learn how it works soon.
 `@hint`
 Submit the query!
 
+
+
 `@solution`
 ```{sql}
 SELECT 'SQL'
 AS result;
 ```
-
 `@sct`
-```{sql}
+```{python}
 Ex().test_error()
 
 Ex().test_student_typed('SQL', msg="Don't modify the query!", fixed=True)
 
 Ex().test_has_columns()
 Ex().check_result()
-
 ```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 764f82129d
+
 xp: 30
+
+key: 764f82129d
 ```
+
+
 
 `@instructions`
 Now change `'SQL'` to `'SQL is'` and click Submit!
@@ -232,14 +254,15 @@ Now change `'SQL'` to `'SQL is'` and click Submit!
 `@hint`
 Change the code and submit the query!
 
+
+
 `@solution`
 ```{sql}
 SELECT 'SQL is'
 AS result;
 ```
-
 `@sct`
-```{sql}
+```{python}
 Ex().test_error()
 
 Ex().test_student_typed('SQL is', msg="Did you change the query correctly?", fixed=True)
@@ -248,13 +271,22 @@ Ex().test_has_columns()
 Ex().check_result()
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 1496605dac
+
 xp: 30
+
+key: 1496605dac
 ```
+
+
 
 `@instructions`
 Finally, change `'SQL is'` to `'SQL is cool!'` and click Submit!
@@ -262,14 +294,15 @@ Finally, change `'SQL is'` to `'SQL is cool!'` and click Submit!
 `@hint`
 Change the code and submit the query!
 
+
+
 `@solution`
 ```{sql}
 SELECT 'SQL is cool!'
 AS result;
 ```
-
 `@sct`
-```{sql}
+```{python}
 Ex().test_error()
 
 Ex().test_student_typed('SQL is cool!', msg="Did you change the query correctly?", fixed=True)
@@ -278,6 +311,9 @@ Ex().test_has_columns()
 Ex().check_result()
 ```
 
+
+
+
 ---
 ## Beginning your SQL journey
 
@@ -285,6 +321,7 @@ Ex().check_result()
 type: PlainMultipleChoiceExercise
 lang: sql
 xp: 50
+
 key: a1f556e63f
 ```
 
@@ -316,6 +353,9 @@ How many fields does the employees table above contain?
 `@hint`
 Remember that in database lingo, a column is called a *field*. How many fields does the table contain?
 
+
+
+
 `@sct`
 ```{python}
 msg1 = "Incorrect, a table contains information about one type of entity, but generally has multiple fields."
@@ -326,6 +366,8 @@ success_msg = "Correct! The table contains four columns, or fields."
 Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
 ```
 
+
+
 ---
 ## SELECTing single columns
 
@@ -333,6 +375,7 @@ Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: c0bb58f7f9
 ```
 
@@ -358,38 +401,47 @@ It's also good practice (but not necessary for the exercises in this course) to 
 
 Remember, you can see the results of executing your query in the __query result__ tab to the right!
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
 
-`@sample_code`
-```{sql}
 
-```
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: a41cc766d5
+
 xp: 30
+
+key: a41cc766d5
 ```
+
+
 
 `@instructions`
 Select the `title` column from the `films` table.
-
-`@solution`
-```{sql}
-SELECT title
-FROM films;
-```
 
 `@hint`
 ```
 SELECT ___
 FROM ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT title
+FROM films;
 ```
 `@sct`
 ```{python}
@@ -408,26 +460,38 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 4a74270ecd
+
 xp: 30
+
+key: 4a74270ecd
 ```
+
+
 
 `@instructions`
 Select the `release_year` column from the `films` table.
+
+`@hint`
+```
+SELECT ___
+FROM ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT release_year
 FROM films;
-```
-`@hint`
-```
-SELECT ___
-FROM ___;
 ```
 `@sct`
 ```{python}
@@ -446,26 +510,38 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 323bd5ddf5
+
 xp: 30
+
+key: 323bd5ddf5
 ```
+
+
 
 `@instructions`
 Select the `name` of each person in the `people` table.
+
+`@hint`
+```
+SELECT ___
+FROM ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT name
 FROM people;
-```
-`@hint`
-```
-SELECT ___
-FROM ___;
 ```
 `@sct`
 ```{python}
@@ -484,6 +560,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## SELECTing multiple columns
 
@@ -491,6 +570,7 @@ Ex().test_correct(check_result(), [
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: 09f21bae4c
 ```
 
@@ -522,37 +602,47 @@ LIMIT 10;
 
 Before getting started with the instructions below, check out the column names in the `films` table by clicking on the `films` tab to the right!
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
 
-`@sample_code`
-```{sql}
-```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: d561b4df97
+
 xp: 30
+
+key: d561b4df97
 ```
+
+
 
 `@instructions`
 Get the title of every film from the `films` table.
-
-`@solution`
-```{sql}
-SELECT title
-FROM films;
-```
 
 `@hint`
 ```
 SELECT ___
 FROM ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT title
+FROM films;
 ```
 `@sct`
 ```{python}
@@ -573,26 +663,38 @@ Ex().test_correct(check_result2(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 917d7dc533
+
 xp: 30
+
+key: 917d7dc533
 ```
+
+
 
 `@instructions`
 Get the title and release year for every film.
+
+`@hint`
+```
+SELECT ___, ___
+FROM ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT title, release_year
 FROM films;
-```
-`@hint`
-```
-SELECT ___, ___
-FROM ___;
 ```
 `@sct`
 ```{python}
@@ -616,27 +718,38 @@ Ex().test_correct(check_result2(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: eeba078a00
+
 xp: 30
+
+key: eeba078a00
 ```
+
+
 
 `@instructions`
 Get the title, release year and country for every film.
-
-`@solution`
-```{sql}
-SELECT title, release_year, country
-FROM films;
-```
 
 `@hint`
 ```
 SELECT ___, ___, ___
 FROM ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT title, release_year, country
+FROM films;
 ```
 `@sct`
 ```{python}
@@ -663,22 +776,25 @@ Ex().test_correct(check_result2(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: dac27d9aad
+
 xp: 30
+
+key: dac27d9aad
 ```
+
+
 
 `@instructions`
 Get all columns from the `films` table.
-
-`@solution`
-```{sql}
-SELECT *
-FROM films;
-```
 
 `@hint`
 ```
@@ -686,6 +802,13 @@ SELECT *
 FROM ___;
 ```
 
+
+
+`@solution`
+```{sql}
+SELECT *
+FROM films;
+```
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -703,6 +826,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## SELECT DISTINCT
 
@@ -710,6 +836,7 @@ Ex().test_correct(check_result(), [
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: de52236965
 ```
 
@@ -724,37 +851,47 @@ FROM films;
 
 Remember, you can check out the data in the tables by clicking on the tabs to the right under the editor!
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'roles'])
 ```
 
-`@sample_code`
-```{sql}
-```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: e6b81711f1
+
 xp: 30
+
+key: e6b81711f1
 ```
+
+
 
 `@instructions`
 Get all the unique countries represented in the `films` table.
-
-`@solution`
-```{sql}
-SELECT DISTINCT country
-FROM films;
-```
 
 `@hint`
 ```
 SELECT DISTINCT ___
 FROM ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT DISTINCT country
+FROM films;
 ```
 `@sct`
 ```{python}
@@ -775,21 +912,25 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 2cb9a4bf6a
+
 xp: 30
+
+key: 2cb9a4bf6a
 ```
+
+
 
 `@instructions`
 Get all the different film certifications from the `films` table.
-`@solution`
-```{sql}
-SELECT DISTINCT certification
-FROM films;
-```
 
 `@hint`
 ```
@@ -797,6 +938,13 @@ SELECT DISTINCT ___
 FROM ___;
 ```
 
+
+
+`@solution`
+```{sql}
+SELECT DISTINCT certification
+FROM films;
+```
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -817,27 +965,38 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 26835d3029
+
 xp: 30
+
+key: 26835d3029
 ```
+
+
 
 `@instructions`
 Get the different types of film roles from the `roles` table.
-
-`@solution`
-```{sql}
-SELECT DISTINCT role
-FROM roles;
-```
 
 `@hint`
 ```
 SELECT DISTINCT ___
 FROM ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT DISTINCT role
+FROM roles;
 ```
 `@sct`
 ```{python}
@@ -859,6 +1018,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## Learning to COUNT
 
@@ -866,6 +1028,7 @@ Ex().test_correct(check_result(), [
 type: MultipleChoiceExercise
 lang: sql
 xp: 50
+
 key: 97f97f5766
 ```
 
@@ -895,11 +1058,9 @@ Run a query to count the number of records in the `reviews` table!
 ```{python}
 connect('postgresql', 'films')
 ```
-
 `@sample_code`
 ```{sql}
 -- You can test out queries here!
-
 ```
 
 `@sct`
@@ -909,6 +1070,9 @@ msg2 = "Use the syntax provided in the example. Be sure to swap out `people` for
 
 Ex().test_mc(3,[msg2, msg2, success_msg, msg2, msg2])
 ```
+
+
+
 ---
 ## Practice with COUNT
 
@@ -916,6 +1080,7 @@ Ex().test_mc(3,[msg2, msg2, success_msg, msg2, msg2])
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: 7643365e67
 ```
 
@@ -939,32 +1104,34 @@ FROM people;
 
 Let's get some practice with `COUNT`!
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
 
-`@sample_code`
-```{sql}
-```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 4688067e3e
+
 xp: 30
+
+key: 4688067e3e
 ```
+
+
 
 `@instructions`
 Count the number of rows in the `people` table.
-
-`@solution`
-```{sql}
-SELECT COUNT(*)
-FROM people;
-```
 
 `@hint`
 ```
@@ -972,6 +1139,13 @@ SELECT COUNT(___)
 FROM ___;
 ```
 
+
+
+`@solution`
+```{sql}
+SELECT COUNT(*)
+FROM people;
+```
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -995,22 +1169,25 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 497ffa962e
+
 xp: 30
+
+key: 497ffa962e
 ```
+
+
 
 `@instructions`
 Count the number of (non-missing) birth dates in the `people` table.
-
-`@solution`
-```{sql}
-SELECT COUNT(birthdate)
-FROM people;
-```
 
 `@hint`
 ```
@@ -1018,6 +1195,13 @@ SELECT ___(___)
 FROM ___;
 ```
 
+
+
+`@solution`
+```{sql}
+SELECT COUNT(birthdate)
+FROM people;
+```
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -1040,29 +1224,39 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 50c903a00a
+
 xp: 30
+
+key: 50c903a00a
 ```
+
+
 
 `@instructions`
 Count the number of unique birth dates in the `people` table.
+
+`@hint`
+```
+SELECT ___(DISTINCT ___)
+FROM ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
-
-`@hint`
-```
-SELECT ___(DISTINCT ___)
-FROM ___;
-```
-
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -1088,29 +1282,39 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 511052cbbe
+
 xp: 30
+
+key: 511052cbbe
 ```
+
+
 
 `@instructions`
 Count the number of unique languages in the `films` table.
+
+`@hint`
+```
+SELECT ___(DISTINCT ___)
+FROM ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT COUNT(DISTINCT language)
 FROM films;
 ```
-
-`@hint`
-```
-SELECT ___(DISTINCT ___)
-FROM ___;
-```
-
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -1136,29 +1340,39 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 9e1147efe5
+
 xp: 30
+
+key: 9e1147efe5
 ```
+
+
 
 `@instructions`
 Count the number of unique countries in the `films` table.
+
+`@hint`
+```
+SELECT ___(DISTINCT ___)
+FROM ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT COUNT(DISTINCT country)
 FROM films;
 ```
-
-`@hint`
-```
-SELECT ___(DISTINCT ___)
-FROM ___;
-```
-
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -1183,3 +1397,6 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
+
