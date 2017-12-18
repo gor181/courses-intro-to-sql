@@ -1028,7 +1028,7 @@ GROUP BY sex
 ORDER BY count DESC;
 ```
 
-might return something like
+might return something like asdf
 
 | sex | count |
 |----|----|
