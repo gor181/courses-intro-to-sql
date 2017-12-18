@@ -1,6 +1,8 @@
 ---
-title       : Sorting, grouping and joins
-description : This chapter provides a brief introduction to sorting and grouping your results, and briefly touches on the concept of joins.
+title: Sorting, grouping and joins
+description: >-
+  This chapter provides a brief introduction to sorting and grouping your results, and briefly touches on the concept of joins.
+
 
 ---
 ## ORDER BY
@@ -9,6 +11,7 @@ description : This chapter provides a brief introduction to sorting and grouping
 type: PlainMultipleChoiceExercise
 lang: sql
 xp: 50
+
 key: 322af4938b
 ```
 
@@ -40,6 +43,9 @@ How do you think `ORDER BY` sorts a column of text values by default?
 `@hint`
 By default, `ORDER BY` sorts alphabetically, but in which direction?
 
+
+
+
 `@sct`
 ```{python}
 success_msg = 'Correct!'
@@ -49,6 +55,8 @@ msg2 = 'Incorrect. Text values are ordered alphabetically.'
 Ex().test_mc(1, [success_msg, msg1, msg2, msg2])
 ```
 
+
+
 ---
 ## Sorting single columns
 
@@ -56,10 +64,13 @@ Ex().test_mc(1, [success_msg, msg1, msg2, msg2])
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: a7b2964ba6
 ```
 
 Now that you understand how `ORDER BY` works, give these exercises a go!
+
+
 
 `@pre_exercise_code`
 ```{python}
@@ -67,27 +78,26 @@ connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
 
-`@sample_code`
-```{sql}
 
-```
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: e3a06cce15
+
 xp: 30
+
+key: e3a06cce15
 ```
+
+
 
 `@instructions`
 Get the names of people from the `people` table, sorted alphabetically.
-`@solution`
-```{sql}
-SELECT name
-FROM people
-ORDER BY name;
-```
 
 `@hint`
 ```
@@ -96,6 +106,14 @@ FROM ___
 ORDER BY ___;
 ```
 
+
+
+`@solution`
+```{sql}
+SELECT name
+FROM people
+ORDER BY name;
+```
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -114,33 +132,45 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 14a2792baa
+
 xp: 30
+
+key: 14a2792baa
 ```
+
+
 
 `@instructions`
 Get the names of people, sorted by birth date.
-`@solution`
-```{sql}
-SELECT name
-FROM people
-ORDER BY birthdate;
-```
+
 `@hint`
 ```
 SELECT ___
 FROM ___
 ORDER BY ___;
 ```
-`@sct`
+
+
+
+`@solution`
 ```{sql}
+SELECT name
+FROM people
+ORDER BY birthdate;
+```
+`@sct`
+```{python}
 sel = check_node('SelectStmt')
 
 name = test_column('name', msg='Did you select the `name` column correctly?')
@@ -159,27 +189,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 6cfeca71b1
+
 xp: 30
+
+key: 6cfeca71b1
 ```
+
+
 
 `@instructions`
 Get the birth date and name for every person, in order of when they were born.
-`@solution`
-```{sql}
-SELECT birthdate, name
-FROM people
-ORDER BY birthdate;
-```
+
 `@hint`
 ```
 SELECT ___, ___
 FROM ___
 ORDER BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate;
 ```
 `@sct`
 ```{python}
@@ -204,6 +247,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## Sorting single columns (2)
 
@@ -211,10 +257,13 @@ Ex().test_correct(check_result(), [
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: 357ec9bc3d
 ```
 
-Let's get some more practice with `ORDER BY`!
+Let's get some more practice with `ORDER BY`! adsf
+
+
 
 `@pre_exercise_code`
 ```{python}
@@ -222,34 +271,43 @@ connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
 
-`@sample_code`
-```{sql}
 
-```
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: e2702b5933
+
 xp: 30
+
+key: e2702b5933
 ```
+
+
 
 `@instructions`
 Get the title of films released in 2000 or 2012, in the order they were released.
-`@solution`
-```{sql}
-SELECT title
-FROM films
-WHERE release_year IN (2000, 2012)
-ORDER BY release_year;
-```
+
 `@hint`
 ```
 SELECT ___
 FROM ___
 WHERE ___ IN (___, ___)
 ORDER BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT title
+FROM films
+WHERE release_year IN (2000, 2012)
+ORDER BY release_year;
 ```
 `@sct`
 ```{python}
@@ -276,29 +334,42 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 5c84507976
+
 xp: 30
+
+key: 5c84507976
 ```
+
+
 
 `@instructions`
 Get all details for all films except those released in 2015 and order them by duration.
-`@solution`
-```{sql}
-SELECT *
-FROM films
-WHERE release_year <> 2015
-ORDER BY duration;
-```
+
 `@hint`
 ```{sql}
 SELECT ___
 FROM ___
 WHERE ___ <> ___
 ORDER BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT *
+FROM films
+WHERE release_year <> 2015
+ORDER BY duration;
 ```
 `@sct`
 ```{python}
@@ -325,29 +396,42 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 6359addbf8
+
 xp: 30
+
+key: 6359addbf8
 ```
+
+
 
 `@instructions`
 Get the title and gross earnings for movies which begin with the letter 'M' and order the results alphabetically.
-`@solution`
-```{sql}
-SELECT title, gross
-FROM films
-WHERE title LIKE 'M%'
-ORDER BY title;
-```
+
 `@hint`
 ```{sql}
 SELECT ___, ___
 FROM ___
 WHERE ___ LIKE ___
 ORDER BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT title, gross
+FROM films
+WHERE title LIKE 'M%'
+ORDER BY title;
 ```
 `@sct`
 ```{python}
@@ -381,6 +465,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## Sorting single columns (DESC)
 
@@ -388,6 +475,7 @@ Ex().test_correct(check_result(), [
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: a7b2964ba7
 ```
 
@@ -401,34 +489,34 @@ ORDER BY name DESC;
 
 Now practice using `ORDER BY` with `DESC` to sort single columns in descending order!
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'reviews'])
 ```
 
-`@sample_code`
-```{sql}
 
-```
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 1ed651456d
+
 xp: 30
+
+key: 1ed651456d
 ```
+
+
 
 `@instructions`
 Get the IMDB score and film ID for every film from the reviews table, sorted from highest to lowest score.
-
-`@solution`
-```{sql}
-SELECT imdb_score, film_id
-FROM reviews
-ORDER BY imdb_score DESC;
-```
 
 `@hint`
 ```
@@ -437,6 +525,14 @@ FROM ___
 ORDER BY ___ DESC;
 ```
 
+
+
+`@solution`
+```{sql}
+SELECT imdb_score, film_id
+FROM reviews
+ORDER BY imdb_score DESC;
+```
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -459,28 +555,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 3629dd5dcd
+
 xp: 30
+
+key: 3629dd5dcd
 ```
+
+
 
 `@instructions`
 Get the title for every film, in reverse order.
+
+`@hint`
+```
+SELECT ___
+FROM ___
+ORDER BY ___ ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT title
 FROM films
 ORDER BY title DESC;
-```
-`@hint`
-```
-SELECT ___
-FROM ___
-ORDER BY ___ ___;
 ```
 `@sct`
 ```{python}
@@ -502,28 +610,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: ddcb2dd3ad
+
 xp: 30
+
+key: ddcb2dd3ad
 ```
+
+
 
 `@instructions`
 Get the title and duration for every film, in order of longest duration to shortest.
+
+`@hint`
+```
+SELECT ___, ___
+FROM ___
+ORDER BY ___ ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT title, duration
 FROM films
 ORDER BY duration DESC;
-```
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-ORDER BY ___ ___;
 ```
 `@sct`
 ```{python}
@@ -548,6 +668,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## Sorting multiple columns
 
@@ -555,6 +678,7 @@ Ex().test_correct(check_result(), [
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: b2a52993bc
 ```
 
@@ -570,33 +694,35 @@ sorts on birth dates first (oldest to newest) and then sorts on the names in alp
 
 Try using `ORDER BY` to sort multiple columns! Remember, to specify multiple columns you separate the column names with a comma.
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
 
-`@sample_code`
-```{sql}
 
-```
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 9ec6e8ae72
+
 xp: 30
+
+key: 9ec6e8ae72
 ```
+
+
 
 `@instructions`
 Get the birth date and name of people in the `people` table, in order of when they were born and alphabetically by name.
-`@solution`
-```{sql}
-SELECT birthdate, name
-FROM people
-ORDER BY birthdate, name;
-```
+
 `@hint`
 ```
 SELECT ___, ___
@@ -604,6 +730,14 @@ FROM ___
 ORDER BY ___, ___;
 ```
 
+
+
+`@solution`
+```{sql}
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate, name;
+```
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -627,27 +761,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 3460b2f14b
+
 xp: 30
+
+key: 3460b2f14b
 ```
+
+
 
 `@instructions`
 Get the release year, duration, and title of films ordered by their release year and duration.
-`@solution`
-```{sql}
-SELECT release_year, duration, title
-FROM films
-ORDER BY release_year, duration;
-```
+
 `@hint`
 ```
 SELECT ___, ___, ___
 FROM ___
 ORDER BY ___, ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, duration, title
+FROM films
+ORDER BY release_year, duration;
 ```
 `@sct`
 ```{python}
@@ -675,28 +822,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: c03517c2b9
+
 xp: 30
+
+key: c03517c2b9
 ```
+
+
 
 `@instructions`
 Get certifications, release years, and titles of films ordered by certification (alphabetically) and release year.
+
+`@hint`
+```
+SELECT ___, ___, ___
+FROM ___
+ORDER BY ___, ___;
+```
+
+
 
 `@solution`
 ```{sql}
 SELECT certification, release_year, title
 FROM films
 ORDER BY certification, release_year;
-```
-`@hint`
-```
-SELECT ___, ___, ___
-FROM ___
-ORDER BY ___, ___;
 ```
 `@sct`
 ```{python}
@@ -726,27 +885,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: f0ade213ff
+
 xp: 30
+
+key: f0ade213ff
 ```
+
+
 
 `@instructions`
 Get the names and birthdates of people ordered by name and birth date.
-`@solution`
-```{sql}
-SELECT name, birthdate
-FROM people
-ORDER BY name, birthdate;
-```
+
 `@hint`
 ```
 SELECT ___, ___
 FROM ___
 ORDER BY ___, ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT name, birthdate
+FROM people
+ORDER BY name, birthdate;
 ```
 `@sct`
 ```{python}
@@ -773,6 +945,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## GROUP BY
 
@@ -780,6 +955,7 @@ Ex().test_correct(check_result(), [
 type: PlainMultipleChoiceExercise
 lang: sql
 xp: 50
+
 key: 81987a99cf
 ```
 
@@ -813,6 +989,9 @@ What is `GROUP BY` used for?
 `@hint`
 You use `GROUP BY` when you want to compute results within groups.
 
+
+
+
 `@sct`
 ```{python}
 one = 'Incorrect. While `GROUP BY` does sort by column, we could just use `ORDER BY` for this.'
@@ -823,6 +1002,8 @@ success_msg = 'Correct! `GROUP BY` is for performing operations within groups.'
 Ex().test_mc(4, [one, two, three, success_msg])
 ```
 
+
+
 ---
 ## GROUP BY practice
 
@@ -830,6 +1011,7 @@ Ex().test_mc(4, [one, two, three, success_msg])
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: 98e30a6131
 ```
 
@@ -856,38 +1038,49 @@ might return something like
 <br>
 because there are more females at our company than males. Note also that `ORDER BY` always goes after `GROUP BY`. Let's try some exercises!
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'reviews'])
 ```
 
-`@sample_code`
-```{sql}
 
-```
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 0b29eb4ff3
+
 xp: 30
+
+key: 0b29eb4ff3
 ```
+
+
 
 `@instructions`
 Get the release year and count of films released in each year.
-`@solution`
-```{sql}
-SELECT release_year, COUNT(*)
-FROM films
-GROUP BY release_year;
-```
+
 `@hint`
 ```
 SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, COUNT(*)
+FROM films
+GROUP BY release_year;
 ```
 `@sct`
 ```{python}
@@ -915,27 +1108,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: ebee043890
+
 xp: 30
+
+key: ebee043890
 ```
+
+
 
 `@instructions`
 Get the release year and average duration of all films, grouped by release year.
-`@solution`
-```{sql}
-SELECT release_year, AVG(duration)
-FROM films
-GROUP BY release_year;
-```
+
 `@hint`
 ```
 SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, AVG(duration)
+FROM films
+GROUP BY release_year;
 ```
 `@sct`
 ```{python}
@@ -961,30 +1167,42 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: b4341b8451
+
 xp: 30
+
+key: b4341b8451
 ```
+
+
 
 `@instructions`
 Get the release year and largest budget for all films, grouped by release year.
-`@solution`
-```{sql}
-SELECT release_year, MAX(budget)
-FROM films
-GROUP BY release_year;
-```
+
 `@hint`
 ```
 SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, MAX(budget)
+FROM films
+GROUP BY release_year;
 ```
 `@sct`
 ```{python}
@@ -1010,31 +1228,42 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 66d0c5198a
+
 xp: 30
+
+key: 66d0c5198a
 ```
+
+
 
 `@instructions`
 Get the IMDB score and count of film reviews grouped by IMDB score in the `reviews` table.
-`@solution`
-```{sql}
-SELECT imdb_score, COUNT(*)
-FROM reviews
-GROUP BY imdb_score;
-```
 
 `@hint`
 ```
 SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT imdb_score, COUNT(*)
+FROM reviews
+GROUP BY imdb_score;
 ```
 `@sct`
 ```{python}
@@ -1064,6 +1293,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## GROUP BY practice (2)
 
@@ -1071,6 +1303,7 @@ Ex().test_correct(check_result(), [
 type: BulletExercise
 lang: sql
 xp: 100
+
 key: 38a7c62434
 ```
 
@@ -1078,38 +1311,49 @@ Now practice your new skills by combining `GROUP BY` and `ORDER BY` with some mo
 
 Make sure to always put the `ORDER BY` clause at the end of your query. You can't sort values that you haven't calculated yet!
 
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
 
-`@sample_code`
-```{sql}
 
-```
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 53ad6da98c
+
 xp: 30
+
+key: 53ad6da98c
 ```
+
+
 
 `@instructions`
 Get the release year and lowest gross earnings per release year.
-`@solution`
-```{sql}
-SELECT release_year, MIN(gross)
-FROM films
-GROUP BY release_year;
-```
+
 `@hint`
 ```
 SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, MIN(gross)
+FROM films
+GROUP BY release_year;
 ```
 `@sct`
 ```{python}
@@ -1137,27 +1381,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: cff5924de5
+
 xp: 30
+
+key: cff5924de5
 ```
+
+
 
 `@instructions`
 Get the language and total gross amount films in each language made.
-`@solution`
-```{sql}
-SELECT language, SUM(gross)
-FROM films
-GROUP BY language;
-```
+
 `@hint`
 ```
 SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT language, SUM(gross)
+FROM films
+GROUP BY language;
 ```
 `@sct`
 ```{python}
@@ -1185,27 +1442,40 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 83944ff64f
+
 xp: 30
+
+key: 83944ff64f
 ```
+
+
 
 `@instructions`
 Get the country and total budget spent making movies in each country.
-`@solution`
-```{sql}
-SELECT country, SUM(budget)
-FROM films
-GROUP BY country;
-```
+
 `@hint`
 ```
 SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT country, SUM(budget)
+FROM films
+GROUP BY country;
 ```
 `@sct`
 ```{python}
@@ -1233,29 +1503,42 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: eac5f722a5
+
 xp: 30
+
+key: eac5f722a5
 ```
+
+
 
 `@instructions`
 Get the release year, country, and highest budget spent making a film for each year, for each country. Sort your results by release year and country.
-`@solution`
-```{sql}
-SELECT release_year, country, MAX(budget)
-FROM films
-GROUP BY release_year, country
-ORDER BY release_year, country;
-```
+
 `@hint`
 ```
 SELECT ___, ___, ___(___)
 FROM ___
 GROUP BY ___, ___
 ORDER BY ___, ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, country, MAX(budget)
+FROM films
+GROUP BY release_year, country
+ORDER BY release_year, country;
 ```
 `@sct`
 ```{python}
@@ -1287,29 +1570,42 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 48461bd4d3
+
 xp: 30
+
+key: 48461bd4d3
 ```
+
+
 
 `@instructions`
 Get the country, release year, and lowest amount grossed per release year per country. Order your results by country and release year.
-`@solution`
-```{sql}
-SELECT country, release_year, MIN(gross)
-FROM films
-GROUP BY country, release_year
-ORDER BY country, release_year;
-```
+
 `@hint`
 ```
 SELECT ___, ___, ___(___)
 FROM films
 GROUP BY country, release_year
 ORDER BY ___, ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT country, release_year, MIN(gross)
+FROM films
+GROUP BY country, release_year
+ORDER BY country, release_year;
 ```
 `@sct`
 ```{python}
@@ -1343,6 +1639,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## HAVING a great time
 
@@ -1350,6 +1649,7 @@ Ex().test_correct(check_result(), [
 type: MultipleChoiceExercise
 lang: sql
 xp: 50
+
 key: a391d35885
 ```
 
@@ -1390,11 +1690,9 @@ Replace 10 with 200 in the query above and run it in the editor.
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
 `@sample_code`
 ```{sql}
 -- You can test out queries here!
-
 ```
 
 `@sct`
@@ -1405,6 +1703,8 @@ msg2 = 'Incorrect! Make a small modification to the query above and run it in th
 Ex().test_mc(2, [msg2, msg1, msg2, msg2])
 ```
 
+
+
 ---
 ## All together now
 
@@ -1412,6 +1712,7 @@ Ex().test_mc(2, [msg2, msg1, msg2, msg2])
 type: TabExercise
 lang: sql
 xp: 100
+
 key: f7dcb9e122
 ```
 
@@ -1422,36 +1723,46 @@ Now you're going to write a query that returns the average budget and average gr
 This is going to be a big query, but you can handle it!
 
 
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
 
-`@sample_code`
-```{sql}
 
-```
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: a141cd669f
+
 xp: 30
+
+key: a141cd669f
 ```
+
+
 
 `@instructions`
 Get the release year, budget and gross earnings for each film in the `films` table.
-`@solution`
-```{sql}
-SELECT release_year, budget, gross
-FROM films;
-```
+
 `@hint`
 ```
 SELECT ___, ___, ___
 FROM ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, budget, gross
+FROM films;
 ```
 `@sct`
 ```{python}
@@ -1474,30 +1785,42 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: d80bd57b13
+
 xp: 30
+
+key: d80bd57b13
 ```
+
+
 
 `@instructions`
 Modify your query so that only results after 1990 are included.
-`@solution`
-```{sql}
-SELECT release_year, budget, gross
-FROM films
-WHERE release_year > 1990;
-```
+
 `@hint`
 ```
 SELECT ___, ___, ___
 FROM ___
 WHERE ___ > ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, budget, gross
+FROM films
+WHERE release_year > 1990;
 ```
 `@sct`
 ```{python}
@@ -1525,32 +1848,44 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: NormalExercise
-key: 2d5e6bd8cf
+
 xp: 30
+
+key: 2d5e6bd8cf
 ```
+
+
 
 `@instructions`
 Remove the budget and gross columns, and group your results by release year.
-`@solution`
-```{sql}
-SELECT release_year
-FROM films
-WHERE release_year > 1990
-GROUP BY release_year;
-```
+
 `@hint`
 ```
 SELECT ___
 FROM ___
 WHERE ___ > ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
 ```
 `@sct`
 ```{python}
@@ -1577,29 +1912,42 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: ee92d8cbaa
+
 xp: 30
+
+key: ee92d8cbaa
 ```
+
+
 
 `@instructions`
 Modify your query to add in the average budget and average gross earnings for the results you have so far. Alias your results as `avg_budget` and `avg_gross`, respectively.
-`@solution`
-```{sql}
-SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
-FROM films
-WHERE release_year > 1990
-GROUP BY release_year;
-```
+
 `@hint`
 ```
 SELECT ___, ___(___) AS avg_budget, AVG(gross) AS avg_gross
 FROM ___
 WHERE ___ > ___
 GROUP BY ___;
+```
+
+
+
+`@solution`
+```{sql}
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
 ```
 `@sct`
 ```{python}
@@ -1631,16 +1979,36 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: ce0f248734
+
 xp: 30
+
+key: ce0f248734
 ```
+
+
 
 `@instructions`
 Modify your query so that only years with an average budget of greater than $60 million are included.
+
+`@hint`
+```
+SELECT ___, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM ___
+WHERE ___ > ___
+GROUP BY ___
+HAVING AVG(___) > 60000000;
+```
+
+
 
 `@solution`
 ```{sql}
@@ -1649,14 +2017,6 @@ FROM films
 WHERE release_year > 1990
 GROUP BY release_year
 HAVING AVG(budget) > 60000000;
-```
-`@hint`
-```
-SELECT ___, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
-FROM ___
-WHERE ___ > ___
-GROUP BY ___
-HAVING AVG(___) > 60000000;
 ```
 `@sct`
 ```{python}
@@ -1693,16 +2053,37 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 7b3afeed2f
+
 xp: 30
+
+key: 7b3afeed2f
 ```
+
+
 
 `@instructions`
 Finally, modify your query to order the results from highest average gross earnings to lowest.
+
+`@hint`
+```
+SELECT ___, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM ___
+WHERE ___ > ___
+GROUP BY ___
+HAVING AVG(___) > 60000000
+ORDER BY ___ DESC;
+```
+
+
 
 `@solution`
 ```{sql}
@@ -1712,15 +2093,6 @@ WHERE release_year > 1990
 GROUP BY release_year
 HAVING AVG(budget) > 60000000
 ORDER BY avg_gross DESC;
-```
-`@hint`
-```
-SELECT ___, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
-FROM ___
-WHERE ___ > ___
-GROUP BY ___
-HAVING AVG(___) > 60000000
-ORDER BY ___ DESC;
 ```
 `@sct`
 ```{python}
@@ -1760,6 +2132,9 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
+
 ---
 ## All together now (2)
 
@@ -1778,13 +2153,21 @@ Remember, if you only want to return a certain number of results, you can use th
 `@instructions`
 Get the country, average budget, and average gross take of countries that have made more than 10 films. Order the result by country name, and limit the number of results displayed to 5. You should alias the averages as `avg_budget` and `avg_gross` respectively.
 
+`@hint`
+```
+SELECT ___, AVG(budget) AS avg_budget, ___(gross) AS avg_gross
+FROM films
+GROUP BY ___
+HAVING COUNT(title) > 10
+ORDER BY ___
+LIMIT 5;
+```
 
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
 `@sample_code`
 ```{sql}
 -- select country, average budget, average gross
@@ -1798,9 +2181,7 @@ set_options(visible_tables = ['films'])
 -- order by country
 
 -- limit to only show 5 results
-
 ```
-
 `@solution`
 ```{sql}
 -- select country, average budget, average gross
@@ -1816,16 +2197,6 @@ ORDER BY country
 -- limit to only show 5 results
 LIMIT 5;
 ```
-`@hint`
-```
-SELECT ___, AVG(budget) AS avg_budget, ___(gross) AS avg_gross
-FROM films
-GROUP BY ___
-HAVING COUNT(title) > 10
-ORDER BY ___
-LIMIT 5;
-```
-
 `@sct`
 ```{python}
 sel = check_node('SelectStmt')
@@ -1860,6 +2231,8 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+
 ---
 ## A taste of things to come
 
@@ -1867,6 +2240,7 @@ Ex().test_correct(check_result(), [
 type: TabExercise
 lang: sql
 xp: 100
+
 key: d101be707a
 ```
 
@@ -1884,12 +2258,13 @@ As you can see, joins are incredibly useful and important to understand for anyo
 
 We'll have a whole course dedicated to them coming soon!
 
+
+
 `@pre_exercise_code`
-```{sql}
+```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'reviews'])
 ```
-
 `@sample_code`
 ```{sql}
 SELECT title, imdb_score
@@ -1899,19 +2274,30 @@ ON films.id = reviews.film_id
 WHERE title = 'To Kill a Mockingbird';
 ```
 
+
+
+
 ***
+
+
 
 ```yaml
 type: NormalExercise
-key: 7c4fc7a484
+
 xp: 30
+
+key: 7c4fc7a484
 ```
+
+
 
 `@instructions`
 Submit the code in the editor and inspect the results.
 
 `@hint`
 Submit the code in the editor!
+
+
 
 `@solution`
 ```{sql}
@@ -1921,9 +2307,8 @@ JOIN reviews
 ON films.id = reviews.film_id
 WHERE title = 'To Kill a Mockingbird';
 ```
-
 `@sct`
-```{sql}
+```{python}
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column correctly?')
@@ -1943,28 +2328,31 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
+
+
+
 
 ***
 
+
+
 ```yaml
 type: MultipleChoiceExercise
-key: fc288db979
+
 xp: 30
+
+key: fc288db979
 ```
 
-`@question`
-What rating does _To Kill a Mockingbird_ have on IMDB?
 
-`@possible_answers`
-- 8.1
-- 8.4
-- 7.7
-- 9.3
+
 
 `@hint`
 Look at the query result tab!
+
+
+
 
 `@sct`
 ```{python}
@@ -1973,3 +2361,6 @@ correct = 'Correct!'
 
 Ex().test_mc(2,[msg1, correct, msg1, msg1])
 ```
+
+
+
