@@ -36,8 +36,6 @@ For this course, you'll be using a database containing information on almost 500
 From looking at the tabs, who is the first person listed in the `people` table?
 
 
-example edit two
-
 `@instructions`
 - Kanye West
 - Biggie Smalls
