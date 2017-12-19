@@ -92,6 +92,8 @@ WHERE budget > 10000;
 
 Now it's your turn to use the `WHERE` clause to filter numeric values!
 
+asdf
+
 
 
 `@pre_exercise_code`
