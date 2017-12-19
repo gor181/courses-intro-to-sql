@@ -42,7 +42,7 @@ From looking at the tabs, who is the first person listed in the `people` table? 
 - Jay Z
 
 `@hint`
-Look at the `people` tab under the editor!
+Look at the `people` tab under the editor! asdf
 
 `@pre_exercise_code`
 ```{python}
