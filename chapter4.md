@@ -32,7 +32,7 @@ ORDER BY release_year DESC;
 gives you the titles of films sorted by release year, from newest to oldest.
 
 <hr>
-How do you think `ORDER BY` sorts a column of text values by default?
+How do you think `ORDER BY` sorts a column of text values by default? adf
 
 `@instructions`
 - Alphabetically (A-Z)
