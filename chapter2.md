@@ -300,7 +300,7 @@ Remember, the `WHERE` clause can also be used to filter text results, such as na
 
 For example, this query gets the titles of all films which were filmed in China:
 
-sample edit
+sample edit adf
 
 ```
 SELECT title
