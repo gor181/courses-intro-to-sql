@@ -132,6 +132,9 @@ _DataCamp_ errors are shown in the **Instructions** box. These will let you know
 You need to add SELECT at the start of line 2!
 ```
 
+
+test
+
 `@instructions`
 Submit the code to the right, check out the errors, then fix them!
 
