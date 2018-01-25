@@ -5,7 +5,7 @@ description: >-
 
 
 ---
-## Welcome to the course! change
+## Welcome to the course!
 
 ```yaml
 type: VideoExercise
