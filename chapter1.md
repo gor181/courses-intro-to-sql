@@ -60,6 +60,8 @@ Ex().test_mc(3,[msg1, msg1, correct, msg1])
 
 
 
+
+
 ---
 ## Onboarding | Query Result
 
@@ -104,6 +106,8 @@ correct = 'Correct!'
 
 Ex().test_mc(2, [msg1, correct, msg1, msg1])
 ```
+
+
 
 
 
@@ -166,6 +170,8 @@ Ex().test_error()
 
 
 
+
+
 ---
 ## Onboarding | Bullet Exercises
 
@@ -190,6 +196,8 @@ connect('postgresql', 'films')
 SELECT 'SQL'
 AS result;
 ```
+
+
 
 
 
@@ -234,6 +242,8 @@ Ex().check_result()
 
 
 
+
+
 ***
 
 
@@ -274,6 +284,8 @@ Ex().check_result()
 
 
 
+
+
 ***
 
 
@@ -310,6 +322,8 @@ Ex().test_student_typed('SQL is cool!', msg="Did you change the query correctly?
 Ex().test_has_columns()
 Ex().check_result()
 ```
+
+
 
 
 
@@ -368,6 +382,8 @@ Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
 
 
 
+
+
 ---
 ## SELECTing single columns
 
@@ -408,6 +424,8 @@ Remember, you can see the results of executing your query in the __query result_
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+
+
 
 
 
@@ -463,6 +481,8 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
 ***
 
 
@@ -509,6 +529,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 
 
 
@@ -563,6 +585,8 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
 ---
 ## SELECTing multiple columns
 
@@ -609,6 +633,8 @@ Before getting started with the instructions below, check out the column names i
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+
+
 
 
 
@@ -666,6 +692,8 @@ Ex().test_correct(check_result2(), [
 
 
 
+
+
 ***
 
 
@@ -717,6 +745,8 @@ Ex().test_correct(check_result2(), [
     test_error()
 ])
 ```
+
+
 
 
 
@@ -779,6 +809,8 @@ Ex().test_correct(check_result2(), [
 
 
 
+
+
 ***
 
 
@@ -829,6 +861,8 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
 ---
 ## SELECT DISTINCT
 
@@ -858,6 +892,8 @@ Remember, you can check out the data in the tables by clicking on the tabs to th
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'roles'])
 ```
+
+
 
 
 
@@ -915,6 +951,8 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
 ***
 
 
@@ -964,6 +1002,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 
 
 
@@ -1021,6 +1061,8 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
 ---
 ## Learning to COUNT
 
@@ -1073,6 +1115,8 @@ Ex().test_mc(3,[msg2, msg2, success_msg, msg2, msg2])
 
 
 
+
+
 ---
 ## Practice with COUNT
 
@@ -1111,6 +1155,8 @@ Let's get some practice with `COUNT`!
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+
+
 
 
 
@@ -1172,6 +1218,8 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
 ***
 
 
@@ -1223,6 +1271,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 
 
 
@@ -1285,6 +1335,8 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
 ***
 
 
@@ -1339,6 +1391,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 
 
 
@@ -1400,3 +1454,19 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
+---
+## a new vid exercise
+
+```yaml
+type: VideoExercise
+
+xp: undefined
+
+key: 6e08bb52bc
+```
+
+`@projector_key`
+04c20db1553e0df206b6a166caae54cf
