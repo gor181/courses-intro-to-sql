@@ -1456,3 +1456,17 @@ Ex().test_correct(check_result(), [
 
 
 
+
+---
+## Insert exercise title here
+
+```yaml
+type: VideoExercise
+
+xp: undefined
+
+key: 5dbe03206d
+```
+
+`@projector_key`
+a63c54c43321e5cd7fddd665fa802c12
