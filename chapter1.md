@@ -1458,15 +1458,29 @@ Ex().test_correct(check_result(), [
 
 
 ---
-## Insert exercise title here
+## I need coffee
 
 ```yaml
 type: VideoExercise
 
-xp: undefined
+xp: NaN
 
 key: 5d3081735e
 ```
 
 `@projector_key`
 1fe9493f7b56c663beef3018d4655c99
+
+---
+## Testing again cus you never know
+
+```yaml
+type: VideoExercise
+
+xp: undefined
+
+key: d91de87c17
+```
+
+`@projector_key`
+d7d38acc352eb4c7d19bf84a52a938d6
