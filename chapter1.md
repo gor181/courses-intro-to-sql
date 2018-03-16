@@ -1456,17 +1456,3 @@ Ex().test_correct(check_result(), [
 
 
 
-
----
-## a new vid exercise
-
-```yaml
-type: VideoExercise
-
-xp: undefined
-
-key: 6e08bb52bc
-```
-
-`@projector_key`
-04c20db1553e0df206b6a166caae54cf
