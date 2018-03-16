@@ -1465,8 +1465,8 @@ type: VideoExercise
 
 xp: undefined
 
-key: 5dbe03206d
+key: 5d3081735e
 ```
 
 `@projector_key`
-a63c54c43321e5cd7fddd665fa802c12
+1fe9493f7b56c663beef3018d4655c99
