@@ -1477,10 +1477,24 @@ key: 5d3081735e
 ```yaml
 type: VideoExercise
 
-xp: undefined
+xp: NaN
 
 key: d91de87c17
 ```
 
 `@projector_key`
 d7d38acc352eb4c7d19bf84a52a938d6
+
+---
+## testing
+
+```yaml
+type: VideoExercise
+
+xp: undefined
+
+key: d297ee70f6
+```
+
+`@projector_key`
+f9373f8900e66210e51e4d1c7a62d26a
