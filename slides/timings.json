@@ -1,9 +1,16 @@
 {
   "slides/chapter_1_welcome_to_the_course.md": [
     {
-      "timing": 0.11846689895470386,
+      "timing": 0,
       "state": {
         "indexh": 0,
+        "indexf": -1
+      }
+    },
+    {
+      "timing": 0.11846689895470386,
+      "state": {
+        "indexh": 1,
         "indexf": -1
       }
     }
