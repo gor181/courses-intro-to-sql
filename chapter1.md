@@ -209,7 +209,7 @@ AS result;
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 157ee8d1ad
 ```
@@ -225,12 +225,12 @@ Submit the query!
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT 'SQL'
 AS result;
 ```
 `@sct`
-```{python}
+```{undefined}
 Ex().test_error()
 
 Ex().test_student_typed('SQL', msg="Don't modify the query!", fixed=True)
@@ -251,7 +251,7 @@ Ex().check_result()
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 764f82129d
 ```
@@ -267,12 +267,12 @@ Change the code and submit the query!
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT 'SQL is'
 AS result;
 ```
 `@sct`
-```{python}
+```{undefined}
 Ex().test_error()
 
 Ex().test_student_typed('SQL is', msg="Did you change the query correctly?", fixed=True)
@@ -309,12 +309,12 @@ Change the code and submit the query!
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT 'SQL is cool!'
 AS result;
 ```
 `@sct`
-```{python}
+```{undefined}
 Ex().test_error()
 
 Ex().test_student_typed('SQL is cool!', msg="Did you change the query correctly?", fixed=True)
@@ -438,7 +438,7 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: a41cc766d5
 ```
@@ -457,12 +457,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT title
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column correctly?')
@@ -490,7 +490,7 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 4a74270ecd
 ```
@@ -509,12 +509,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT release_year
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 release_year = test_column('release_year', msg='Did you select the `release_year` column correctly?')
@@ -561,12 +561,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT name
 FROM people;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 name = test_column('name', msg='Did you select the `name` column correctly?')
@@ -647,7 +647,7 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: d561b4df97
 ```
@@ -666,12 +666,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT title
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -701,7 +701,7 @@ Ex().test_correct(check_result2(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 917d7dc533
 ```
@@ -720,12 +720,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT title, release_year
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -758,7 +758,7 @@ Ex().test_correct(check_result2(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: eeba078a00
 ```
@@ -777,12 +777,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT title, release_year, country
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -818,7 +818,7 @@ Ex().test_correct(check_result2(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: dac27d9aad
 ```
@@ -837,12 +837,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT *
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 star = sel.check_node('Star').has_equal_ast('Did you use `SELECT *` to get all columns?')
@@ -906,7 +906,7 @@ set_options(visible_tables = ['films', 'roles'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: e6b81711f1
 ```
@@ -925,12 +925,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT DISTINCT country
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -960,7 +960,7 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 2cb9a4bf6a
 ```
@@ -979,12 +979,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT DISTINCT certification
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -1034,12 +1034,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT DISTINCT role
 FROM roles;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -1169,7 +1169,7 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 4688067e3e
 ```
@@ -1188,12 +1188,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT COUNT(*)
 FROM people;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1227,7 +1227,7 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 497ffa962e
 ```
@@ -1246,12 +1246,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT COUNT(birthdate)
 FROM people;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1284,7 +1284,7 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 50c903a00a
 ```
@@ -1303,12 +1303,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1344,7 +1344,7 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 511052cbbe
 ```
@@ -1363,12 +1363,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT COUNT(DISTINCT language)
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1404,7 +1404,7 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 9e1147efe5
 ```
@@ -1423,12 +1423,12 @@ FROM ___;
 
 
 `@solution`
-```{sql}
+```{undefined}
 SELECT COUNT(DISTINCT country)
 FROM films;
 ```
 `@sct`
-```{python}
+```{undefined}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1463,7 +1463,7 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: VideoExercise
 
-xp: NaN
+xp: 50
 
 key: 5d3081735e
 ```
@@ -1477,7 +1477,7 @@ key: 5d3081735e
 ```yaml
 type: VideoExercise
 
-xp: NaN
+xp: 50
 
 key: d91de87c17
 ```
@@ -1491,7 +1491,7 @@ d7d38acc352eb4c7d19bf84a52a938d6
 ```yaml
 type: VideoExercise
 
-xp: undefined
+xp: 50
 
 key: d297ee70f6
 ```
