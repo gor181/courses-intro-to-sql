@@ -1,8 +1,7 @@
 ---
-title: Selecting columns
-description: >-
-  This chapter provides a brief introduction to working with relational databases. You'll learn about their structure, how to talk about them using database lingo, and how to begin an analysis by using simple SQL commands to select and summarize columns from database tables.
-
+  title: "Selecting columns"
+  description: "This chapter provides a brief introduction to working with relational databases. You'll learn about their structure, how to talk about them using database lingo, and how to begin an analysis by using simple SQL commands to select and summarize columns from database tables."
+  v2: true
 
 ---
 ## Welcome to the course!
@@ -13,6 +12,9 @@ lang: sql
 xp: 50
 skills: 1
 key: dcdbb24914
+
+
+
 ```
 
 `@projector_key`
@@ -27,6 +29,9 @@ lang: sql
 xp: 50
 skills: 1
 key: e456699517
+
+
+
 ```
 
 If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-introduction-to-r) or [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), you'll be familiar with the interface. For SQL, however, there are a few new features you should be aware of.
@@ -40,6 +45,7 @@ From looking at the tabs, who is the first person listed in the `people` table?
 - Biggie Smalls
 - 50 Cent
 - Jay Z
+- Eminem
 
 `@hint`
 Look at the `people` tab under the editor! asdf adf
@@ -62,6 +68,7 @@ Ex().test_mc(3,[msg1, msg1, correct, msg1])
 
 
 
+
 ---
 ## Onboarding | Query Result
 
@@ -71,6 +78,9 @@ lang: sql
 xp: 50
 skills: 1
 key: 5314676aac
+
+
+
 ```
 
 Notice the **query result** tab in the bottom right corner of your screen. This is where the results of your SQL queries will be displayed.
@@ -111,6 +121,7 @@ Ex().test_mc(2, [msg1, correct, msg1, msg1])
 
 
 
+
 ---
 ## Onboarding | Errors
 
@@ -120,6 +131,9 @@ lang: sql
 xp: 100
 skills: 1
 key: 7d7e325a12
+
+
+
 ```
 
 If you submit the code to the right, you'll see that you get two types of errors.
@@ -172,6 +186,7 @@ Ex().test_error()
 
 
 
+
 ---
 ## Onboarding | Bullet Exercises
 
@@ -181,6 +196,9 @@ lang: sql
 xp: 100
 skills: 1
 key: 81eb00a53d
+
+
+
 ```
 
 Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
@@ -202,6 +220,7 @@ AS result;
 
 
 
+
 ***
 
 
@@ -212,6 +231,9 @@ type: NormalExercise
 xp: 35
 
 key: 157ee8d1ad
+
+
+
 ```
 
 
@@ -225,12 +247,12 @@ Submit the query!
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT 'SQL'
 AS result;
 ```
 `@sct`
-```{undefined}
+```{python}
 Ex().test_error()
 
 Ex().test_student_typed('SQL', msg="Don't modify the query!", fixed=True)
@@ -238,6 +260,7 @@ Ex().test_student_typed('SQL', msg="Don't modify the query!", fixed=True)
 Ex().test_has_columns()
 Ex().check_result()
 ```
+
 
 
 
@@ -254,6 +277,9 @@ type: NormalExercise
 xp: 35
 
 key: 764f82129d
+
+
+
 ```
 
 
@@ -267,12 +293,12 @@ Change the code and submit the query!
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT 'SQL is'
 AS result;
 ```
 `@sct`
-```{undefined}
+```{python}
 Ex().test_error()
 
 Ex().test_student_typed('SQL is', msg="Did you change the query correctly?", fixed=True)
@@ -280,6 +306,7 @@ Ex().test_student_typed('SQL is', msg="Did you change the query correctly?", fix
 Ex().test_has_columns()
 Ex().check_result()
 ```
+
 
 
 
@@ -296,6 +323,9 @@ type: NormalExercise
 xp: 30
 
 key: 1496605dac
+
+
+
 ```
 
 
@@ -309,12 +339,12 @@ Change the code and submit the query!
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT 'SQL is cool!'
 AS result;
 ```
 `@sct`
-```{undefined}
+```{python}
 Ex().test_error()
 
 Ex().test_student_typed('SQL is cool!', msg="Did you change the query correctly?", fixed=True)
@@ -322,6 +352,7 @@ Ex().test_student_typed('SQL is cool!', msg="Did you change the query correctly?
 Ex().test_has_columns()
 Ex().check_result()
 ```
+
 
 
 
@@ -337,6 +368,9 @@ lang: sql
 xp: 50
 
 key: a1f556e63f
+
+
+
 ```
 
 Now that you're familiar with the interface, let's get straight into it.
@@ -384,6 +418,7 @@ Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
 
 
 
+
 ---
 ## SELECTing single columns
 
@@ -393,6 +428,9 @@ lang: sql
 xp: 100
 
 key: c0bb58f7f9
+
+
+
 ```
 
 While SQL can be used to create and modify databases, the focus of this course will be *querying* databases. A *query* is a request for data from a database table (or combination of tables). Querying is an essential skill for a data scientist, since the data you need for your analyses will often live in databases.
@@ -431,6 +469,7 @@ set_options(visible_tables = ['films', 'people'])
 
 
 
+
 ***
 
 
@@ -441,6 +480,9 @@ type: NormalExercise
 xp: 35
 
 key: a41cc766d5
+
+
+
 ```
 
 
@@ -457,12 +499,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT title
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column correctly?')
@@ -483,6 +525,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ***
 
 
@@ -493,6 +536,9 @@ type: NormalExercise
 xp: 35
 
 key: 4a74270ecd
+
+
+
 ```
 
 
@@ -509,12 +555,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT release_year
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 release_year = test_column('release_year', msg='Did you select the `release_year` column correctly?')
@@ -535,6 +581,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ***
 
 
@@ -545,6 +592,9 @@ type: NormalExercise
 xp: 30
 
 key: 323bd5ddf5
+
+
+
 ```
 
 
@@ -561,12 +611,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT name
 FROM people;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 name = test_column('name', msg='Did you select the `name` column correctly?')
@@ -587,6 +637,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ---
 ## SELECTing multiple columns
 
@@ -596,6 +647,9 @@ lang: sql
 xp: 100
 
 key: 09f21bae4c
+
+
+
 ```
 
 Well done! Now you know how to select single columns.
@@ -640,6 +694,7 @@ set_options(visible_tables = ['films'])
 
 
 
+
 ***
 
 
@@ -650,6 +705,9 @@ type: NormalExercise
 xp: 25
 
 key: d561b4df97
+
+
+
 ```
 
 
@@ -666,12 +724,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT title
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -694,6 +752,7 @@ Ex().test_correct(check_result2(), [
 
 
 
+
 ***
 
 
@@ -704,6 +763,9 @@ type: NormalExercise
 xp: 25
 
 key: 917d7dc533
+
+
+
 ```
 
 
@@ -720,12 +782,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT title, release_year
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -751,6 +813,7 @@ Ex().test_correct(check_result2(), [
 
 
 
+
 ***
 
 
@@ -761,6 +824,9 @@ type: NormalExercise
 xp: 25
 
 key: eeba078a00
+
+
+
 ```
 
 
@@ -777,12 +843,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT title, release_year, country
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -811,6 +877,7 @@ Ex().test_correct(check_result2(), [
 
 
 
+
 ***
 
 
@@ -821,6 +888,9 @@ type: NormalExercise
 xp: 25
 
 key: dac27d9aad
+
+
+
 ```
 
 
@@ -837,12 +907,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT *
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 star = sel.check_node('Star').has_equal_ast('Did you use `SELECT *` to get all columns?')
@@ -863,6 +933,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ---
 ## SELECT DISTINCT
 
@@ -872,6 +943,9 @@ lang: sql
 xp: 100
 
 key: de52236965
+
+
+
 ```
 
 Often your results will include many duplicate values. If you want to select all the unique values from a column, you can use the `DISTINCT` keyword.
@@ -899,6 +973,7 @@ set_options(visible_tables = ['films', 'roles'])
 
 
 
+
 ***
 
 
@@ -909,6 +984,9 @@ type: NormalExercise
 xp: 35
 
 key: e6b81711f1
+
+
+
 ```
 
 
@@ -925,12 +1003,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT DISTINCT country
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -953,6 +1031,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ***
 
 
@@ -963,6 +1042,9 @@ type: NormalExercise
 xp: 35
 
 key: 2cb9a4bf6a
+
+
+
 ```
 
 
@@ -979,12 +1061,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT DISTINCT certification
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -1008,6 +1090,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ***
 
 
@@ -1018,6 +1101,9 @@ type: NormalExercise
 xp: 30
 
 key: 26835d3029
+
+
+
 ```
 
 
@@ -1034,12 +1120,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT DISTINCT role
 FROM roles;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -1063,6 +1149,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ---
 ## Learning to COUNT
 
@@ -1072,6 +1159,9 @@ lang: sql
 xp: 50
 
 key: 97f97f5766
+
+
+
 ```
 
 What if you want to count the number of employees in your employees table? The `COUNT` statement lets you do this by returning the number of rows in one or more columns.
@@ -1117,6 +1207,7 @@ Ex().test_mc(3,[msg2, msg2, success_msg, msg2, msg2])
 
 
 
+
 ---
 ## Practice with COUNT
 
@@ -1126,6 +1217,9 @@ lang: sql
 xp: 100
 
 key: 7643365e67
+
+
+
 ```
 
 As you've seen, `COUNT(*)` tells you how many rows are in a table. However, if you want to count the number of *non-missing* values in a particular column, you can call `COUNT` on just that column.
@@ -1162,6 +1256,7 @@ set_options(visible_tables = ['films', 'people'])
 
 
 
+
 ***
 
 
@@ -1172,6 +1267,9 @@ type: NormalExercise
 xp: 20
 
 key: 4688067e3e
+
+
+
 ```
 
 
@@ -1188,12 +1286,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT COUNT(*)
 FROM people;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1220,6 +1318,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ***
 
 
@@ -1230,6 +1329,9 @@ type: NormalExercise
 xp: 20
 
 key: 497ffa962e
+
+
+
 ```
 
 
@@ -1246,12 +1348,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT COUNT(birthdate)
 FROM people;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1277,6 +1379,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ***
 
 
@@ -1287,6 +1390,9 @@ type: NormalExercise
 xp: 20
 
 key: 50c903a00a
+
+
+
 ```
 
 
@@ -1303,12 +1409,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1331,6 +1437,7 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
 
 
 
@@ -1347,6 +1454,9 @@ type: NormalExercise
 xp: 20
 
 key: 511052cbbe
+
+
+
 ```
 
 
@@ -1363,12 +1473,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT COUNT(DISTINCT language)
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1391,6 +1501,7 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
 
 
 
@@ -1407,6 +1518,9 @@ type: NormalExercise
 xp: 20
 
 key: 9e1147efe5
+
+
+
 ```
 
 
@@ -1423,12 +1537,12 @@ FROM ___;
 
 
 `@solution`
-```{undefined}
+```{sql}
 SELECT COUNT(DISTINCT country)
 FROM films;
 ```
 `@sct`
-```{undefined}
+```{python}
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1457,6 +1571,7 @@ Ex().test_correct(check_result(), [
 
 
 
+
 ---
 ## I need coffee
 
@@ -1466,6 +1581,9 @@ type: VideoExercise
 xp: 50
 
 key: 5d3081735e
+
+
+
 ```
 
 `@projector_key`
@@ -1480,6 +1598,9 @@ type: VideoExercise
 xp: 50
 
 key: d91de87c17
+
+
+
 ```
 
 `@projector_key`
@@ -1494,6 +1615,9 @@ type: VideoExercise
 xp: 50
 
 key: d297ee70f6
+
+
+
 ```
 
 `@projector_key`
