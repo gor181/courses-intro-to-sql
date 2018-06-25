@@ -1,8 +1,7 @@
 ---
-title: Filtering rows
-description: >-
-  This chapter builds on the first by teaching you how to filter tables for rows satisfying some criteria of interest. You'll learn how to use basic comparison operators, combine multiple criteria, match patterns in text, and much more.
-
+  title: "Filtering rows"
+  description: "This chapter builds on the first by teaching you how to filter tables for rows satisfying some criteria of interest. You'll learn how to use basic comparison operators, combine multiple criteria, match patterns in text, and much more."
+  v2: true
 
 ---
 ## Filtering results
@@ -13,6 +12,9 @@ lang: sql
 xp: 50
 
 key: bfc80ff2e5
+
+
+
 ```
 
 Congrats on finishing the first chapter! You now know how to select columns and perform basic counts. This chapter will focus on filtering your results.
@@ -69,6 +71,9 @@ Ex().test_mc(2, [msg2, success_msg, msg2, msg2])
 
 
 
+
+
+
 ---
 ## Simple filtering of numeric values
 
@@ -78,6 +83,9 @@ lang: sql
 xp: 100
 
 key: b90db25f34
+
+
+
 ```
 
 As you learned in the previous exercise, the `WHERE` clause can also be used to filter numeric records, such as years or ages.
@@ -106,6 +114,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -113,9 +124,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 8a4615ada8
+
+
+
 ```
 
 
@@ -163,6 +177,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -170,9 +187,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 5e6e1c74c6
+
+
+
 ```
 
 
@@ -225,6 +245,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -235,6 +258,9 @@ type: NormalExercise
 xp: 30
 
 key: d66f3d41b7
+
+
+
 ```
 
 
@@ -285,6 +311,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## Simple filtering of text
 
@@ -294,6 +323,9 @@ lang: sql
 xp: 100
 
 key: b90db25f33
+
+
+
 ```
 
 Remember, the `WHERE` clause can also be used to filter text results, such as names or countries.
@@ -324,6 +356,9 @@ set_options(visible_tables = ['films', 'people'])
 
 
 
+
+
+
 ***
 
 
@@ -331,9 +366,12 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: b645308dcd
+
+
+
 ```
 
 
@@ -381,6 +419,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -388,9 +429,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 051f6fb8ec
+
+
+
 ```
 
 
@@ -441,6 +485,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -448,9 +495,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 7b872a3af0
+
+
+
 ```
 
 
@@ -503,6 +553,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -510,9 +563,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 2c87504f11
+
+
+
 ```
 
 
@@ -561,6 +617,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## WHERE AND
 
@@ -570,6 +629,9 @@ lang: sql
 xp: 100
 
 key: 5bda32d7c8
+
+
+
 ```
 
 Often, you'll want to select data based on multiple conditions. You can build up your `WHERE` queries by combining multiple conditions with the `AND` keyword.
@@ -607,6 +669,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -614,9 +679,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 7ccf93b215
+
+
+
 ```
 
 
@@ -672,6 +740,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -679,9 +750,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: e703c95e46
+
+
+
 ```
 
 
@@ -734,6 +808,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -744,6 +821,9 @@ type: NormalExercise
 xp: 30
 
 key: 7f2ba5c82f
+
+
+
 ```
 
 
@@ -801,6 +881,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## WHERE AND OR
 
@@ -810,6 +893,9 @@ lang: sql
 xp: 50
 
 key: 227814cb5d
+
+
+
 ```
 
 What if you want to select rows based on multiple conditions where some but not _all_ of the conditions need to be met? For this, SQL has the `OR` operator.
@@ -867,6 +953,9 @@ Ex().test_mc(1, [success_msg, msg1, msg2])
 
 
 
+
+
+
 ---
 ## WHERE AND OR (2)
 
@@ -876,6 +965,9 @@ lang: sql
 xp: 100
 
 key: ecc1838fc7
+
+
+
 ```
 
 You now know how to select rows that meet __some__ but not __all__ conditions by combining `AND` and `OR`.
@@ -907,6 +999,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -914,9 +1009,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 510b387baa
+
+
+
 ```
 
 
@@ -970,6 +1068,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -977,9 +1078,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 969ed73542
+
+
+
 ```
 
 
@@ -1042,6 +1146,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1052,6 +1159,9 @@ type: NormalExercise
 xp: 30
 
 key: d961856c7a
+
+
+
 ```
 
 
@@ -1118,6 +1228,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## BETWEEN
 
@@ -1127,6 +1240,9 @@ lang: sql
 xp: 50
 
 key: a1827199e2
+
+
+
 ```
 
 As you've learned, you can use the following query to get titles of all films released in and between 1994 and 2000:
@@ -1176,6 +1292,9 @@ Ex().test_mc(4, [numeric, text, lst, success_msg])
 
 
 
+
+
+
 ---
 ## BETWEEN (2)
 
@@ -1185,6 +1304,9 @@ lang: sql
 xp: 100
 
 key: 9c11f67712
+
+
+
 ```
 
 Similar to the `WHERE` clause, the `BETWEEN` clause can be used with multiple `AND` and `OR` operators, so you can build up your queries and make them even more powerful!
@@ -1212,6 +1334,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -1219,9 +1344,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 9252da136b
+
+
+
 ```
 
 
@@ -1276,6 +1404,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1283,9 +1414,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: d21a4bec02
+
+
+
 ```
 
 
@@ -1349,6 +1483,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1356,9 +1493,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 9087bf33ac
+
+
+
 ```
 
 
@@ -1427,6 +1567,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1434,9 +1577,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 73d020dfab
+
+
+
 ```
 
 
@@ -1507,6 +1653,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## WHERE IN
 
@@ -1516,6 +1665,9 @@ lang: sql
 xp: 100
 
 key: 4fc7e638f8
+
+
+
 ```
 
 As you've seen, `WHERE` is very useful for filtering results. However, if you want to filter based on many conditions, `WHERE` can get unwieldy. For example:
@@ -1554,6 +1706,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -1561,9 +1716,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: dc7674d358
+
+
+
 ```
 
 
@@ -1623,6 +1781,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1630,9 +1791,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 3a84c097d2
+
+
+
 ```
 
 
@@ -1682,6 +1846,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1692,6 +1859,9 @@ type: NormalExercise
 xp: 30
 
 key: 3c947b0d2d
+
+
+
 ```
 
 
@@ -1742,6 +1912,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## Introduction to NULL and IS NULL
 
@@ -1751,6 +1924,9 @@ lang: sql
 xp: 50
 
 key: 5cf67b42b3
+
+
+
 ```
 
 In SQL, `NULL` represents a missing or unknown value. You can check for `NULL` values using the expression `IS NULL`. For example, to count the number of missing birth dates in the `people` table:
@@ -1800,6 +1976,9 @@ Ex().test_mc(2, [corrupt, success_msg, empty, invalid])
 
 
 
+
+
+
 ---
 ## NULL and IS NULL
 
@@ -1809,6 +1988,9 @@ lang: sql
 xp: 100
 
 key: 84411d78ab
+
+
+
 ```
 
 Now that you know what `NULL` is and what it's used for, it's time for some practice!
@@ -1825,6 +2007,9 @@ set_options(visible_tables = ['films', 'people'])
 
 
 
+
+
+
 ***
 
 
@@ -1832,9 +2017,12 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 3c646ada87
+
+
+
 ```
 
 
@@ -1880,6 +2068,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1887,9 +2078,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 3c646ada89
+
+
+
 ```
 
 
@@ -1935,6 +2129,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1945,6 +2142,9 @@ type: NormalExercise
 xp: 30
 
 key: 3c646ada88
+
+
+
 ```
 
 
@@ -1995,6 +2195,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## LIKE and NOT LIKE
 
@@ -2004,6 +2207,9 @@ lang: sql
 xp: 100
 
 key: 84411d78ac
+
+
+
 ```
 
 As you've seen, the `WHERE` clause can be used to filter text data. However, so far you've only been able to filter by specifying the exact text you're interested in. In the real world, often you'll want to search for a *pattern* rather than a specific text string.
@@ -2042,6 +2248,9 @@ set_options(visible_tables = ['people'])
 
 
 
+
+
+
 ***
 
 
@@ -2049,9 +2258,12 @@ set_options(visible_tables = ['people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 9e3c3ef68f
+
+
+
 ```
 
 
@@ -2103,6 +2315,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -2110,9 +2325,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 606b667e1c
+
+
+
 ```
 
 
@@ -2164,6 +2382,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -2174,6 +2395,9 @@ type: NormalExercise
 xp: 30
 
 key: 2e4f49a528
+
+
+
 ```
 
 
@@ -2225,6 +2449,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 
 
 
