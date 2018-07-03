@@ -1,8 +1,7 @@
 ---
-title: Sorting, grouping and joins
-description: >-
-  This chapter provides a brief introduction to sorting and grouping your results, and briefly touches on the concept of joins.
-
+  title: "Sorting, grouping and joins"
+  description: "This chapter provides a brief introduction to sorting and grouping your results, and briefly touches on the concept of joins."
+  v2: true
 
 ---
 ## ORDER BY
@@ -13,6 +12,9 @@ lang: sql
 xp: 50
 
 key: 322af4938b
+
+
+
 ```
 
 Congratulations on making it this far! You now know how to select and filter your results.
@@ -57,6 +59,9 @@ Ex().test_mc(1, [success_msg, msg1, msg2, msg2])
 
 
 
+
+
+
 ---
 ## Sorting single columns
 
@@ -66,6 +71,9 @@ lang: sql
 xp: 100
 
 key: a7b2964ba6
+
+
+
 ```
 
 Now that you understand how `ORDER BY` works, give these exercises a go!
@@ -82,6 +90,9 @@ set_options(visible_tables = ['films', 'people'])
 
 
 
+
+
+
 ***
 
 
@@ -89,9 +100,12 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: e3a06cce15
+
+
+
 ```
 
 
@@ -137,6 +151,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -144,9 +161,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 14a2792baa
+
+
+
 ```
 
 
@@ -192,6 +212,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -202,6 +225,9 @@ type: NormalExercise
 xp: 30
 
 key: 6cfeca71b1
+
+
+
 ```
 
 
@@ -250,6 +276,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## Sorting single columns (2)
 
@@ -259,6 +288,9 @@ lang: sql
 xp: 100
 
 key: 357ec9bc3d
+
+
+
 ```
 
 Let's get some more practice with `ORDER BY`! adsf
@@ -275,6 +307,9 @@ set_options(visible_tables = ['films', 'people'])
 
 
 
+
+
+
 ***
 
 
@@ -282,9 +317,12 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: e2702b5933
+
+
+
 ```
 
 
@@ -337,6 +375,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -344,9 +385,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 5c84507976
+
+
+
 ```
 
 
@@ -399,6 +443,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -409,6 +456,9 @@ type: NormalExercise
 xp: 30
 
 key: 6359addbf8
+
+
+
 ```
 
 
@@ -468,6 +518,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## Sorting single columns (DESC)
 
@@ -477,6 +530,9 @@ lang: sql
 xp: 100
 
 key: a7b2964ba7
+
+
+
 ```
 
 To order results in _descending_ order, you can put the keyword `DESC` after your `ORDER BY`. For example, to get all the names in the `people` table, in reverse alphabetical order:
@@ -501,6 +557,9 @@ set_options(visible_tables = ['films', 'reviews'])
 
 
 
+
+
+
 ***
 
 
@@ -508,9 +567,12 @@ set_options(visible_tables = ['films', 'reviews'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 1ed651456d
+
+
+
 ```
 
 
@@ -558,6 +620,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -565,9 +630,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 3629dd5dcd
+
+
+
 ```
 
 
@@ -613,6 +681,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -623,6 +694,9 @@ type: NormalExercise
 xp: 30
 
 key: ddcb2dd3ad
+
+
+
 ```
 
 
@@ -671,6 +745,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## Sorting multiple columns
 
@@ -680,6 +757,9 @@ lang: sql
 xp: 100
 
 key: b2a52993bc
+
+
+
 ```
 
 `ORDER BY` can also be used to sort on multiple columns. It will sort by the first column specified, then sort by the next, then the next, and so on. For example,
@@ -706,6 +786,9 @@ set_options(visible_tables = ['films', 'people'])
 
 
 
+
+
+
 ***
 
 
@@ -713,9 +796,12 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 9ec6e8ae72
+
+
+
 ```
 
 
@@ -764,6 +850,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -771,9 +860,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 3460b2f14b
+
+
+
 ```
 
 
@@ -825,6 +917,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -832,9 +927,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: c03517c2b9
+
+
+
 ```
 
 
@@ -888,6 +986,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -895,9 +996,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: f0ade213ff
+
+
+
 ```
 
 
@@ -948,6 +1052,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## GROUP BY
 
@@ -957,6 +1064,9 @@ lang: sql
 xp: 50
 
 key: 81987a99cf
+
+
+
 ```
 
 Now you know how to sort results! Often you'll need to aggregate results. For example, you might want to get count the number of male and female employees in your company. Here, what you want is to group all the males together and count them, and group all the females together and count them. In SQL, `GROUP BY` allows you to group a result by one or more columns, like so:
@@ -1004,6 +1114,9 @@ Ex().test_mc(4, [one, two, three, success_msg])
 
 
 
+
+
+
 ---
 ## GROUP BY practice
 
@@ -1013,6 +1126,9 @@ lang: sql
 xp: 100
 
 key: 98e30a6131
+
+
+
 ```
 
 As you've just seen, combining aggregate functions with `GROUP BY` can yield some powerful results!
@@ -1050,6 +1166,9 @@ set_options(visible_tables = ['films', 'reviews'])
 
 
 
+
+
+
 ***
 
 
@@ -1057,9 +1176,12 @@ set_options(visible_tables = ['films', 'reviews'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 0b29eb4ff3
+
+
+
 ```
 
 
@@ -1111,6 +1233,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1118,9 +1243,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: ebee043890
+
+
+
 ```
 
 
@@ -1172,6 +1300,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1179,9 +1310,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: b4341b8451
+
+
+
 ```
 
 
@@ -1233,6 +1367,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1240,9 +1377,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 66d0c5198a
+
+
+
 ```
 
 
@@ -1296,6 +1436,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## GROUP BY practice (2)
 
@@ -1305,6 +1448,9 @@ lang: sql
 xp: 100
 
 key: 38a7c62434
+
+
+
 ```
 
 Now practice your new skills by combining `GROUP BY` and `ORDER BY` with some more aggregate functions!
@@ -1323,6 +1469,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -1330,9 +1479,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 53ad6da98c
+
+
+
 ```
 
 
@@ -1384,6 +1536,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1391,9 +1546,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: cff5924de5
+
+
+
 ```
 
 
@@ -1445,6 +1603,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1452,9 +1613,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 83944ff64f
+
+
+
 ```
 
 
@@ -1506,6 +1670,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1513,9 +1680,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: eac5f722a5
+
+
+
 ```
 
 
@@ -1573,6 +1743,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1580,9 +1753,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 48461bd4d3
+
+
+
 ```
 
 
@@ -1642,6 +1818,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## HAVING a great time
 
@@ -1651,6 +1830,9 @@ lang: sql
 xp: 50
 
 key: a391d35885
+
+
+
 ```
 
 In SQL, aggregate functions can't be used in `WHERE` clauses. For example, the following query is invalid:
@@ -1705,6 +1887,9 @@ Ex().test_mc(2, [msg2, msg1, msg2, msg2])
 
 
 
+
+
+
 ---
 ## All together now
 
@@ -1714,6 +1899,9 @@ lang: sql
 xp: 100
 
 key: f7dcb9e122
+
+
+
 ```
 
 Time to practice using `ORDER BY`, `GROUP BY` and `HAVING` together.
@@ -1734,6 +1922,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -1741,9 +1932,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: a141cd669f
+
+
+
 ```
 
 
@@ -1790,6 +1984,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1797,9 +1994,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: d80bd57b13
+
+
+
 ```
 
 
@@ -1853,6 +2053,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1860,9 +2063,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: 2d5e6bd8cf
+
+
+
 ```
 
 
@@ -1915,6 +2121,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1922,9 +2131,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: ee92d8cbaa
+
+
+
 ```
 
 
@@ -1982,6 +2194,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1989,9 +2204,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 20
 
 key: ce0f248734
+
+
+
 ```
 
 
@@ -2056,6 +2274,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -2063,9 +2284,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 0
 
 key: 7b3afeed2f
+
+
+
 ```
 
 
@@ -2135,6 +2359,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## All together now (2)
 
@@ -2144,6 +2371,9 @@ lang: sql
 xp: 100
 skills: 1
 key: 0bbc6da34d
+
+
+
 ```
 
 Great work! Now try another large query. This time, all in one go!
@@ -2233,6 +2463,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## A taste of things to come
 
@@ -2242,6 +2475,9 @@ lang: sql
 xp: 100
 
 key: d101be707a
+
+
+
 ```
 
 Congrats on making it to the end of the course! By now you should have a good understanding of the basics of SQL.
@@ -2277,6 +2513,9 @@ WHERE title = 'To Kill a Mockingbird';
 
 
 
+
+
+
 ***
 
 
@@ -2284,9 +2523,12 @@ WHERE title = 'To Kill a Mockingbird';
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 50
 
 key: 7c4fc7a484
+
+
+
 ```
 
 
@@ -2333,6 +2575,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -2340,9 +2585,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: MultipleChoiceExercise
 
-xp: 30
+xp: 50
 
 key: fc288db979
+
+
+
 ```
 
 
@@ -2361,6 +2609,40 @@ correct = 'Correct!'
 
 Ex().test_mc(2,[msg1, correct, msg1, msg1])
 ```
+
+
+
+
+
+
+
+---
+## Insert exercise title here
+
+```yaml
+type: NormalExercise
+
+xp: 100
+
+key: 6ac884ab95
+
+
+
+```
+
+test ex
+
+`@instructions`
+
+
+`@hint`
+
+
+
+
+
+
+
 
 
 
