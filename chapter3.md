@@ -1,8 +1,7 @@
 ---
-title: Aggregate Functions
-description: >-
-  This chapter builds on the first two by teaching you how to use aggregate functions to summarize your data and gain useful insights. Additionally, you'll learn about arithmetic in SQL, and how to use aliases to make your results more readable!
-
+  title: "Aggregate Functions"
+  description: "This chapter builds on the first two by teaching you how to use aggregate functions to summarize your data and gain useful insights. Additionally, you'll learn about arithmetic in SQL, and how to use aliases to make your results more readable!"
+  v2: true
 
 ---
 ## Aggregate functions
@@ -13,6 +12,9 @@ lang: sql
 xp: 100
 
 key: b883e7079f
+
+
+
 ```
 
 Often, you will want to perform some calculation on the data in a database. SQL provides a few functions, called *aggregate functions*, to help you out with this.
@@ -54,6 +56,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -61,9 +66,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 80fd462ae1
+
+
+
 ```
 
 
@@ -107,6 +115,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -114,9 +125,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 7993b51268
+
+
+
 ```
 
 
@@ -160,6 +174,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -167,9 +184,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: a03aeabbc6
+
+
+
 ```
 
 
@@ -213,6 +233,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -220,9 +243,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: fabbc619c6
+
+
+
 ```
 
 
@@ -266,6 +292,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## Aggregate functions practice
 
@@ -275,6 +304,9 @@ lang: sql
 xp: 100
 
 key: e60103b3f1
+
+
+
 ```
 
 Good work. Aggregate functions are important to understand, so let's get some more practice!
@@ -291,6 +323,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -298,9 +333,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: c8173b7d3e
+
+
+
 ```
 
 
@@ -344,6 +382,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -351,9 +392,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 24c0ab68ad
+
+
+
 ```
 
 
@@ -397,6 +441,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -404,9 +451,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 19838082cb
+
+
+
 ```
 
 
@@ -450,6 +500,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -457,9 +510,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: a49b98de42
+
+
+
 ```
 
 
@@ -503,6 +559,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## Combining aggregate functions with WHERE
 
@@ -512,6 +571,9 @@ lang: sql
 xp: 100
 
 key: b44bd43288
+
+
+
 ```
 
 Aggregate functions can be combined with the `WHERE` clause to gain further insights from your data.
@@ -538,6 +600,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -545,9 +610,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: b986f33a10
+
+
+
 ```
 
 
@@ -598,6 +666,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -605,9 +676,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 65e81175c5
+
+
+
 ```
 
 
@@ -663,6 +737,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -670,9 +747,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: 3ca90a8536
+
+
+
 ```
 
 
@@ -723,6 +803,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -730,9 +813,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 25
 
 key: d2e630e656
+
+
+
 ```
 
 
@@ -787,6 +873,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ---
 ## A note on arithmetic
 
@@ -796,12 +885,15 @@ lang: sql
 xp: 50
 skills: 1
 key: 7b8b54b64d
+
+
+
 ```
 
 In addition to using aggregate functions, you can perform basic arithmetic with symbols like `+`, `-`, `*`, and `/`.
 
 So, for example, this gives a result of `12`:
-
+ adsfasdf
 ```
 SELECT (4 * 3);
 ```
@@ -855,6 +947,9 @@ Ex().test_mc(3,[msg2, msg2, success_msg, msg2])
 
 
 
+
+
+
 ---
 ## It's AS simple AS aliasing
 
@@ -864,6 +959,9 @@ lang: sql
 xp: 100
 
 key: 9f4b026fe7
+
+
+
 ```
 
 You may have noticed in the first exercise of this chapter that the column name of your result was just the name of the function you used. For example,
@@ -906,6 +1004,9 @@ set_options(visible_tables = ['films'])
 
 
 
+
+
+
 ***
 
 
@@ -913,9 +1014,12 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: ec33c2353b
+
+
+
 ```
 
 
@@ -971,6 +1075,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -978,9 +1085,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: 1351c6f6bb
+
+
+
 ```
 
 
@@ -1035,6 +1145,9 @@ Ex().test_correct(alias, [
 
 
 
+
+
+
 ***
 
 
@@ -1045,6 +1158,9 @@ type: NormalExercise
 xp: 30
 
 key: 497f8d2a8a
+
+
+
 ```
 
 
@@ -1095,6 +1211,9 @@ Ex().test_correct(alias, [
 
 
 
+
+
+
 ---
 ## Even more aliasing
 
@@ -1104,6 +1223,9 @@ lang: sql
 xp: 100
 
 key: 7e3a93209c
+
+
+
 ```
 
 Let's practice your newfound aliasing skills some more before moving on!
@@ -1143,6 +1265,9 @@ set_options(visible_tables = ['films', 'people'])
 
 
 
+
+
+
 ***
 
 
@@ -1150,9 +1275,12 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: e14dc7c1a2
+
+
+
 ```
 
 
@@ -1216,6 +1344,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1223,9 +1354,12 @@ Ex().test_correct(check_result(), [
 ```yaml
 type: NormalExercise
 
-xp: 30
+xp: 35
 
 key: c2bbd9a806
+
+
+
 ```
 
 
@@ -1286,6 +1420,9 @@ Ex().test_correct(check_result(), [
 
 
 
+
+
+
 ***
 
 
@@ -1296,6 +1433,9 @@ type: NormalExercise
 xp: 30
 
 key: f272486b68
+
+
+
 ```
 
 
@@ -1362,6 +1502,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 
 
 
