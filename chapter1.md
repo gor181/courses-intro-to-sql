@@ -1,9 +1,8 @@
 ---
   title: "Selecting columns"
   description: "This chapter provides a brief introduction to working with relational databases. You'll learn about their structure, how to talk about them using database lingo, and how to begin an analysis by using simple SQL commands to select and summarize columns from database tables."
-  v2: true
-
 ---
+
 ## Welcome to the course!
 
 ```yaml
@@ -16,8 +15,8 @@ key: dcdbb24914
 
 `@projector_key`
 f05d06ad7807cf476fdb5f674174c9d5
-
 ---
+
 ## Onboarding | Tables
 
 ```yaml
@@ -28,11 +27,13 @@ skills: 1
 key: e456699517   
 ```
 
+
 If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-introduction-to-r) or [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), you'll be familiar with the interface. For SQL, however, there are a few new features you should be aware of.
 
 For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs.
 
-From looking at the tabs, who is the first person listed in the `people` table? test
+From looking at the tabs, who is the first person listed in the `people` table?
+
 
 `@instructions`
 - Kanye West
@@ -50,7 +51,6 @@ Look at the `people` tab under the editor! asdf adf
 connect('postgresql', 'films')
 ```
 
-
 `@sct`
 
 ```{python}
@@ -60,12 +60,8 @@ correct = 'Correct!'
 Ex().test_mc(3,[msg1, msg1, correct, msg1])
 ```
 
-
-
-
-
-
 ---
+
 ## Onboarding | Query Result
 
 ```yaml
@@ -76,6 +72,7 @@ skills: 1
 key: 5314676aac   
 ```
 
+
 Notice the **query result** tab in the bottom right corner of your screen. This is where the results of your SQL queries will be displayed.
 
 Run the query in the editor and check out the resulting table in the query result tab!
@@ -83,6 +80,7 @@ Run the query in the editor and check out the resulting table in the query resul
 <hr>
 
 Who is the second person listed in the query result? asdf adfa a adsfa sdf
+
 
 `@instructions`
 - Kanye West
@@ -98,6 +96,7 @@ Run the code in the editor and look at the query result tab under the editor!
 ```{python}
 connect('postgresql', 'films')
 ```
+
 `@sample_code`
 
 ```{sql}
@@ -113,12 +112,8 @@ correct = 'Correct!'
 Ex().test_mc(2, [msg1, correct, msg1, msg1])
 ```
 
-
-
-
-
-
 ---
+
 ## Onboarding | Errors
 
 ```yaml
@@ -128,6 +123,7 @@ xp: 100
 skills: 1
 key: 7d7e325a12   
 ```
+
 
 If you submit the code to the right, you'll see that you get two types of errors.
 
@@ -146,6 +142,7 @@ You need to add SELECT at the start of line 2!
 
 test
 
+
 `@instructions`
 Submit the code to the right, check out the errors, then fix them!
 
@@ -157,6 +154,7 @@ In the editor, change line 2 to `SELECT 'DataCamp <3 SQL'`.
 ```{python}
 connect('postgresql', 'films')
 ```
+
 `@sample_code`
 
 ```{sql}
@@ -164,6 +162,7 @@ connect('postgresql', 'films')
 'DataCamp <3 SQL'
 AS result;
 ```
+
 `@solution`
 
 ```{sql}
@@ -171,6 +170,7 @@ AS result;
 SELECT 'DataCamp <3 SQL'
 AS result;
 ```
+
 `@sct`
 
 ```{python}
@@ -179,12 +179,8 @@ Ex().test_has_columns()
 Ex().test_error()
 ```
 
-
-
-
-
-
 ---
+
 ## Onboarding | Bullet Exercises
 
 ```yaml
@@ -195,8 +191,8 @@ skills: 1
 key: 81eb00a53d   
 ```
 
-Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
 
+Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
 
 
 `@pre_exercise_code`
@@ -204,18 +200,13 @@ Another new feature we're introducing is the *bullet exercise*, which allows you
 ```{python}
 connect('postgresql', 'films')
 ```
+
 `@sample_code`
 
 ```{sql}
 SELECT 'SQL'
 AS result;
 ```
-
-
-
-
-
-
 
 ***
 
@@ -229,13 +220,13 @@ key: 157ee8d1ad
 
 
 
+
+
 `@instructions`
 Submit the query in the editor! Don't worry, you'll learn how it works soon.
 
 `@hint`
 Submit the query!
-
-
 
 `@solution`
 
@@ -243,6 +234,7 @@ Submit the query!
 SELECT 'SQL'
 AS result;
 ```
+
 `@sct`
 
 ```{python}
@@ -253,11 +245,6 @@ Ex().test_student_typed('SQL', msg="Don't modify the query!", fixed=True)
 Ex().test_has_columns()
 Ex().check_result()
 ```
-
-
-
-
-
 
 
 ***
@@ -272,13 +259,13 @@ key: 764f82129d
 
 
 
+
+
 `@instructions`
 Now change `'SQL'` to `'SQL is'` and click Submit!
 
 `@hint`
 Change the code and submit the query!
-
-
 
 `@solution`
 
@@ -286,6 +273,7 @@ Change the code and submit the query!
 SELECT 'SQL is'
 AS result;
 ```
+
 `@sct`
 
 ```{python}
@@ -296,11 +284,6 @@ Ex().test_student_typed('SQL is', msg="Did you change the query correctly?", fix
 Ex().test_has_columns()
 Ex().check_result()
 ```
-
-
-
-
-
 
 
 ***
@@ -315,13 +298,13 @@ key: 1496605dac
 
 
 
+
+
 `@instructions`
 Finally, change `'SQL is'` to `'SQL is cool!'` and click Submit!
 
 `@hint`
 Change the code and submit the query!
-
-
 
 `@solution`
 
@@ -329,6 +312,7 @@ Change the code and submit the query!
 SELECT 'SQL is cool!'
 AS result;
 ```
+
 `@sct`
 
 ```{python}
@@ -341,12 +325,8 @@ Ex().check_result()
 ```
 
 
-
-
-
-
-
 ---
+
 ## Beginning your SQL journey
 
 ```yaml
@@ -355,6 +335,7 @@ lang: sql
 xp: 50 
 key: a1f556e63f   
 ```
+
 
 Now that you're familiar with the interface, let's get straight into it.
 
@@ -375,6 +356,7 @@ The table of employees might look something like this:
 <hr>
 How many fields does the employees table above contain?
 
+
 `@instructions`
 - 1
 - 2
@@ -383,9 +365,6 @@ How many fields does the employees table above contain?
 
 `@hint`
 Remember that in database lingo, a column is called a *field*. How many fields does the table contain?
-
-
-
 
 `@sct`
 
@@ -398,12 +377,8 @@ success_msg = "Correct! The table contains four columns, or fields."
 Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
 ```
 
-
-
-
-
-
 ---
+
 ## SELECTing single columns
 
 ```yaml
@@ -412,6 +387,7 @@ lang: sql
 xp: 100 
 key: c0bb58f7f9   
 ```
+
 
 While SQL can be used to create and modify databases, the focus of this course will be *querying* databases. A *query* is a request for data from a database table (or combination of tables). Querying is an essential skill for a data scientist, since the data you need for your analyses will often live in databases.
 
@@ -436,20 +412,12 @@ It's also good practice (but not necessary for the exercises in this course) to 
 Remember, you can see the results of executing your query in the __query result__ tab to the right!
 
 
-
 `@pre_exercise_code`
 
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
-
-
-
-
-
-
-
 
 ***
 
@@ -463,6 +431,8 @@ key: a41cc766d5
 
 
 
+
+
 `@instructions`
 Select the `title` column from the `films` table.
 
@@ -472,14 +442,13 @@ SELECT ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT title
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -499,11 +468,6 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -516,6 +480,8 @@ key: 4a74270ecd
 
 
 
+
+
 `@instructions`
 Select the `release_year` column from the `films` table.
 
@@ -525,14 +491,13 @@ SELECT ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT release_year
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -552,11 +517,6 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -569,6 +529,8 @@ key: 323bd5ddf5
 
 
 
+
+
 `@instructions`
 Select the `name` of each person in the `people` table.
 
@@ -578,14 +540,13 @@ SELECT ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT name
 FROM people;
 ```
+
 `@sct`
 
 ```{python}
@@ -605,12 +566,8 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ---
+
 ## SELECTing multiple columns
 
 ```yaml
@@ -619,6 +576,7 @@ lang: sql
 xp: 100 
 key: 09f21bae4c   
 ```
+
 
 Well done! Now you know how to select single columns.
 
@@ -649,20 +607,12 @@ LIMIT 10;
 Before getting started with the instructions below, check out the column names in the `films` table by clicking on the `films` tab to the right!
 
 
-
 `@pre_exercise_code`
 
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
-
-
-
-
-
-
 
 ***
 
@@ -676,6 +626,8 @@ key: d561b4df97
 
 
 
+
+
 `@instructions`
 Get the title of every film from the `films` table.
 
@@ -685,14 +637,13 @@ SELECT ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT title
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -714,11 +665,6 @@ Ex().test_correct(check_result2(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -731,6 +677,8 @@ key: 917d7dc533
 
 
 
+
+
 `@instructions`
 Get the title and release year for every film.
 
@@ -740,14 +688,13 @@ SELECT ___, ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT title, release_year
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -772,11 +719,6 @@ Ex().test_correct(check_result2(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -789,6 +731,8 @@ key: eeba078a00
 
 
 
+
+
 `@instructions`
 Get the title, release year and country for every film.
 
@@ -798,14 +742,13 @@ SELECT ___, ___, ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT title, release_year, country
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -833,11 +776,6 @@ Ex().test_correct(check_result2(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -850,6 +788,8 @@ key: dac27d9aad
 
 
 
+
+
 `@instructions`
 Get all columns from the `films` table.
 
@@ -859,14 +799,13 @@ SELECT *
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT *
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -886,12 +825,8 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ---
+
 ## SELECT DISTINCT
 
 ```yaml
@@ -900,6 +835,7 @@ lang: sql
 xp: 100 
 key: de52236965   
 ```
+
 
 Often your results will include many duplicate values. If you want to select all the unique values from a column, you can use the `DISTINCT` keyword.
 
@@ -913,20 +849,12 @@ FROM films;
 Remember, you can check out the data in the tables by clicking on the tabs to the right under the editor!
 
 
-
 `@pre_exercise_code`
 
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'roles'])
 ```
-
-
-
-
-
-
-
 
 ***
 
@@ -940,6 +868,8 @@ key: e6b81711f1
 
 
 
+
+
 `@instructions`
 Get all the unique countries represented in the `films` table.
 
@@ -949,14 +879,13 @@ SELECT DISTINCT ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT DISTINCT country
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -978,11 +907,6 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -995,6 +919,8 @@ key: 2cb9a4bf6a
 
 
 
+
+
 `@instructions`
 Get all the different film certifications from the `films` table.
 
@@ -1004,14 +930,13 @@ SELECT DISTINCT ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT DISTINCT certification
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -1034,11 +959,6 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -1051,6 +971,8 @@ key: 26835d3029
 
 
 
+
+
 `@instructions`
 Get the different types of film roles from the `roles` table.
 
@@ -1060,14 +982,13 @@ SELECT DISTINCT ___
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT DISTINCT role
 FROM roles;
 ```
+
 `@sct`
 
 ```{python}
@@ -1090,12 +1011,8 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ---
+
 ## Learning to COUNT
 
 ```yaml
@@ -1104,6 +1021,7 @@ lang: sql
 xp: 50 
 key: 97f97f5766   
 ```
+
 
 What if you want to count the number of employees in your employees table? The `COUNT` statement lets you do this by returning the number of rows in one or more columns.
 
@@ -1116,6 +1034,7 @@ FROM people;
 
 <hr>
 How many records are contained in the `reviews` table?
+
 
 `@instructions`
 - 9,468
@@ -1132,6 +1051,7 @@ Run a query to count the number of records in the `reviews` table!
 ```{python}
 connect('postgresql', 'films')
 ```
+
 `@sample_code`
 
 ```{sql}
@@ -1147,12 +1067,8 @@ msg2 = "Use the syntax provided in the example. Be sure to swap out `people` for
 Ex().test_mc(3,[msg2, msg2, success_msg, msg2, msg2])
 ```
 
-
-
-
-
-
 ---
+
 ## Practice with COUNT
 
 ```yaml
@@ -1161,6 +1077,7 @@ lang: sql
 xp: 100 
 key: 7643365e67   
 ```
+
 
 As you've seen, `COUNT(*)` tells you how many rows are in a table. However, if you want to count the number of *non-missing* values in a particular column, you can call `COUNT` on just that column.
 
@@ -1183,20 +1100,12 @@ FROM people;
 Let's get some practice with `COUNT`!
 
 
-
 `@pre_exercise_code`
 
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
-
-
-
-
-
-
-
 
 ***
 
@@ -1210,6 +1119,8 @@ key: 4688067e3e
 
 
 
+
+
 `@instructions`
 Count the number of rows in the `people` table.
 
@@ -1219,14 +1130,13 @@ SELECT COUNT(___)
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT COUNT(*)
 FROM people;
 ```
+
 `@sct`
 
 ```{python}
@@ -1252,11 +1162,6 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -1269,6 +1174,8 @@ key: 497ffa962e
 
 
 
+
+
 `@instructions`
 Count the number of (non-missing) birth dates in the `people` table.
 
@@ -1278,14 +1185,13 @@ SELECT ___(___)
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT COUNT(birthdate)
 FROM people;
 ```
+
 `@sct`
 
 ```{python}
@@ -1310,11 +1216,6 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ***
 
 
@@ -1327,6 +1228,8 @@ key: 50c903a00a
 
 
 
+
+
 `@instructions`
 Count the number of unique birth dates in the `people` table.
 
@@ -1336,14 +1239,13 @@ SELECT ___(DISTINCT ___)
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
+
 `@sct`
 
 ```{python}
@@ -1369,11 +1271,6 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
-
-
-
-
-
 
 
 ***
@@ -1388,6 +1285,8 @@ key: 511052cbbe
 
 
 
+
+
 `@instructions`
 Count the number of unique languages in the `films` table.
 
@@ -1397,14 +1296,13 @@ SELECT ___(DISTINCT ___)
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT COUNT(DISTINCT language)
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -1430,11 +1328,6 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
-
-
-
-
-
 
 
 ***
@@ -1449,6 +1342,8 @@ key: 9e1147efe5
 
 
 
+
+
 `@instructions`
 Count the number of unique countries in the `films` table.
 
@@ -1458,14 +1353,13 @@ SELECT ___(DISTINCT ___)
 FROM ___;
 ```
 
-
-
 `@solution`
 
 ```{sql}
 SELECT COUNT(DISTINCT country)
 FROM films;
 ```
+
 `@sct`
 
 ```{python}
@@ -1493,12 +1387,8 @@ Ex().test_correct(check_result(), [
 ```
 
 
-
-
-
-
-
 ---
+
 ## Testing again cus you never know
 
 ```yaml
@@ -1509,8 +1399,8 @@ key: d91de87c17
 
 `@projector_key`
 d7d38acc352eb4c7d19bf84a52a938d6
-
 ---
+
 ## testing
 
 ```yaml
