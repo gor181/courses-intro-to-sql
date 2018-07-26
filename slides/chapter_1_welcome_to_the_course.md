@@ -41,26 +41,6 @@ Now let's get started!
 
 
 ---
-## one more slide
-
-```yaml
-type: FullImageSlide
-key: 9350264393
-```
-
-`@part1`
-part 1
-
-
-
-
-
-`@script`
-
-
-
-
----
 ## added a slide
 
 ```yaml
@@ -72,6 +52,26 @@ key: 218ea0f9f5
 one {{-}}
 
 two {{-}}
+
+
+
+
+
+`@script`
+
+
+
+
+---
+## one more slide
+
+```yaml
+type: FullImageSlide
+key: 9350264393
+```
+
+`@part1`
+part 1 {{-}}
 
 
 
