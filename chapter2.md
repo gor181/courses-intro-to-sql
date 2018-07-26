@@ -1373,330 +1373,6 @@ Ex().test_correct(check_result(), [
 
 ---
 
-## BETWEEN (2)
-
-```yaml
-type: TabExercise 
-lang: sql
-xp: 100 
-key: 9c11f67712   
-```
-
-
-Similar to the `WHERE` clause, the `BETWEEN` clause can be used with multiple `AND` and `OR` operators, so you can build up your queries and make them even more powerful!
-
-For example, suppose we have a table called `kids`. We can get the names of all kids between the ages of 2 and 12 from the United States:
-
-```
-SELECT name
-FROM kids
-WHERE age BETWEEN 2 AND 12
-AND nationality = 'USA';
-```
-
-Take a go at using `BETWEEN` with `AND` on the films data to get the title and release year of all Spanish language films released between 1990 and 2000 (inclusive) with budgets over $100 million. We have broken the problem into smaller steps so that you can build the query as you go along!
-
-
-`@pre_exercise_code`
-
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['films'])
-```
-
-***
-
-
-
-```yaml
-type: NormalExercise 
-xp: 25 
-key: 9252da136b   
-```
-
-
-
-
-
-`@instructions`
-Get the title and release year of all films released between 1990 and 2000 (inclusive).
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ BETWEEN ___ AND ___;
-```
-
-`@solution`
-
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year BETWEEN 1990 AND 2000;
-```
-
-`@sct`
-
-```{python}
-sel = check_node('SelectStmt')
-
-title = test_column('title', msg='Did you select the `title` column?')
-
-release_year = test_column('release_year', msg='Did you select the `release_year` column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-where_clause = sel.check_field('where_clause')
-
-between_left = where_clause.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
-between_op1 = where_clause.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
-between_op2 = where_clause.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    between_left,
-    between_op1,
-    between_op2,
-    title,
-    release_year,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
-```
-
-
-***
-
-
-
-```yaml
-type: NormalExercise 
-xp: 25 
-key: d21a4bec02   
-```
-
-
-
-
-
-`@instructions`
-Now, build on your previous query to select only films that have budgets over $100 million.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ BETWEEN ___ AND ___
-AND ___ > ___;
-```
-
-`@solution`
-
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year BETWEEN 1990 AND 2000
-AND budget > 100000000;
-```
-
-`@sct`
-
-```{python}
-sel = check_node('SelectStmt')
-
-title = test_column('title', msg='Did you select the `title` column?')
-
-release_year = test_column('release_year', msg='Did you select the `release_year` column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-where_clause = sel.check_field('where_clause')
-
-# TODO: when test_not_typed() is a thing, use it here to check that `OR` was not typed
-
-between_node = where_clause.check_field('left')
-
-between_left = between_node.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
-between_op1 = between_node.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
-between_op2 = between_node.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
-
-where_budget = where_clause.has_equal_ast(sql='budget > 100000000', start='expression', exact=False, msg='Did you check the `budget` correctly?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    between_left,
-    between_op1,
-    between_op2,
-    where_budget,
-    title,
-    release_year,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
-```
-
-
-***
-
-
-
-```yaml
-type: NormalExercise 
-xp: 25 
-key: 9087bf33ac   
-```
-
-
-
-
-
-`@instructions`
-Now restrict the query to only return Spanish language films.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ BETWEEN ___ AND ___
-AND ___ > ___
-AND ___ = '___';
-```
-
-`@solution`
-
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year BETWEEN 1990 AND 2000
-AND budget > 100000000
-AND language = 'Spanish';
-```
-
-`@sct`
-
-```{python}
-sel = check_node('SelectStmt')
-
-title = test_column('title', msg='Did you select the `title` column?')
-
-release_year = test_column('release_year', msg='Did you select the `release_year` column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-where_clause = sel.check_field('where_clause')
-
-# TODO: when test_not_typed() is a thing, use it here to check that `OR` was not typed instead of `AND` on last line
-
-between_node = where_clause.check_field('left')
-
-between_left = between_node.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
-between_op1 = between_node.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
-between_op2 = between_node.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
-
-where_budget = where_clause.has_equal_ast(sql='budget > 100000000', start='expression', exact=False, msg='Did you check the `budget` correctly?')
-
-where_language = where_clause.has_equal_ast(sql="language = 'Spanish'", start='expression', exact=False, msg='Did you check the `language` correctly?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    between_left,
-    between_op1,
-    between_op2,
-    where_budget,
-    where_language,
-    title,
-    release_year,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
-```
-
-
-***
-
-
-
-```yaml
-type: NormalExercise 
-xp: 25 
-key: 73d020dfab   
-```
-
-
-
-
-
-`@instructions`
-Finally, modify to your previous query to include all Spanish language *or* French language films with the same criteria as before. Don't forget your parentheses!
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ BETWEEN ___ AND ___
-AND ___ > ___
-AND (___ = '___' OR ___ = '___');
-```
-
-`@solution`
-
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year BETWEEN 1990 AND 2000
-AND budget > 100000000
-AND (language = 'Spanish' OR language = 'French');
-```
-
-`@sct`
-
-```{python}
-sel = check_node('SelectStmt')
-
-title = test_column('title', msg='Did you select the `title` column?')
-
-release_year = test_column('release_year', msg='Did you select the `release_year` column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-where_clause = sel.check_field('where_clause')
-
-# TODO: when test_not_typed() is a thing, use it here to check that `OR` was not typed instead of `AND` on last line
-
-between_left = where_clause.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
-between_op1 = where_clause.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
-between_op2 = where_clause.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
-
-where_budget = where_clause.has_equal_ast(sql='budget > 100000000', start='expression', exact=False, msg='Did you check the `budget` correctly?')
-
-where_language1 = where_clause.has_equal_ast(sql="language = 'Spanish'", start='expression', exact=False, msg='Did you check the Spanish `language` correctly?')
-
-where_language2 = where_clause.has_equal_ast(sql="language = 'French'", start='expression', exact=False, msg='Did you check the French `language` correctly?')
-
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    where_budget,
-    where_language1,
-    where_language2,
-    between_left,
-    between_op1,
-    between_op2,
-    title,
-    release_year,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
-```
-
-
----
-
 ## Introduction to NULL and IS NULL
 
 ```yaml
@@ -2161,6 +1837,330 @@ Ex().test_correct(check_result(), [
     right_like,
     op_like,
     name,
+    test_has_columns(),
+    test_ncols(),
+    test_error()
+])
+```
+
+
+---
+
+## BETWEEN (2)
+
+```yaml
+type: TabExercise 
+lang: sql
+xp: 100 
+key: 9c11f67712   
+```
+
+
+Similar to the `WHERE` clause, the `BETWEEN` clause can be used with multiple `AND` and `OR` operators, so you can build up your queries and make them even more powerful!
+
+For example, suppose we have a table called `kids`. We can get the names of all kids between the ages of 2 and 12 from the United States:
+
+```
+SELECT name
+FROM kids
+WHERE age BETWEEN 2 AND 12
+AND nationality = 'USA';
+```
+
+Take a go at using `BETWEEN` with `AND` on the films data to get the title and release year of all Spanish language films released between 1990 and 2000 (inclusive) with budgets over $100 million. We have broken the problem into smaller steps so that you can build the query as you go along!
+
+
+`@pre_exercise_code`
+
+```{python}
+connect('postgresql', 'films')
+set_options(visible_tables = ['films'])
+```
+
+***
+
+
+
+```yaml
+type: NormalExercise 
+xp: 25 
+key: 9252da136b   
+```
+
+
+
+
+
+`@instructions`
+Get the title and release year of all films released between 1990 and 2000 (inclusive).
+
+`@hint`
+```
+SELECT ___, ___
+FROM ___
+WHERE ___ BETWEEN ___ AND ___;
+```
+
+`@solution`
+
+```{sql}
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000;
+```
+
+`@sct`
+
+```{python}
+sel = check_node('SelectStmt')
+
+title = test_column('title', msg='Did you select the `title` column?')
+
+release_year = test_column('release_year', msg='Did you select the `release_year` column?')
+
+from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
+
+where_clause = sel.check_field('where_clause')
+
+between_left = where_clause.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
+between_op1 = where_clause.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
+between_op2 = where_clause.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
+
+Ex().test_correct(check_result(), [
+    from_clause,
+    between_left,
+    between_op1,
+    between_op2,
+    title,
+    release_year,
+    test_has_columns(),
+    test_ncols(),
+    test_error()
+])
+```
+
+
+***
+
+
+
+```yaml
+type: NormalExercise 
+xp: 25 
+key: d21a4bec02   
+```
+
+
+
+
+
+`@instructions`
+Now, build on your previous query to select only films that have budgets over $100 million.
+
+`@hint`
+```
+SELECT ___, ___
+FROM ___
+WHERE ___ BETWEEN ___ AND ___
+AND ___ > ___;
+```
+
+`@solution`
+
+```{sql}
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+AND budget > 100000000;
+```
+
+`@sct`
+
+```{python}
+sel = check_node('SelectStmt')
+
+title = test_column('title', msg='Did you select the `title` column?')
+
+release_year = test_column('release_year', msg='Did you select the `release_year` column?')
+
+from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
+
+where_clause = sel.check_field('where_clause')
+
+# TODO: when test_not_typed() is a thing, use it here to check that `OR` was not typed
+
+between_node = where_clause.check_field('left')
+
+between_left = between_node.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
+between_op1 = between_node.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
+between_op2 = between_node.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
+
+where_budget = where_clause.has_equal_ast(sql='budget > 100000000', start='expression', exact=False, msg='Did you check the `budget` correctly?')
+
+Ex().test_correct(check_result(), [
+    from_clause,
+    between_left,
+    between_op1,
+    between_op2,
+    where_budget,
+    title,
+    release_year,
+    test_has_columns(),
+    test_ncols(),
+    test_error()
+])
+```
+
+
+***
+
+
+
+```yaml
+type: NormalExercise 
+xp: 25 
+key: 9087bf33ac   
+```
+
+
+
+
+
+`@instructions`
+Now restrict the query to only return Spanish language films.
+
+`@hint`
+```
+SELECT ___, ___
+FROM ___
+WHERE ___ BETWEEN ___ AND ___
+AND ___ > ___
+AND ___ = '___';
+```
+
+`@solution`
+
+```{sql}
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+AND budget > 100000000
+AND language = 'Spanish';
+```
+
+`@sct`
+
+```{python}
+sel = check_node('SelectStmt')
+
+title = test_column('title', msg='Did you select the `title` column?')
+
+release_year = test_column('release_year', msg='Did you select the `release_year` column?')
+
+from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
+
+where_clause = sel.check_field('where_clause')
+
+# TODO: when test_not_typed() is a thing, use it here to check that `OR` was not typed instead of `AND` on last line
+
+between_node = where_clause.check_field('left')
+
+between_left = between_node.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
+between_op1 = between_node.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
+between_op2 = between_node.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
+
+where_budget = where_clause.has_equal_ast(sql='budget > 100000000', start='expression', exact=False, msg='Did you check the `budget` correctly?')
+
+where_language = where_clause.has_equal_ast(sql="language = 'Spanish'", start='expression', exact=False, msg='Did you check the `language` correctly?')
+
+Ex().test_correct(check_result(), [
+    from_clause,
+    between_left,
+    between_op1,
+    between_op2,
+    where_budget,
+    where_language,
+    title,
+    release_year,
+    test_has_columns(),
+    test_ncols(),
+    test_error()
+])
+```
+
+
+***
+
+
+
+```yaml
+type: NormalExercise 
+xp: 25 
+key: 73d020dfab   
+```
+
+
+
+
+
+`@instructions`
+Finally, modify to your previous query to include all Spanish language *or* French language films with the same criteria as before. Don't forget your parentheses!
+
+`@hint`
+```
+SELECT ___, ___
+FROM ___
+WHERE ___ BETWEEN ___ AND ___
+AND ___ > ___
+AND (___ = '___' OR ___ = '___');
+```
+
+`@solution`
+
+```{sql}
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+AND budget > 100000000
+AND (language = 'Spanish' OR language = 'French');
+```
+
+`@sct`
+
+```{python}
+sel = check_node('SelectStmt')
+
+title = test_column('title', msg='Did you select the `title` column?')
+
+release_year = test_column('release_year', msg='Did you select the `release_year` column?')
+
+from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
+
+where_clause = sel.check_field('where_clause')
+
+# TODO: when test_not_typed() is a thing, use it here to check that `OR` was not typed instead of `AND` on last line
+
+between_left = where_clause.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
+between_op1 = where_clause.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
+between_op2 = where_clause.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
+
+where_budget = where_clause.has_equal_ast(sql='budget > 100000000', start='expression', exact=False, msg='Did you check the `budget` correctly?')
+
+where_language1 = where_clause.has_equal_ast(sql="language = 'Spanish'", start='expression', exact=False, msg='Did you check the Spanish `language` correctly?')
+
+where_language2 = where_clause.has_equal_ast(sql="language = 'French'", start='expression', exact=False, msg='Did you check the French `language` correctly?')
+
+
+Ex().test_correct(check_result(), [
+    from_clause,
+    where_budget,
+    where_language1,
+    where_language2,
+    between_left,
+    between_op1,
+    between_op2,
+    title,
+    release_year,
     test_has_columns(),
     test_ncols(),
     test_error()
