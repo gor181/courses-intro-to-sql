@@ -327,58 +327,6 @@ Ex().check_result()
 
 ---
 
-## Beginning your SQL journey
-
-```yaml
-type: PlainMultipleChoiceExercise 
-lang: sql
-xp: 50 
-key: a1f556e63f   
-```
-
-
-Now that you're familiar with the interface, let's get straight into it.
-
-SQL, which stands for *Structured Query Language*, is a language for interacting with data stored in something called a *relational database*.
-
-You can think of a relational database as a collection of tables. A table is just a set of rows and columns, like a spreadsheet, which represents exactly one type of entity. For example, a table might represent employees in a company or purchases made, but not both.
-
-Each row, or *record*, of a table contains information about a single entity. For example, in a table representing employees, each row represents a single person. Each column, or *field*, of a table contains a single attribute for all rows in the table. For example, in a table representing employees, we might have a column containing first and last names for all employees.
-
-The table of employees might look something like this:
-
-| id | name | age | nationality |
-|----|----|----|----|
-| 1 | Jessica | 22 | Ireland
-| 2 | Gabriel | 48 | France |
-| 3 | Laura | 36 | USA |
-
-<hr>
-How many fields does the employees table above contain?
-
-
-`@instructions`
-- 1
-- 2
-- 3
-- 4
-
-`@hint`
-Remember that in database lingo, a column is called a *field*. How many fields does the table contain?
-
-`@sct`
-
-```{python}
-msg1 = "Incorrect, a table contains information about one type of entity, but generally has multiple fields."
-msg2 = "Sorry, try again!"
-msg3 = "Incorrect, the table contains three records, but how many fields does it have?"
-success_msg = "Correct! The table contains four columns, or fields."
-
-Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
-```
-
----
-
 ## SELECTing single columns
 
 ```yaml
@@ -1010,6 +958,58 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
+
+---
+
+## Beginning your SQL journey
+
+```yaml
+type: PlainMultipleChoiceExercise 
+lang: sql
+xp: 50 
+key: a1f556e63f   
+```
+
+
+Now that you're familiar with the interface, let's get straight into it.
+
+SQL, which stands for *Structured Query Language*, is a language for interacting with data stored in something called a *relational database*.
+
+You can think of a relational database as a collection of tables. A table is just a set of rows and columns, like a spreadsheet, which represents exactly one type of entity. For example, a table might represent employees in a company or purchases made, but not both.
+
+Each row, or *record*, of a table contains information about a single entity. For example, in a table representing employees, each row represents a single person. Each column, or *field*, of a table contains a single attribute for all rows in the table. For example, in a table representing employees, we might have a column containing first and last names for all employees.
+
+The table of employees might look something like this:
+
+| id | name | age | nationality |
+|----|----|----|----|
+| 1 | Jessica | 22 | Ireland
+| 2 | Gabriel | 48 | France |
+| 3 | Laura | 36 | USA |
+
+<hr>
+How many fields does the employees table above contain?
+
+
+`@instructions`
+- 1
+- 2
+- 3
+- 4
+
+`@hint`
+Remember that in database lingo, a column is called a *field*. How many fields does the table contain?
+
+`@sct`
+
+```{python}
+msg1 = "Incorrect, a table contains information about one type of entity, but generally has multiple fields."
+msg2 = "Sorry, try again!"
+msg3 = "Incorrect, the table contains three records, but how many fields does it have?"
+success_msg = "Correct! The table contains four columns, or fields."
+
+Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
+```
 
 ---
 
