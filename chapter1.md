@@ -426,55 +426,6 @@ set_options(visible_tables = ['films', 'people'])
 ```yaml
 type: NormalExercise 
 xp: 35 
-key: a41cc766d5   
-```
-
-
-
-
-
-`@instructions`
-Select the `title` column from the `films` table.
-
-`@hint`
-```
-SELECT ___
-FROM ___;
-```
-
-`@solution`
-
-```{sql}
-SELECT title
-FROM films;
-```
-
-`@sct`
-
-```{python}
-sel = check_node('SelectStmt')
-
-title = test_column('title', msg='Did you select the `title` column correctly?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    title,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
-```
-
-
-***
-
-
-
-```yaml
-type: NormalExercise 
-xp: 35 
 key: 4a74270ecd   
 ```
 
@@ -510,6 +461,55 @@ from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` claus
 Ex().test_correct(check_result(), [
     from_clause,
     release_year,
+    test_has_columns(),
+    test_ncols(),
+    test_error()
+])
+```
+
+
+***
+
+
+
+```yaml
+type: NormalExercise 
+xp: 35 
+key: a41cc766d5   
+```
+
+
+
+
+
+`@instructions`
+Select the `title` column from the `films` table.
+
+`@hint`
+```
+SELECT ___
+FROM ___;
+```
+
+`@solution`
+
+```{sql}
+SELECT title
+FROM films;
+```
+
+`@sct`
+
+```{python}
+sel = check_node('SelectStmt')
+
+title = test_column('title', msg='Did you select the `title` column correctly?')
+
+from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
+
+Ex().test_correct(check_result(), [
+    from_clause,
+    title,
     test_has_columns(),
     test_ncols(),
     test_error()
