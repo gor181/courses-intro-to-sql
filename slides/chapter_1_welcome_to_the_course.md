@@ -58,7 +58,7 @@ two {{-}}
 
 
 `@script`
-
+this is a test
 
 
 
@@ -77,8 +77,6 @@ part 1 {{-}}
 
 
 
-`@script`
-
 
 
 
@@ -94,8 +92,6 @@ key: 4ccb7cd500
 
 
 
-
-`@script`
 
 
 
