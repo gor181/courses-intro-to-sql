@@ -41,6 +41,26 @@ Now let's get started!
 
 
 ---
+## one more slide
+
+```yaml
+type: FullImageSlide
+key: 9350264393
+```
+
+`@part1`
+part 1
+
+
+
+
+
+`@script`
+
+
+
+
+---
 ## added a slide
 
 ```yaml
@@ -74,6 +94,8 @@ key: 4ccb7cd500
 
 
 
+
+`@script`
 
 
 
