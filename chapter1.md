@@ -57,7 +57,7 @@ connect('postgresql', 'films')
 msg1 = 'Nope, look at the `people` table!'
 correct = 'Correct!'
 
-Ex().test_mc(3,[msg1, msg1, correct, msg1])	
+Ex().test_mc(3,[msg1, msg1, correct, msg1])
 ```
 
 ---
