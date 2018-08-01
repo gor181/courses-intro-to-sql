@@ -129,9 +129,6 @@ You need to add SELECT at the start of line 2!
 ```
 
 
-test
-
-
 `@instructions`
 Submit the code to the right, check out the errors, then fix them!
 
