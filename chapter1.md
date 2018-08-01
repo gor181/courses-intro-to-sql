@@ -38,8 +38,6 @@ From looking at the tabs, who is the first person listed in the `people` table?
 `@instructions`
 - Kanye West
 - Biggie Smalls
-- 50 Cent
-- Edited this in editor again
 
 `@hint`
 Look at the `people` tab under the editor! asdf adf
