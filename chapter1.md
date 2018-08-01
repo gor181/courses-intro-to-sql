@@ -39,7 +39,7 @@ From looking at the tabs, who is the first person listed in the `people` table?
 - Kanye West
 - Biggie Smalls
 - 50 Cent
-- Edited this in asdf
+- Edited this in editor
 
 `@hint`
 Look at the `people` tab under the editor! asdf adf
