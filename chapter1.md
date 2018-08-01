@@ -192,6 +192,12 @@ The table of employees might look something like this:
 How many fields does the employees table above contain?
 
 
+
+
+
+
+
+
 `@instructions`
 - 1
 - 2
