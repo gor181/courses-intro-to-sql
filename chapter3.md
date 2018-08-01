@@ -1,21 +1,17 @@
 ---
   title: "Aggregate Functions"
   description: "This chapter builds on the first two by teaching you how to use aggregate functions to summarize your data and gain useful insights. Additionally, you'll learn about arithmetic in SQL, and how to use aliases to make your results more readable!"
-  v2: true
-
 ---
+
 ## Aggregate functions
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: b883e7079f
-
-
-
+xp: 100 
+key: b883e7079f   
 ```
+
 
 Often, you will want to perform some calculation on the data in a database. SQL provides a few functions, called *aggregate functions*, to help you out with this.
 
@@ -45,34 +41,22 @@ FROM films;
 You can probably guess what the `MIN` function does! Now it's your turn to try out some SQL functions.
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 80fd462ae1
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 80fd462ae1   
 ```
+
+
 
 
 
@@ -84,8 +68,6 @@ Use the `SUM` function to get the total duration of all films.
 SELECT ___(___)
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -112,26 +94,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 7993b51268
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 7993b51268   
 ```
+
+
 
 
 
@@ -143,8 +116,6 @@ Get the average duration of all films.
 SELECT ___(___)
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -171,26 +142,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: a03aeabbc6
-
-
-
+type: NormalExercise 
+xp: 25 
+key: a03aeabbc6   
 ```
+
+
 
 
 
@@ -202,8 +164,6 @@ Get the duration of the shortest film.
 SELECT ___(___)
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -230,26 +190,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: fabbc619c6
-
-
-
+type: NormalExercise 
+xp: 25 
+key: fabbc619c6   
 ```
+
+
 
 
 
@@ -261,8 +212,6 @@ Get the duration of the longest film.
 SELECT ___(___)
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -289,28 +238,19 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## Aggregate functions practice
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: e60103b3f1
-
-
-
+xp: 100 
+key: e60103b3f1   
 ```
 
-Good work. Aggregate functions are important to understand, so let's get some more practice!
 
+Good work. Aggregate functions are important to understand, so let's get some more practice!
 
 
 `@pre_exercise_code`
@@ -318,28 +258,17 @@ Good work. Aggregate functions are important to understand, so let's get some mo
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: c8173b7d3e
-
-
-
+type: NormalExercise 
+xp: 25 
+key: c8173b7d3e   
 ```
+
+
 
 
 
@@ -351,8 +280,6 @@ Use the `SUM` function to get the total amount grossed by all films.
 SELECT ___(___)
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -379,26 +306,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 24c0ab68ad
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 24c0ab68ad   
 ```
+
+
 
 
 
@@ -410,8 +328,6 @@ Get the average amount grossed by all films.
 SELECT ___(___)
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -438,26 +354,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 19838082cb
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 19838082cb   
 ```
+
+
 
 
 
@@ -469,8 +376,6 @@ Get the amount grossed by the worst performing film.
 SELECT ___(___)
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -497,26 +402,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: a49b98de42
-
-
-
+type: NormalExercise 
+xp: 25 
+key: a49b98de42   
 ```
+
+
 
 
 
@@ -528,8 +424,6 @@ Get the amount grossed by the best performing film.
 SELECT ___(___)
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -556,25 +450,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## Combining aggregate functions with WHERE
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: b44bd43288
-
-
-
+xp: 100 
+key: b44bd43288   
 ```
+
 
 Aggregate functions can be combined with the `WHERE` clause to gain further insights from your data.
 
@@ -589,34 +475,22 @@ WHERE release_year >= 2010;
 Now it's your turn!
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: b986f33a10
-
-
-
+type: NormalExercise 
+xp: 25 
+key: b986f33a10   
 ```
+
+
 
 
 
@@ -629,8 +503,6 @@ SELECT ___(___)
 FROM ___
 WHERE ___ >= ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -663,26 +535,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 65e81175c5
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 65e81175c5   
 ```
+
+
 
 
 
@@ -695,8 +558,6 @@ SELECT ___(___)
 FROM ___
 WHERE ___ LIKE 'A%';
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -734,26 +595,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 3ca90a8536
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 3ca90a8536   
 ```
+
+
 
 
 
@@ -766,8 +618,6 @@ SELECT ___(___)
 FROM ___
 WHERE ___ = ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -800,26 +650,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: d2e630e656
-
-
-
+type: NormalExercise 
+xp: 25 
+key: d2e630e656   
 ```
+
+
 
 
 
@@ -832,8 +673,6 @@ SELECT ___(___)
 FROM ___
 WHERE ___ BETWEEN ___ AND ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -870,25 +709,18 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## A note on arithmetic
 
 ```yaml
-type: MultipleChoiceExercise
+type: MultipleChoiceExercise 
 lang: sql
-xp: 50
+xp: 50 
 skills: 1
-key: 7b8b54b64d
-
-
-
+key: 7b8b54b64d   
 ```
+
 
 In addition to using aggregate functions, you can perform basic arithmetic with symbols like `+`, `-`, `*`, and `/`.
 
@@ -919,6 +751,7 @@ gives you the result you would expect: `1.333`.
 <hr>
 What is the result of `SELECT (10 / 3);`?
 
+
 `@instructions`
 - 2.333
 - 3.333
@@ -936,7 +769,6 @@ connect('postgresql', 'films')
 ```{sql}
 -- You can test out queries here!
 ```
-
 `@sct`
 ```{python}
 success_msg = 'Correct!'
@@ -944,25 +776,17 @@ msg2 = "Incorrect, try out the query in the editor!"
 
 Ex().test_mc(3,[msg2, msg2, success_msg, msg2])
 ```
-
-
-
-
-
-
 ---
+
 ## It's AS simple AS aliasing
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: 9f4b026fe7
-
-
-
+xp: 100 
+key: 9f4b026fe7   
 ```
+
 
 You may have noticed in the first exercise of this chapter that the column name of your result was just the name of the function you used. For example,
 
@@ -993,34 +817,22 @@ FROM films;
 Aliases are helpful for making results more readable!
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: ec33c2353b
-
-
-
+type: NormalExercise 
+xp: 35 
+key: ec33c2353b   
 ```
+
+
 
 
 
@@ -1032,8 +844,6 @@ Get the title and net profit (the amount a film grossed, minus its budget) for a
 SELECT ___, ___ - ___ AS ___
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1072,26 +882,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: 1351c6f6bb
-
-
-
+type: NormalExercise 
+xp: 35 
+key: 1351c6f6bb   
 ```
+
+
 
 
 
@@ -1103,8 +904,6 @@ Get the title and duration in hours for all films. The duration is in minutes, s
 SELECT ___, ___ / 60.0 AS ___
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1142,26 +941,17 @@ Ex().test_correct(alias, [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 30
-
-key: 497f8d2a8a
-
-
-
+type: NormalExercise 
+xp: 30 
+key: 497f8d2a8a   
 ```
+
+
 
 
 
@@ -1173,8 +963,6 @@ Get the average duration in hours for all films, aliased as `avg_duration_hours`
 SELECT ___(___) / 60.0 AS avg_duration_hours  
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1208,25 +996,17 @@ Ex().test_correct(alias, [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## Even more aliasing
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: 7e3a93209c
-
-
-
+xp: 100 
+key: 7e3a93209c   
 ```
+
 
 Let's practice your newfound aliasing skills some more before moving on!
 
@@ -1250,7 +1030,6 @@ SELECT 45 * 100.0 / 10;
 The above now gives the correct answer of `450.0` as now the numerator of the division (`45 * 100.0`) is a decimal!
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -1261,27 +1040,17 @@ set_options(visible_tables = ['films', 'people'])
 -- get the count(deathdate) and multiply by 100.0
 -- then divide by count(*)
 ```
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: e14dc7c1a2
-
-
-
+type: NormalExercise 
+xp: 35 
+key: e14dc7c1a2   
 ```
+
+
 
 
 
@@ -1293,8 +1062,6 @@ Get the percentage of `people` who are no longer alive. Alias the result as `per
 SELECT ___(___) * 100.0 / ___(___) AS percentage_dead
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1341,26 +1108,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: c2bbd9a806
-
-
-
+type: NormalExercise 
+xp: 35 
+key: c2bbd9a806   
 ```
+
+
 
 
 
@@ -1373,8 +1131,6 @@ SELECT ___(___) - ___(___)
 AS difference
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1417,26 +1173,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 30
-
-key: f272486b68
-
-
-
+type: NormalExercise 
+xp: 30 
+key: f272486b68   
 ```
+
+
 
 
 
@@ -1449,8 +1196,6 @@ SELECT (___(___) - ___(___)) / 10.0
 AS number_of_decades
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1502,8 +1247,3 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
-
-
-
-
-

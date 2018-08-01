@@ -1,21 +1,17 @@
 ---
   title: "Sorting, grouping and joins"
   description: "This chapter provides a brief introduction to sorting and grouping your results, and briefly touches on the concept of joins."
-  v2: true
-
 ---
+
 ## ORDER BY
 
 ```yaml
-type: PlainMultipleChoiceExercise
+type: PlainMultipleChoiceExercise 
 lang: sql
-xp: 50
-
-key: 322af4938b
-
-
-
+xp: 50 
+key: 322af4938b   
 ```
+
 
 Congratulations on making it this far! You now know how to select and filter your results.
 
@@ -36,6 +32,7 @@ gives you the titles of films sorted by release year, from newest to oldest.
 <hr>
 How do you think `ORDER BY` sorts a column of text values by default? adf
 
+
 `@instructions`
 - Alphabetically (A-Z)
 - Reverse alphabetically (Z-A)
@@ -45,9 +42,6 @@ How do you think `ORDER BY` sorts a column of text values by default? adf
 `@hint`
 By default, `ORDER BY` sorts alphabetically, but in which direction?
 
-
-
-
 `@sct`
 ```{python}
 success_msg = 'Correct!'
@@ -56,28 +50,19 @@ msg2 = 'Incorrect. Text values are ordered alphabetically.'
 
 Ex().test_mc(1, [success_msg, msg1, msg2, msg2])
 ```
-
-
-
-
-
-
 ---
+
 ## Sorting single columns
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: a7b2964ba6
-
-
-
+xp: 100 
+key: a7b2964ba6   
 ```
 
-Now that you understand how `ORDER BY` works, give these exercises a go!
 
+Now that you understand how `ORDER BY` works, give these exercises a go!
 
 
 `@pre_exercise_code`
@@ -85,28 +70,17 @@ Now that you understand how `ORDER BY` works, give these exercises a go!
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: e3a06cce15
-
-
-
+type: NormalExercise 
+xp: 35 
+key: e3a06cce15   
 ```
+
+
 
 
 
@@ -119,8 +93,6 @@ SELECT ___
 FROM ___
 ORDER BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -148,26 +120,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: 14a2792baa
-
-
-
+type: NormalExercise 
+xp: 35 
+key: 14a2792baa   
 ```
+
+
 
 
 
@@ -180,8 +143,6 @@ SELECT ___
 FROM ___
 ORDER BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -209,26 +170,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 30
-
-key: 6cfeca71b1
-
-
-
+type: NormalExercise 
+xp: 30 
+key: 6cfeca71b1   
 ```
+
+
 
 
 
@@ -241,8 +193,6 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -273,28 +223,19 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## Sorting single columns (2)
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: 357ec9bc3d
-
-
-
+xp: 100 
+key: 357ec9bc3d   
 ```
 
-Let's get some more practice with `ORDER BY`! adsf
 
+Let's get some more practice with `ORDER BY`! adsf
 
 
 `@pre_exercise_code`
@@ -302,28 +243,17 @@ Let's get some more practice with `ORDER BY`! adsf
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: e2702b5933
-
-
-
+type: NormalExercise 
+xp: 35 
+key: e2702b5933   
 ```
+
+
 
 
 
@@ -337,8 +267,6 @@ FROM ___
 WHERE ___ IN (___, ___)
 ORDER BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -372,26 +300,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: 5c84507976
-
-
-
+type: NormalExercise 
+xp: 35 
+key: 5c84507976   
 ```
+
+
 
 
 
@@ -405,8 +324,6 @@ FROM ___
 WHERE ___ <> ___
 ORDER BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -440,26 +357,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 30
-
-key: 6359addbf8
-
-
-
+type: NormalExercise 
+xp: 30 
+key: 6359addbf8   
 ```
+
+
 
 
 
@@ -473,8 +381,6 @@ FROM ___
 WHERE ___ LIKE ___
 ORDER BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -515,25 +421,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## Sorting single columns (DESC)
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: a7b2964ba7
-
-
-
+xp: 100 
+key: a7b2964ba7   
 ```
+
 
 To order results in _descending_ order, you can put the keyword `DESC` after your `ORDER BY`. For example, to get all the names in the `people` table, in reverse alphabetical order:
 
@@ -546,34 +444,22 @@ ORDER BY name DESC;
 Now practice using `ORDER BY` with `DESC` to sort single columns in descending order!
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'reviews'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: 1ed651456d
-
-
-
+type: NormalExercise 
+xp: 35 
+key: 1ed651456d   
 ```
+
+
 
 
 
@@ -586,8 +472,6 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___ DESC;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -617,26 +501,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 35
-
-key: 3629dd5dcd
-
-
-
+type: NormalExercise 
+xp: 35 
+key: 3629dd5dcd   
 ```
+
+
 
 
 
@@ -649,8 +524,6 @@ SELECT ___
 FROM ___
 ORDER BY ___ ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -678,26 +551,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 30
-
-key: ddcb2dd3ad
-
-
-
+type: NormalExercise 
+xp: 30 
+key: ddcb2dd3ad   
 ```
+
+
 
 
 
@@ -710,8 +574,6 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___ ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -742,25 +604,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## Sorting multiple columns
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: b2a52993bc
-
-
-
+xp: 100 
+key: b2a52993bc   
 ```
+
 
 `ORDER BY` can also be used to sort on multiple columns. It will sort by the first column specified, then sort by the next, then the next, and so on. For example,
 
@@ -775,34 +629,22 @@ sorts on birth dates first (oldest to newest) and then sorts on the names in alp
 Try using `ORDER BY` to sort multiple columns! Remember, to specify multiple columns you separate the column names with a comma.
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 9ec6e8ae72
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 9ec6e8ae72   
 ```
+
+
 
 
 
@@ -815,8 +657,6 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___, ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -847,26 +687,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 3460b2f14b
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 3460b2f14b   
 ```
+
+
 
 
 
@@ -879,8 +710,6 @@ SELECT ___, ___, ___
 FROM ___
 ORDER BY ___, ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -914,26 +743,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: c03517c2b9
-
-
-
+type: NormalExercise 
+xp: 25 
+key: c03517c2b9   
 ```
+
+
 
 
 
@@ -946,8 +766,6 @@ SELECT ___, ___, ___
 FROM ___
 ORDER BY ___, ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -983,26 +801,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: f0ade213ff
-
-
-
+type: NormalExercise 
+xp: 25 
+key: f0ade213ff   
 ```
+
+
 
 
 
@@ -1015,8 +824,6 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___, ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1049,25 +856,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## GROUP BY
 
 ```yaml
-type: PlainMultipleChoiceExercise
+type: PlainMultipleChoiceExercise 
 lang: sql
-xp: 50
-
-key: 81987a99cf
-
-
-
+xp: 50 
+key: 81987a99cf   
 ```
+
 
 Now you know how to sort results! Often you'll need to aggregate results. For example, you might want to get count the number of male and female employees in your company. Here, what you want is to group all the males together and count them, and group all the females together and count them. In SQL, `GROUP BY` allows you to group a result by one or more columns, like so:
 
@@ -1090,6 +889,7 @@ Commonly, `GROUP BY` is used with _aggregate functions_ like `COUNT()` or `MAX()
 <hr>
 What is `GROUP BY` used for?
 
+
 `@instructions`
 - Performing operations by column
 - Performing operations all at once
@@ -1098,9 +898,6 @@ What is `GROUP BY` used for?
 
 `@hint`
 You use `GROUP BY` when you want to compute results within groups.
-
-
-
 
 `@sct`
 ```{python}
@@ -1111,25 +908,17 @@ success_msg = 'Correct! `GROUP BY` is for performing operations within groups.'
 
 Ex().test_mc(4, [one, two, three, success_msg])
 ```
-
-
-
-
-
-
 ---
+
 ## GROUP BY practice
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: 98e30a6131
-
-
-
+xp: 100 
+key: 98e30a6131   
 ```
+
 
 As you've just seen, combining aggregate functions with `GROUP BY` can yield some powerful results!
 
@@ -1155,34 +944,22 @@ might return something like
 because there are more females at our company than males. Note also that `ORDER BY` always goes after `GROUP BY`. Let's try some exercises!
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'reviews'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 0b29eb4ff3
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 0b29eb4ff3   
 ```
+
+
 
 
 
@@ -1195,8 +972,6 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1230,26 +1005,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: ebee043890
-
-
-
+type: NormalExercise 
+xp: 25 
+key: ebee043890   
 ```
+
+
 
 
 
@@ -1262,8 +1028,6 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1297,26 +1061,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: b4341b8451
-
-
-
+type: NormalExercise 
+xp: 25 
+key: b4341b8451   
 ```
+
+
 
 
 
@@ -1329,8 +1084,6 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1364,26 +1117,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 25
-
-key: 66d0c5198a
-
-
-
+type: NormalExercise 
+xp: 25 
+key: 66d0c5198a   
 ```
+
+
 
 
 
@@ -1396,8 +1140,6 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1433,30 +1175,21 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## GROUP BY practice (2)
 
 ```yaml
-type: BulletExercise
+type: BulletExercise 
 lang: sql
-xp: 100
-
-key: 38a7c62434
-
-
-
+xp: 100 
+key: 38a7c62434   
 ```
+
 
 Now practice your new skills by combining `GROUP BY` and `ORDER BY` with some more aggregate functions!
 
 Make sure to always put the `ORDER BY` clause at the end of your query. You can't sort values that you haven't calculated yet!
-
 
 
 `@pre_exercise_code`
@@ -1464,28 +1197,17 @@ Make sure to always put the `ORDER BY` clause at the end of your query. You can'
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: 53ad6da98c
-
-
-
+type: NormalExercise 
+xp: 20 
+key: 53ad6da98c   
 ```
+
+
 
 
 
@@ -1498,8 +1220,6 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1533,26 +1253,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: cff5924de5
-
-
-
+type: NormalExercise 
+xp: 20 
+key: cff5924de5   
 ```
+
+
 
 
 
@@ -1565,8 +1276,6 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1600,26 +1309,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: 83944ff64f
-
-
-
+type: NormalExercise 
+xp: 20 
+key: 83944ff64f   
 ```
+
+
 
 
 
@@ -1632,8 +1332,6 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1667,26 +1365,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: eac5f722a5
-
-
-
+type: NormalExercise 
+xp: 20 
+key: eac5f722a5   
 ```
+
+
 
 
 
@@ -1700,8 +1389,6 @@ FROM ___
 GROUP BY ___, ___
 ORDER BY ___, ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1740,26 +1427,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: 48461bd4d3
-
-
-
+type: NormalExercise 
+xp: 20 
+key: 48461bd4d3   
 ```
+
+
 
 
 
@@ -1773,8 +1451,6 @@ FROM films
 GROUP BY country, release_year
 ORDER BY ___, ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1815,25 +1491,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## HAVING a great time
 
 ```yaml
-type: MultipleChoiceExercise
+type: MultipleChoiceExercise 
 lang: sql
-xp: 50
-
-key: a391d35885
-
-
-
+xp: 50 
+key: a391d35885   
 ```
+
 
 In SQL, aggregate functions can't be used in `WHERE` clauses. For example, the following query is invalid:
 
@@ -1858,6 +1526,7 @@ shows only those years in which more than 10 films were released.
 <hr>
 In how many different years were more than 200 movies released?
 
+
 `@instructions`
 - 12
 - 13
@@ -1876,7 +1545,6 @@ set_options(visible_tables = ['films'])
 ```{sql}
 -- You can test out queries here!
 ```
-
 `@sct`
 ```{python}
 msg1 = 'Correct!'
@@ -1884,25 +1552,17 @@ msg2 = 'Incorrect! Make a small modification to the query above and run it in th
 
 Ex().test_mc(2, [msg2, msg1, msg2, msg2])
 ```
-
-
-
-
-
-
 ---
+
 ## All together now
 
 ```yaml
-type: TabExercise
+type: TabExercise 
 lang: sql
-xp: 100
-
-key: f7dcb9e122
-
-
-
+xp: 100 
+key: f7dcb9e122   
 ```
+
 
 Time to practice using `ORDER BY`, `GROUP BY` and `HAVING` together.
 
@@ -1911,34 +1571,22 @@ Now you're going to write a query that returns the average budget and average gr
 This is going to be a big query, but you can handle it!
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
-
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: a141cd669f
-
-
-
+type: NormalExercise 
+xp: 20 
+key: a141cd669f   
 ```
+
+
 
 
 
@@ -1950,8 +1598,6 @@ Get the release year, budget and gross earnings for each film in the `films` tab
 SELECT ___, ___, ___
 FROM ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -1981,26 +1627,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: d80bd57b13
-
-
-
+type: NormalExercise 
+xp: 20 
+key: d80bd57b13   
 ```
+
+
 
 
 
@@ -2013,8 +1650,6 @@ SELECT ___, ___, ___
 FROM ___
 WHERE ___ > ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -2050,26 +1685,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: 2d5e6bd8cf
-
-
-
+type: NormalExercise 
+xp: 20 
+key: 2d5e6bd8cf   
 ```
+
+
 
 
 
@@ -2083,8 +1709,6 @@ FROM ___
 WHERE ___ > ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -2118,26 +1742,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: ee92d8cbaa
-
-
-
+type: NormalExercise 
+xp: 20 
+key: ee92d8cbaa   
 ```
+
+
 
 
 
@@ -2151,8 +1766,6 @@ FROM ___
 WHERE ___ > ___
 GROUP BY ___;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -2191,26 +1804,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 20
-
-key: ce0f248734
-
-
-
+type: NormalExercise 
+xp: 20 
+key: ce0f248734   
 ```
+
+
 
 
 
@@ -2225,8 +1829,6 @@ WHERE ___ > ___
 GROUP BY ___
 HAVING AVG(___) > 60000000;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -2271,26 +1873,17 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 0
-
-key: 7b3afeed2f
-
-
-
+type: NormalExercise 
+xp: 0 
+key: 7b3afeed2f   
 ```
+
+
 
 
 
@@ -2306,8 +1899,6 @@ GROUP BY ___
 HAVING AVG(___) > 60000000
 ORDER BY ___ DESC;
 ```
-
-
 
 `@solution`
 ```{sql}
@@ -2356,29 +1947,23 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ---
+
 ## All together now (2)
 
 ```yaml
-type: NormalExercise
+type: NormalExercise 
 lang: sql
-xp: 100
+xp: 100 
 skills: 1
-key: 0bbc6da34d
-
-
-
+key: 0bbc6da34d   
 ```
+
 
 Great work! Now try another large query. This time, all in one go!
 
 Remember, if you only want to return a certain number of results, you can use the `LIMIT` keyword to limit the number of rows returned
+
 
 `@instructions`
 Get the country, average budget, and average gross take of countries that have made more than 10 films. Order the result by country name, and limit the number of results displayed to 5. You should alias the averages as `avg_budget` and `avg_gross` respectively.
@@ -2460,25 +2045,17 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
-
-
-
-
-
-
 ---
+
 ## A taste of things to come
 
 ```yaml
-type: TabExercise
+type: TabExercise 
 lang: sql
-xp: 100
-
-key: d101be707a
-
-
-
+xp: 100 
+key: d101be707a   
 ```
+
 
 Congrats on making it to the end of the course! By now you should have a good understanding of the basics of SQL.
 
@@ -2495,7 +2072,6 @@ As you can see, joins are incredibly useful and important to understand for anyo
 We'll have a whole course dedicated to them coming soon!
 
 
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -2509,27 +2085,17 @@ JOIN reviews
 ON films.id = reviews.film_id
 WHERE title = 'To Kill a Mockingbird';
 ```
-
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: NormalExercise
-
-xp: 50
-
-key: 7c4fc7a484
-
-
-
+type: NormalExercise 
+xp: 50 
+key: 7c4fc7a484   
 ```
+
+
 
 
 
@@ -2538,8 +2104,6 @@ Submit the code in the editor and inspect the results.
 
 `@hint`
 Submit the code in the editor!
-
-
 
 `@solution`
 ```{sql}
@@ -2572,35 +2136,22 @@ Ex().test_correct(check_result(), [
 ])
 ```
 
-
-
-
-
-
-
 ***
 
 
 
 ```yaml
-type: MultipleChoiceExercise
-
-xp: 50
-
-key: fc288db979
-
-
-
+type: MultipleChoiceExercise 
+xp: 50 
+key: fc288db979   
 ```
+
 
 
 
 
 `@hint`
 Look at the query result tab!
-
-
-
 
 `@sct`
 ```{python}
@@ -2610,39 +2161,16 @@ correct = 'Correct!'
 Ex().test_mc(2,[msg1, correct, msg1, msg1])
 ```
 
-
-
-
-
-
-
 ---
+
 ## Insert exercise title here
 
 ```yaml
-type: NormalExercise
-
-xp: 100
-
-key: 6ac884ab95
-
-
-
+type: NormalExercise 
+xp: 100 
+key: 6ac884ab95   
 ```
 
+
 test ex
-
-`@instructions`
-
-
-`@hint`
-
-
-
-
-
-
-
-
-
 
