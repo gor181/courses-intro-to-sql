@@ -13,13 +13,6 @@ key: bfc80ff2e5
 ```
 
 
-
-
-
-
-
-
-
 Congrats on finishing the first chapter! You now know how to select columns and perform basic counts. This chapter will focus on filtering your results.
 
 In SQL, the `WHERE` keyword allows you to filter based on both text and numeric values in a table. There are a few different comparison operators you can use:
@@ -53,12 +46,7 @@ WHERE release_year > 2000;
 ```
 
 
-
-
-
-
 `@instructions`
-
 - Films released before the year 2000
 - Films released after the year 2000
 - Films released after the year 2001
@@ -107,9 +95,6 @@ connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
 ***
-
-
-
 
 
 
