@@ -124,19 +124,6 @@ Ex().test_correct(check_result(), [
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ```yaml
 type: NormalExercise 
 xp: 35 
