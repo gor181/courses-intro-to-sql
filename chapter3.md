@@ -13,11 +13,6 @@ key: b883e7079f
 ```
 
 
-
-
-
-
-
 Often, you will want to perform some calculation on the data in a database. SQL provides a few functions, called *aggregate functions*, to help you out with this.
 
 some example edit.
