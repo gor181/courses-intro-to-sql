@@ -116,11 +116,7 @@ Get all details for all films released in 2016.
 SELECT ___
 FROM ___
 WHERE ___ = ___;
-``` 
-
-
-
-
+```
 
 `@solution`
 ```{sql}
