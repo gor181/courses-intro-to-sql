@@ -33,7 +33,6 @@ If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-intro
 For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs.
 
 From looking at the tabs, who is the first person listed in the `people` table?
-some more edits that could conflict
 
 
 `@instructions`
