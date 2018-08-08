@@ -13,14 +13,11 @@ transformations:
 
 ---
 ## Welcome to the course!
-
+  
 ```yaml
-type: TitleSlide
-key: 7ad662bca6
+type: "TitleSlide"
+key: "7ad662bca6"
 ```
-
-
-
 
 
 `@lower_third`
@@ -36,62 +33,54 @@ Most of the world's data live in databases, so learning how to access and unlock
 
 This course will give you a basic introduction to SQL. We hope you enjoy it.
 
-Now let's get started!
-
+Now let's get started! asdf asdfas fasdfas adsfa dfaf
 
 
 ---
 ## added a slide
-
+  
 ```yaml
-type: FullSlide
-key: 218ea0f9f5
+type: "FullSlide"
+key: "218ea0f9f5"
 ```
 
+
 `@part1`
-one {{-}}
+one 
 
-two {{-}}
-
-
-
+two
 
 
 `@script`
 this is a test
 
 
-
 ---
 ## one more slide
-
+  
 ```yaml
-type: FullImageSlide
-key: 9350264393
+type: "FullImageSlide"
+key: "9350264393"
 ```
 
+
 `@part1`
-part 1 {{-}}
+part 1
 
 
-
-
-
+`@script`
 
 
 
 ---
 ## Final Slide
-
+  
 ```yaml
-type: FinalSlide
-key: 4ccb7cd500
+type: "FinalSlide"
+key: "4ccb7cd500"
 ```
 
 
-
-
-
-
+`@script`
 
 
