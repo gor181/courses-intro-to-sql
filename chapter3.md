@@ -1,6 +1,6 @@
 ---
-  title: "Aggregate Functions"
-  description: "This chapter builds on the first two by teaching you how to use aggregate functions to summarize your data and gain useful insights. Additionally, you'll learn about arithmetic in SQL, and how to use aliases to make your results more readable!"
+title: 'Aggregate Functions'
+description: 'This chapter builds on the first two by teaching you how to use aggregate functions to summarize your data and gain useful insights. Additionally, you''ll learn about arithmetic in SQL, and how to use aliases to make your results more readable!'
 ---
 
 ## Aggregate functions
