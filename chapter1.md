@@ -1276,32 +1276,33 @@ Ex().test_correct(check_result(), [
 ## Insert exercise title here
 
 ```yaml
+type: undefined 
+xp: 0 
+key: 0f5ffbf56f   
+```
+
+
+```yaml
 type: NormalExercise 
 xp: 100 
 key: f627c8eb1a   
 ```
-
-`@instructions`
-
-`@hint`
-
-`@pre_exercise_code`
-```{r}
-```
-
-`@sample_code`
-```{r}
-```
-
-`@solution`
-```{r}
-```
-
-`@sct`
-```{r}
-```
-
----
+ `@instructions`
+ `@hint`
+ `@pre_exercise_code`
+ ```{r}
+ ```
+ `@sample_code`
+ ```{r}
+ ```
+ `@solution`
+ ```{r}
+ ```
+ `@sct`
+ ```{r}
+ ```
+ 
+ ---
  
  ## Insert exercise title here
  ```yaml
@@ -1309,26 +1310,21 @@ type: NormalExercise
 xp: 100 
 key: ea0e7cd088   
 ```
- 
-`@instructions`
- 
-`@hint`
- 
-`@pre_exercise_code`
-```{r}
-```
+ `@instructions`
+ `@hint`
+ `@pre_exercise_code`
+ ```{r}
+ ```
+ `@sample_code`
+ ```{r}
+ ```
+ `@solution`
+ ```{r}
+ ```
+ `@sct`
+ ```{r}
+ ```
 
-`@sample_code`
-```{r}
-```
-
-`@solution`
-```{r}
-```
-
-`@sct`
-```{r}
-```
 
 ---
 
@@ -1342,7 +1338,6 @@ key: d91de87c17
 
 `@projector_key`
 d7d38acc352eb4c7d19bf84a52a938d6
-
 ---
 
 ## Insert exercise title here
