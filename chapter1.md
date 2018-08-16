@@ -1276,18 +1276,13 @@ Ex().test_correct(check_result(), [
 ## Insert exercise title here
 
 ```yaml
-type: undefined 
-xp: 0 
-key: 0f5ffbf56f   
-```
-
-
-```yaml
 type: NormalExercise 
 xp: 100 
 key: f627c8eb1a   
 ```
- `@instructions`
+
+
+`@instructions`
  `@hint`
  `@pre_exercise_code`
  ```{r}
