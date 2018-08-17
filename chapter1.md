@@ -1883,42 +1883,7 @@ key: f627c8eb1a
 
 
 `@instructions`
-`@hint`
- `@pre_exercise_code`
- ```{r}
- ```
- `@sample_code`
- ```{r}
- ```
- `@solution`
- ```{r}
- ```
- `@sct`
- ```{r}
- ```
- 
- ---
- 
- ## Insert exercise title here
- ```yaml
-type: NormalExercise 
-xp: 100 
-key: ea0e7cd088   
-```
- `@instructions`
- `@hint`
- `@pre_exercise_code`
- ```{r}
- ```
- `@sample_code`
- ```{r}
- ```
- `@solution`
- ```{r}
- ```
- `@sct`
- ```{r}
- ```
+
 
 `@hint`
 
