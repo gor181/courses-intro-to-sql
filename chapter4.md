@@ -42,6 +42,27 @@ How do you think `ORDER BY` sorts a column of text values by default? adf
 `@hint`
 By default, `ORDER BY` sorts alphabetically, but in which direction?
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
 ```{python}
 success_msg = 'Correct!'
@@ -50,6 +71,12 @@ msg2 = 'Incorrect. Text values are ordered alphabetically.'
 
 Ex().test_mc(1, [success_msg, msg1, msg2, msg2])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Sorting single columns
@@ -65,11 +92,44 @@ key: a7b2964ba6
 Now that you understand how `ORDER BY` works, give these exercises a go!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -93,6 +153,20 @@ SELECT ___
 FROM ___
 ORDER BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -119,6 +193,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -143,6 +223,20 @@ SELECT ___
 FROM ___
 ORDER BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -169,6 +263,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -193,6 +293,20 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -222,6 +336,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -238,11 +358,44 @@ key: 357ec9bc3d
 Let's get some more practice with `ORDER BY`! adsf
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -267,6 +420,20 @@ FROM ___
 WHERE ___ IN (___, ___)
 ORDER BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -299,6 +466,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -324,6 +497,20 @@ FROM ___
 WHERE ___ <> ___
 ORDER BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -356,6 +543,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -381,6 +574,20 @@ FROM ___
 WHERE ___ LIKE ___
 ORDER BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -420,6 +627,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -444,11 +657,44 @@ ORDER BY name DESC;
 Now practice using `ORDER BY` with `DESC` to sort single columns in descending order!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'reviews'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -472,6 +718,20 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___ DESC;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -500,6 +760,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -524,6 +790,20 @@ SELECT ___
 FROM ___
 ORDER BY ___ ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -550,6 +830,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -574,6 +860,20 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___ ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -603,6 +903,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -629,11 +935,44 @@ sorts on birth dates first (oldest to newest) and then sorts on the names in alp
 Try using `ORDER BY` to sort multiple columns! Remember, to specify multiple columns you separate the column names with a comma.
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -657,6 +996,20 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___, ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -686,6 +1039,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -710,6 +1069,20 @@ SELECT ___, ___, ___
 FROM ___
 ORDER BY ___, ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -742,6 +1115,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -766,6 +1145,20 @@ SELECT ___, ___, ___
 FROM ___
 ORDER BY ___, ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -800,6 +1193,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -824,6 +1223,20 @@ SELECT ___, ___
 FROM ___
 ORDER BY ___, ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -855,6 +1268,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -899,6 +1318,27 @@ What is `GROUP BY` used for?
 `@hint`
 You use `GROUP BY` when you want to compute results within groups.
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
 ```{python}
 one = 'Incorrect. While `GROUP BY` does sort by column, we could just use `ORDER BY` for this.'
@@ -908,6 +1348,12 @@ success_msg = 'Correct! `GROUP BY` is for performing operations within groups.'
 
 Ex().test_mc(4, [one, two, three, success_msg])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## GROUP BY practice
@@ -944,11 +1390,44 @@ might return something like
 because there are more females at our company than males. Note also that `ORDER BY` always goes after `GROUP BY`. Let's try some exercises!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'reviews'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -972,6 +1451,20 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1004,6 +1497,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1028,6 +1527,20 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1060,6 +1573,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1084,6 +1603,20 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1116,6 +1649,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1140,6 +1679,20 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1174,6 +1727,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -1192,11 +1751,44 @@ Now practice your new skills by combining `GROUP BY` and `ORDER BY` with some mo
 Make sure to always put the `ORDER BY` clause at the end of your query. You can't sort values that you haven't calculated yet!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1220,6 +1812,20 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1252,6 +1858,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1276,6 +1888,20 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1308,6 +1934,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1332,6 +1964,20 @@ SELECT ___, ___(___)
 FROM ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1364,6 +2010,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1389,6 +2041,20 @@ FROM ___
 GROUP BY ___, ___
 ORDER BY ___, ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1426,6 +2092,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1451,6 +2123,20 @@ FROM films
 GROUP BY country, release_year
 ORDER BY ___, ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1490,6 +2176,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -1545,6 +2237,13 @@ set_options(visible_tables = ['films'])
 ```{sql}
 -- You can test out queries here!
 ```
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
 ```{python}
 msg1 = 'Correct!'
@@ -1552,6 +2251,12 @@ msg2 = 'Incorrect! Make a small modification to the query above and run it in th
 
 Ex().test_mc(2, [msg2, msg1, msg2, msg2])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## All together now
@@ -1571,11 +2276,44 @@ Now you're going to write a query that returns the average budget and average gr
 This is going to be a big query, but you can handle it!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1598,6 +2336,20 @@ Get the release year, budget and gross earnings for each film in the `films` tab
 SELECT ___, ___, ___
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1626,6 +2378,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1650,6 +2408,20 @@ SELECT ___, ___, ___
 FROM ___
 WHERE ___ > ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1684,6 +2456,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1709,6 +2487,20 @@ FROM ___
 WHERE ___ > ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1741,6 +2533,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1766,6 +2564,20 @@ FROM ___
 WHERE ___ > ___
 GROUP BY ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1803,6 +2615,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1829,6 +2647,20 @@ WHERE ___ > ___
 GROUP BY ___
 HAVING AVG(___) > 60000000;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1872,6 +2704,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1899,6 +2737,20 @@ GROUP BY ___
 HAVING AVG(___) > 60000000
 ORDER BY ___ DESC;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1946,6 +2798,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -2045,6 +2903,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## A taste of things to come
@@ -2072,6 +2936,12 @@ As you can see, joins are incredibly useful and important to understand for anyo
 We'll have a whole course dedicated to them coming soon!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -2085,6 +2955,26 @@ JOIN reviews
 ON films.id = reviews.film_id
 WHERE title = 'To Kill a Mockingbird';
 ```
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -2104,6 +2994,20 @@ Submit the code in the editor and inspect the results.
 
 `@hint`
 Submit the code in the editor!
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -2135,6 +3039,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -2150,8 +3060,32 @@ key: fc288db979
 
 
 
+`@instructions`
+
+
 `@hint`
 Look at the query result tab!
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
 
 `@sct`
 ```{python}
@@ -2160,6 +3094,12 @@ correct = 'Correct!'
 
 Ex().test_mc(2,[msg1, correct, msg1, msg1])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -2173,4 +3113,44 @@ key: 6ac884ab95
 
 
 test ex
+
+
+`@instructions`
+
+
+`@hint`
+
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
 

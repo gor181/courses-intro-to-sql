@@ -55,6 +55,27 @@ WHERE release_year > 2000;
 `@hint`
 If you're stuck, refer to the list of comparison operators above!
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
 ```{python}
 success_msg = "Correct!"
@@ -62,6 +83,12 @@ msg2 = "Incorrect. `>` means *strictly* greater than and *not* equal to."
 
 Ex().test_mc(2, [msg2, success_msg, msg2, msg2])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Simple filtering of numeric values
@@ -89,11 +116,44 @@ Now it's your turn to use the `WHERE` clause to filter numeric values!
 asdf
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -117,6 +177,20 @@ SELECT ___
 FROM ___
 WHERE ___ = ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -145,6 +219,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -169,6 +249,20 @@ SELECT ___(*)
 FROM ___
 WHERE ___ < ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -202,6 +296,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -226,6 +326,20 @@ SELECT ___, ___
 FROM ___
 WHERE ___ > ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -257,6 +371,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -287,11 +407,44 @@ Now it's your turn to practice using `WHERE` with text values!
 **Important: in PostgreSQL (the version of SQL we're using), you must use single quotes with `WHERE`.**
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -315,6 +468,20 @@ SELECT ___
 FROM ___
 WHERE ___ = '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -343,6 +510,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -367,6 +540,20 @@ SELECT ___, ___
 FROM ___
 WHERE ___ = '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -398,6 +585,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -422,6 +615,20 @@ SELECT ___(___)
 FROM ___
 WHERE ___ = '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -455,6 +662,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -479,6 +692,20 @@ SELECT ___
 FROM ___
 WHERE ___ = '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -508,6 +735,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -545,11 +778,44 @@ WHERE release_year > 1994 AND < 2000;
 You can add as many `AND` conditions as you need!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -574,6 +840,20 @@ FROM ___
 WHERE ___ < ___
 AND ___ = '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -609,6 +889,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -634,6 +920,20 @@ FROM ___
 WHERE ___ > ___
 AND ___ = '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -666,6 +966,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -692,6 +998,20 @@ WHERE ___ > ___
 AND ___ < ___
 AND ___ = '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -728,6 +1048,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -783,6 +1109,27 @@ What does the `OR` operator do?
 `@hint`
 Think about records that meet condition1 **and** condition2.
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
 ```{python}
 success_msg = 'Correct!'
@@ -791,6 +1138,12 @@ msg2 = 'Incorrect. `OR` does not display rows that meet **none** of the specifie
 
 Ex().test_mc(1, [success_msg, msg1, msg2])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## WHERE AND OR (2)
@@ -821,11 +1174,44 @@ Now you'll write a query to get the title and release year of films released in 
 It looks like a lot, but you can build the query up one step at a time to get comfortable with the underlying concept in each step. Let's go!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -849,6 +1235,20 @@ SELECT ___, ___
 FROM ___
 WHERE ___ >= 1990 AND ___ < 2000;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -883,6 +1283,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -908,6 +1314,20 @@ FROM ___
 WHERE (___ >= 1990 AND ___ < 2000)
 AND (___ = 'French' OR ___ = 'Spanish');
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -950,6 +1370,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -976,6 +1402,20 @@ WHERE (___ >= 1990 AND ___ < 2000)
 AND (___ = '___' OR ___ = '___')
 AND ___ > ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1021,6 +1461,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -1067,6 +1513,27 @@ What does the `BETWEEN` keyword do?
 `@hint`
 Think about looking for values **between** a beginning and end point.
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
 ```{python}
 success_msg = 'Correct!'
@@ -1076,6 +1543,12 @@ lst = 'Incorrect!'
 
 Ex().test_mc(4, [numeric, text, lst, success_msg])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## WHERE IN
@@ -1113,11 +1586,44 @@ WHERE age IN (2, 4, 6, 8, 10);
 Try using the `IN` operator yourself!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1142,6 +1648,20 @@ FROM ___
 WHERE release_year IN (___, ___)
 AND ___ > ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1181,6 +1701,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1205,6 +1731,20 @@ SELECT ___, ___
 FROM ___
 WHERE ___ IN ('___', '___', '___');
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1235,6 +1775,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1259,6 +1805,20 @@ SELECT ___, ___
 FROM ___
 WHERE ___ IN ('NC-17', '___');
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1290,6 +1850,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -1336,6 +1902,27 @@ What does `NULL` represent?
 `@hint`
 Remember, `NULL` represents values which are missing or unknown.
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
 ```{python}
 corrupt = 'Incorrect. We can not be sure that a `NULL` value is actually corrupt.'
@@ -1345,6 +1932,12 @@ invalid = 'Incorrect!'
 
 Ex().test_mc(2, [corrupt, success_msg, empty, invalid])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## NULL and IS NULL
@@ -1360,11 +1953,44 @@ key: 84411d78ab
 Now that you know what `NULL` is and what it's used for, it's time for some practice!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1388,6 +2014,20 @@ SELECT ___
 FROM ___
 WHERE ___ IS NULL;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1414,6 +2054,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1438,6 +2084,20 @@ SELECT ___
 FROM ___
 WHERE ___ ___ ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1464,6 +2124,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1488,6 +2154,20 @@ SELECT ___(___)
 FROM ___
 WHERE language ___ ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1519,6 +2199,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -1557,11 +2243,44 @@ You can also use the `NOT LIKE` operator to find records that *don't* match the 
 Got it? Let's practice!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['people'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1585,6 +2304,20 @@ SELECT ___
 FROM ___
 WHERE ___ LIKE '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1617,6 +2350,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1641,6 +2380,20 @@ SELECT ___
 FROM ___
 WHERE ___ ___ '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1673,6 +2426,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1697,6 +2456,20 @@ SELECT ___
 FROM ___
 WHERE ___ NOT LIKE '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1733,6 +2506,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -1760,11 +2539,44 @@ AND nationality = 'USA';
 Take a go at using `BETWEEN` with `AND` on the films data to get the title and release year of all Spanish language films released between 1990 and 2000 (inclusive) with budgets over $100 million. We have broken the problem into smaller steps so that you can build the query as you go along!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1788,6 +2600,20 @@ SELECT ___, ___
 FROM ___
 WHERE ___ BETWEEN ___ AND ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1823,6 +2649,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1848,6 +2680,20 @@ FROM ___
 WHERE ___ BETWEEN ___ AND ___
 AND ___ > ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1891,6 +2737,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1917,6 +2769,20 @@ WHERE ___ BETWEEN ___ AND ___
 AND ___ > ___
 AND ___ = '___';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1964,6 +2830,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1990,6 +2862,20 @@ WHERE ___ BETWEEN ___ AND ___
 AND ___ > ___
 AND (___ = '___' OR ___ = '___');
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -2039,3 +2925,9 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+

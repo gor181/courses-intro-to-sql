@@ -41,11 +41,44 @@ FROM films;
 You can probably guess what the `MIN` function does! Now it's your turn to try out some SQL functions.
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -68,6 +101,20 @@ Use the `SUM` function to get the total duration of all films.
 SELECT ___(___)
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -93,6 +140,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -116,6 +169,20 @@ Get the average duration of all films.
 SELECT ___(___)
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -141,6 +208,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -164,6 +237,20 @@ Get the duration of the shortest film.
 SELECT ___(___)
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -189,6 +276,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -212,6 +305,20 @@ Get the duration of the longest film.
 SELECT ___(___)
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -237,6 +344,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -253,11 +366,44 @@ key: e60103b3f1
 Good work. Aggregate functions are important to understand, so let's get some more practice!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -280,6 +426,20 @@ Use the `SUM` function to get the total amount grossed by all films.
 SELECT ___(___)
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -305,6 +465,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -328,6 +494,20 @@ Get the average amount grossed by all films.
 SELECT ___(___)
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -353,6 +533,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -376,6 +562,20 @@ Get the amount grossed by the worst performing film.
 SELECT ___(___)
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -401,6 +601,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -424,6 +630,20 @@ Get the amount grossed by the best performing film.
 SELECT ___(___)
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -449,6 +669,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -475,11 +701,44 @@ WHERE release_year >= 2010;
 Now it's your turn!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -503,6 +762,20 @@ SELECT ___(___)
 FROM ___
 WHERE ___ >= ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -534,6 +807,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -558,6 +837,20 @@ SELECT ___(___)
 FROM ___
 WHERE ___ LIKE 'A%';
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -594,6 +887,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -618,6 +917,20 @@ SELECT ___(___)
 FROM ___
 WHERE ___ = ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -649,6 +962,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -673,6 +992,20 @@ SELECT ___(___)
 FROM ___
 WHERE ___ BETWEEN ___ AND ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -708,6 +1041,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -769,6 +1108,13 @@ connect('postgresql', 'films')
 ```{sql}
 -- You can test out queries here!
 ```
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
 ```{python}
 success_msg = 'Correct!'
@@ -776,6 +1122,12 @@ msg2 = "Incorrect, try out the query in the editor!"
 
 Ex().test_mc(3,[msg2, msg2, success_msg, msg2])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## It's AS simple AS aliasing
@@ -817,11 +1169,44 @@ FROM films;
 Aliases are helpful for making results more readable!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -844,6 +1229,20 @@ Get the title and net profit (the amount a film grossed, minus its budget) for a
 SELECT ___, ___ - ___ AS ___
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -881,6 +1280,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -904,6 +1309,20 @@ Get the title and duration in hours for all films. The duration is in minutes, s
 SELECT ___, ___ / 60.0 AS ___
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -940,6 +1359,12 @@ Ex().test_correct(alias, [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -963,6 +1388,20 @@ Get the average duration in hours for all films, aliased as `avg_duration_hours`
 SELECT ___(___) / 60.0 AS avg_duration_hours  
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -995,6 +1434,12 @@ Ex().test_correct(alias, [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ---
 
@@ -1030,6 +1475,12 @@ SELECT 45 * 100.0 / 10;
 The above now gives the correct answer of `450.0` as now the numerator of the division (`45 * 100.0`) is a decimal!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -1040,6 +1491,26 @@ set_options(visible_tables = ['films', 'people'])
 -- get the count(deathdate) and multiply by 100.0
 -- then divide by count(*)
 ```
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1062,6 +1533,20 @@ Get the percentage of `people` who are no longer alive. Alias the result as `per
 SELECT ___(___) * 100.0 / ___(___) AS percentage_dead
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1107,6 +1592,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1131,6 +1622,20 @@ SELECT ___(___) - ___(___)
 AS difference
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1172,6 +1677,12 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 
 ***
 
@@ -1196,6 +1707,20 @@ SELECT (___(___) - ___(___)) / 10.0
 AS number_of_decades
 FROM ___;
 ```
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
 
 `@solution`
 ```{sql}
@@ -1247,3 +1772,9 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
