@@ -19,6 +19,10 @@ f05d06ad7807cf476fdb5f674174c9d5
 
 ## Onboarding | Tables
 
+
+
+
+
 ```yaml
 type: MultipleChoiceExercise 
 lang: sql
