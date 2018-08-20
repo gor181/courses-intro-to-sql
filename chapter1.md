@@ -1883,39 +1883,27 @@ key: f627c8eb1a
 
 
 `@instructions`
-asdf
+soemthing
 
 `@hint`
 
 
 `@pre_exercise_code`
-
 ```{python}
 
 ```
-
-
 `@sample_code`
-
 ```{sql}
 
 ```
-
-
 `@solution`
-
 ```{sql}
 
 ```
-
-
 `@sct`
-
 ```{python}
 
 ```
-
-
 `@possible_answers`
 
 
