@@ -77,12 +77,17 @@ If you're stuck, refer to the list of comparison operators above!
 
 
 `@sct`
+
 ```{python}
+
 success_msg = "Correct!"
 msg2 = "Incorrect. `>` means *strictly* greater than and *not* equal to."
 
 Ex().test_mc(2, [msg2, success_msg, msg2, msg2])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -123,10 +128,15 @@ asdf
 
 
 `@pre_exercise_code`
+
 ```{python}
+
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
+
 ```
+
+
 `@sample_code`
 
 ```{sql}
@@ -193,13 +203,20 @@ WHERE ___ = ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT *
 FROM films
 WHERE release_year = 2016;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 star = sel.check_node('Star').has_equal_ast('Are you selecting all columns?')
@@ -218,7 +235,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -265,13 +285,20 @@ WHERE ___ < ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT COUNT(*)
 FROM films
 WHERE release_year < 2000;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -295,7 +322,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -342,13 +372,20 @@ WHERE ___ > ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE release_year > 2000;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -370,7 +407,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -414,10 +454,15 @@ Now it's your turn to practice using `WHERE` with text values!
 
 
 `@pre_exercise_code`
+
 ```{python}
+
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
+
 ```
+
+
 `@sample_code`
 
 ```{sql}
@@ -484,13 +529,20 @@ WHERE ___ = '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT *
 FROM films
 WHERE language = 'French';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 star = sel.check_node('Star').has_equal_ast('Are you selecting all columns?')
@@ -509,7 +561,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -556,13 +611,20 @@ WHERE ___ = '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT name, birthdate
 FROM people
 WHERE birthdate = '1974-11-11';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 name = test_column('name', msg='Did you select the `name` column?')
@@ -584,7 +646,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -631,13 +696,20 @@ WHERE ___ = '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT COUNT(*)
 FROM films
 WHERE language = 'Hindi';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -661,7 +733,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -708,13 +783,20 @@ WHERE ___ = '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT *
 FROM films
 WHERE certification = 'R';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 star = sel.check_node('Star').has_equal_ast('Are you selecting all columns?')
@@ -734,7 +816,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -785,10 +870,15 @@ You can add as many `AND` conditions as you need!
 
 
 `@pre_exercise_code`
+
 ```{python}
+
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
+
 ```
+
+
 `@sample_code`
 
 ```{sql}
@@ -856,14 +946,21 @@ AND ___ = '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE release_year < 2000
 AND language = 'Spanish';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you include the `title` column?')
@@ -888,7 +985,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -936,14 +1036,21 @@ AND ___ = '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT *
 FROM films
 WHERE release_year > 2000
 AND language = 'Spanish';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 star = sel.check_node('Star').has_equal_ast('Are you selecting all columns?')
@@ -965,7 +1072,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1014,15 +1124,22 @@ AND ___ = '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT *
 FROM films
 WHERE release_year > 2000
 AND release_year < 2010
 AND language = 'Spanish';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 star = sel.check_node('Star').has_equal_ast(msg='Are you selecing all columns?')
@@ -1047,7 +1164,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1131,13 +1251,18 @@ Think about records that meet condition1 **and** condition2.
 
 
 `@sct`
+
 ```{python}
+
 success_msg = 'Correct!'
 msg1 = 'Incorrect. `OR` does not display rows that meet **all** of the specified conditions.'
 msg2 = 'Incorrect. `OR` does not display rows that meet **none** of the specified conditions.'
 
 Ex().test_mc(1, [success_msg, msg1, msg2])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1181,10 +1306,15 @@ It looks like a lot, but you can build the query up one step at a time to get co
 
 
 `@pre_exercise_code`
+
 ```{python}
+
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
+
 ```
+
+
 `@sample_code`
 
 ```{sql}
@@ -1251,13 +1381,20 @@ WHERE ___ >= 1990 AND ___ < 2000;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE release_year >= 1990 AND release_year < 2000;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -1282,7 +1419,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1330,14 +1470,21 @@ AND (___ = 'French' OR ___ = 'Spanish');
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE (release_year >= 1990 AND release_year < 2000)
 AND (language = 'French' OR language = 'Spanish');
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -1369,7 +1516,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1418,15 +1568,22 @@ AND ___ > ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE (release_year >= 1990 AND release_year < 2000)
 AND (language = 'French' OR language = 'Spanish')
 AND gross > 2000000;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -1460,7 +1617,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1535,14 +1695,19 @@ Think about looking for values **between** a beginning and end point.
 
 
 `@sct`
+
 ```{python}
+
 success_msg = 'Correct!'
 numeric = 'Incorrect. `BETWEEN` does not just filter numeric values.'
 text = 'Incorrect. `BETWEEN` does not just filter text values.'
 lst = 'Incorrect!'
 
 Ex().test_mc(4, [numeric, text, lst, success_msg])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1593,10 +1758,15 @@ Try using the `IN` operator yourself!
 
 
 `@pre_exercise_code`
+
 ```{python}
+
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
+
 ```
+
+
 `@sample_code`
 
 ```{sql}
@@ -1664,14 +1834,21 @@ AND ___ > ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE release_year IN (1990, 2000)
 AND duration > 120;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -1700,7 +1877,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1747,13 +1927,20 @@ WHERE ___ IN ('___', '___', '___');
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, language
 FROM films
 WHERE language IN ('English', 'Spanish', 'French');
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -1774,7 +1961,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1821,13 +2011,20 @@ WHERE ___ IN ('NC-17', '___');
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, certification
 FROM films
 WHERE certification IN ('NC-17', 'R');
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -1849,7 +2046,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1924,14 +2124,19 @@ Remember, `NULL` represents values which are missing or unknown.
 
 
 `@sct`
+
 ```{python}
+
 corrupt = 'Incorrect. We can not be sure that a `NULL` value is actually corrupt.'
 success_msg = 'Correct! `NULL` is used to represent unknown values.'
 empty = 'Incorrect. An empty string is not the same as a `NULL` value.'
 invalid = 'Incorrect!'
 
 Ex().test_mc(2, [corrupt, success_msg, empty, invalid])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -1960,10 +2165,15 @@ Now that you know what `NULL` is and what it's used for, it's time for some prac
 
 
 `@pre_exercise_code`
+
 ```{python}
+
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
+
 ```
+
+
 `@sample_code`
 
 ```{sql}
@@ -2030,13 +2240,20 @@ WHERE ___ IS NULL;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT name
 FROM people
 WHERE deathdate IS NULL;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 name = test_column('name', 'Did you select the `name` column?')
@@ -2053,7 +2270,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2100,13 +2320,20 @@ WHERE ___ ___ ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title
 FROM films
 WHERE budget IS NULL;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Are you selecting the `title` column?')
@@ -2123,7 +2350,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2170,13 +2400,20 @@ WHERE language ___ ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT COUNT(title)
 FROM films
 WHERE language IS NULL;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -2198,7 +2435,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2250,10 +2490,15 @@ Got it? Let's practice!
 
 
 `@pre_exercise_code`
+
 ```{python}
+
 connect('postgresql', 'films')
 set_options(visible_tables = ['people'])
+
 ```
+
+
 `@sample_code`
 
 ```{sql}
@@ -2320,13 +2565,20 @@ WHERE ___ LIKE '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT name
 FROM people
 WHERE name LIKE 'B%';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 name = test_column('name', msg='Are you selecting the `name` column?')
@@ -2349,7 +2601,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2396,13 +2651,20 @@ WHERE ___ ___ '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT name
 FROM people
 WHERE name LIKE '_r%';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 name = test_column('name', msg='Are you selecting the `name` column?')
@@ -2425,7 +2687,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2472,13 +2737,20 @@ WHERE ___ NOT LIKE '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT name
 FROM people
 WHERE name NOT LIKE 'A%';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 name = test_column('name', msg='Are you selecting the `name` column?')
@@ -2505,7 +2777,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2546,10 +2821,15 @@ Take a go at using `BETWEEN` with `AND` on the films data to get the title and r
 
 
 `@pre_exercise_code`
+
 ```{python}
+
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
+
 ```
+
+
 `@sample_code`
 
 ```{sql}
@@ -2616,13 +2896,20 @@ WHERE ___ BETWEEN ___ AND ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE release_year BETWEEN 1990 AND 2000;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -2648,7 +2935,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2696,14 +2986,21 @@ AND ___ > ___;
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE release_year BETWEEN 1990 AND 2000
 AND budget > 100000000;
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -2736,7 +3033,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2785,15 +3085,22 @@ AND ___ = '___';
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE release_year BETWEEN 1990 AND 2000
 AND budget > 100000000
 AND language = 'Spanish';
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -2829,7 +3136,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 
@@ -2878,15 +3188,22 @@ AND (___ = '___' OR ___ = '___');
 
 
 `@solution`
+
 ```{sql}
+
 SELECT title, release_year
 FROM films
 WHERE release_year BETWEEN 1990 AND 2000
 AND budget > 100000000
 AND (language = 'Spanish' OR language = 'French');
+
 ```
+
+
 `@sct`
+
 ```{python}
+
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column?')
@@ -2924,7 +3241,10 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
+
 ```
+
+
 `@possible_answers`
 
 

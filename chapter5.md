@@ -30,23 +30,43 @@ Preview the dataset.
 Some hint.
 
 `@pre_exercise_code`
+
 ```{r}
+
 library(tidyverse)
 billboard_eighth <- read_csv("https://s3.amazonaws.com/assets.datacamp.com/production/repositories/3140/datasets/billboard_eighth.csv")
+
 ```
+
+
 `@sample_code`
+
 ```{r}
+
 billboard_eighth
+
 ```
+
+
 `@solution`
+
 ```{r}
+
 billboard_eighth
+
 ```
+
+
 `@sct`
+
 ```{r}
+
 # Update this to something more informative.
 success_msg("Nice!")
+
 ```
+
+
 `@possible_answers`
 
 
@@ -76,23 +96,43 @@ Preview the dataset.
 Some hint.
 
 `@pre_exercise_code`
+
 ```{r}
+
 library(tidyverse)
 billboard_quarter <- read_csv("https://s3.amazonaws.com/assets.datacamp.com/production/repositories/3140/datasets/billboard_quarter.csv")
+
 ```
+
+
 `@sample_code`
+
 ```{r}
+
 billboard_quarter
+
 ```
+
+
 `@solution`
+
 ```{r}
+
 billboard_quarter
+
 ```
+
+
 `@sct`
+
 ```{r}
+
 # Update this to something more informative.
 success_msg("Nice!")
+
 ```
+
+
 `@possible_answers`
 
 
@@ -122,23 +162,43 @@ Preview the dataset.
 Some hint.
 
 `@pre_exercise_code`
+
 ```{r}
+
 library(tidyverse)
 billboard_half <- read_csv("https://s3.amazonaws.com/assets.datacamp.com/production/repositories/3140/datasets/billboard_half.csv")
+
 ```
+
+
 `@sample_code`
+
 ```{r}
+
 billboard_half
+
 ```
+
+
 `@solution`
+
 ```{r}
+
 billboard_half
+
 ```
+
+
 `@sct`
+
 ```{r}
+
 # Update this to something more informative.
 success_msg("Nice!")
+
 ```
+
+
 `@possible_answers`
 
 
@@ -168,23 +228,43 @@ Adding them back.
 Some hint.
 
 `@pre_exercise_code`
+
 ```{r}
+
 library(tidyverse)
 billboard_full <- read_csv("https://s3.amazonaws.com/assets.datacamp.com/production/repositories/3140/datasets/billboard_full.csv")
+
 ```
+
+
 `@sample_code`
+
 ```{r}
+
 billboard_full
+
 ```
+
+
 `@solution`
+
 ```{r}
+
 billboard_full
+
 ```
+
+
 `@sct`
+
 ```{r}
+
 # Update this to something more informative.
 success_msg("Nice!")
+
 ```
+
+
 `@possible_answers`
 
 
