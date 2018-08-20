@@ -1,7 +1,6 @@
 ---
 title: TEST
 description: 'Testing the standardization'
-
 ---
 
 ## 4.4 MB datasets
@@ -48,6 +47,12 @@ billboard_eighth
 # Update this to something more informative.
 success_msg("Nice!")
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## 10.1 MB dataset
@@ -88,6 +93,12 @@ billboard_quarter
 # Update this to something more informative.
 success_msg("Nice!")
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## 20.2 MB dataset
@@ -128,6 +139,12 @@ billboard_half
 # Update this to something more informative.
 success_msg("Nice!")
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## 41.6 MB dataset
@@ -168,6 +185,12 @@ billboard_full
 # Update this to something more informative.
 success_msg("Nice!")
 ```
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Insert exercise title here
@@ -190,30 +213,36 @@ key: f627c8eb1a
 
 `@pre_exercise_code`
 
-```{r}
+```{python}
 
 ```
 
 
 `@sample_code`
 
-```{r}
+```{sql}
 
 ```
 
 
 `@solution`
 
-```{r}
+```{sql}
 
 ```
 
 
 `@sct`
 
-```{r}
+```{python}
 
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
 
 
 ---
@@ -238,30 +267,36 @@ key: ea0e7cd088
 
 `@pre_exercise_code`
 
-```{r}
+```{python}
 
 ```
 
 
 `@sample_code`
 
-```{r}
+```{sql}
 
 ```
 
 
 `@solution`
 
-```{r}
+```{sql}
 
 ```
 
 
 `@sct`
 
-```{r}
+```{python}
 
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
 
 
 ---
@@ -278,13 +313,44 @@ key: 9e75c2ca75
 
 
 
+`@instructions`
+
+
 `@hint`
+
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
 
 
 `@possible_answers`
 
 
-`@feedbacks`
+`@feedback`
 
 
 ---
@@ -306,3 +372,37 @@ test
 
 `@hint`
 test
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
