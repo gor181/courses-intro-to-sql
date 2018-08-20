@@ -158,11 +158,11 @@ key: bd4288cb1f
 ```
 
 
-
+ze question
 
 
 `@instructions`
-
+ze answer
 
 `@hint`
 
@@ -170,7 +170,7 @@ key: bd4288cb1f
 `@pre_exercise_code`
 
 ```{python}
-
+some code LOL
 ```
 
 
