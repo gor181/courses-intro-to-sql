@@ -45,9 +45,7 @@ Look at the `people` tab under the editor! asdf adf
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
-
 ```
 
 
@@ -68,12 +66,10 @@ connect('postgresql', 'films')
 `@sct`
 
 ```{python}
-
 msg1 = 'Nope, look at the `people` table!'
 correct = 'Correct!'
 
 Ex().test_mc(3,[msg1, msg1, correct, msg1])
-
 ```
 
 
@@ -117,18 +113,14 @@ Run the code in the editor and look at the query result tab under the editor!
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
-
 ```
 
 
 `@sample_code`
 
 ```{sql}
-
 SELECT name FROM people;
-
 ```
 
 
@@ -142,12 +134,10 @@ SELECT name FROM people;
 `@sct`
 
 ```{python}
-
 msg1 = 'Nope, look at the query result tab!'
 correct = 'Correct!'
 
 Ex().test_mc(2, [msg1, correct, msg1, msg1])
-
 ```
 
 
@@ -194,42 +184,34 @@ In the editor, change line 2 to `SELECT 'DataCamp <3 SQL'`.
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
-
 ```
 
 
 `@sample_code`
 
 ```{sql}
-
 -- Try running me!
 'DataCamp <3 SQL'
 AS result;
-
 ```
 
 
 `@solution`
 
 ```{sql}
-
 -- Try running me!
 SELECT 'DataCamp <3 SQL'
 AS result;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 Ex().test_student_typed('SELECT|select', msg='You need to add `SELECT` at the start of line 2!')
 Ex().test_has_columns()
 Ex().test_error()
-
 ```
 
 
@@ -304,14 +286,12 @@ Remember that in database lingo, a column is called a *field*. How many fields d
 `@sct`
 
 ```{python}
-
 msg1 = "Incorrect, a table contains information about one type of entity, but generally has multiple fields."
 msg2 = "Sorry, try again!"
 msg3 = "Incorrect, the table contains three records, but how many fields does it have?"
 success_msg = "Correct! The table contains four columns, or fields."
 
 Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
-
 ```
 
 
@@ -346,19 +326,15 @@ Another new feature we're introducing is the *bullet exercise*, which allows you
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
-
 ```
 
 
 `@sample_code`
 
 ```{sql}
-
 SELECT 'SQL'
 AS result;
-
 ```
 
 
@@ -419,24 +395,20 @@ Submit the query!
 `@solution`
 
 ```{sql}
-
 SELECT 'SQL'
 AS result;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 Ex().test_error()
 
 Ex().test_student_typed('SQL', msg="Don't modify the query!", fixed=True)
 
 Ex().test_has_columns()
 Ex().check_result()
-
 ```
 
 
@@ -484,24 +456,20 @@ Change the code and submit the query!
 `@solution`
 
 ```{sql}
-
 SELECT 'SQL is'
 AS result;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 Ex().test_error()
 
 Ex().test_student_typed('SQL is', msg="Did you change the query correctly?", fixed=True)
 
 Ex().test_has_columns()
 Ex().check_result()
-
 ```
 
 
@@ -549,24 +517,20 @@ Change the code and submit the query!
 `@solution`
 
 ```{sql}
-
 SELECT 'SQL is cool!'
 AS result;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 Ex().test_error()
 
 Ex().test_student_typed('SQL is cool!', msg="Did you change the query correctly?", fixed=True)
 
 Ex().test_has_columns()
 Ex().check_result()
-
 ```
 
 
@@ -621,10 +585,8 @@ Remember, you can see the results of executing your query in the __query result_
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
-
 ```
 
 
@@ -695,17 +657,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT release_year
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 release_year = test_column('release_year', msg='Did you select the `release_year` column correctly?')
@@ -719,7 +678,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -770,17 +728,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT title
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column correctly?')
@@ -794,7 +749,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -845,17 +799,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT name
 FROM people;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 name = test_column('name', msg='Did you select the `name` column correctly?')
@@ -869,7 +820,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -930,10 +880,8 @@ Before getting started with the instructions below, check out the column names i
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
-
 ```
 
 
@@ -1004,17 +952,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT title
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -1030,7 +975,6 @@ Ex().test_correct(check_result2(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1081,17 +1025,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT title, release_year
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -1110,7 +1051,6 @@ Ex().test_correct(check_result2(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1161,17 +1101,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT title, release_year, country
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 from sqlwhat_ext import check_result2
 
 sel = check_node('SelectStmt')
@@ -1193,7 +1130,6 @@ Ex().test_correct(check_result2(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1244,17 +1180,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT *
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 star = sel.check_node('Star').has_equal_ast('Did you use `SELECT *` to get all columns?')
@@ -1268,7 +1201,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1312,10 +1244,8 @@ Remember, you can check out the data in the tables by clicking on the tabs to th
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'roles'])
-
 ```
 
 
@@ -1386,17 +1316,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT DISTINCT country
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -1412,7 +1339,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1463,17 +1389,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT DISTINCT certification
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -1490,7 +1413,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1541,17 +1463,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT DISTINCT role
 FROM roles;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 distinct = sel.check_field('pref').has_equal_ast("Don't forget to use the `DISTINCT` keyword!")
@@ -1568,7 +1487,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1617,18 +1535,14 @@ Run a query to count the number of records in the `reviews` table!
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
-
 ```
 
 
 `@sample_code`
 
 ```{sql}
-
 -- You can test out queries here!
-
 ```
 
 
@@ -1642,12 +1556,10 @@ connect('postgresql', 'films')
 `@sct`
 
 ```{python}
-
 success_msg = 'Correct!'
 msg2 = "Use the syntax provided in the example. Be sure to swap out `people` for `reviews`!"
 
 Ex().test_mc(3,[msg2, msg2, success_msg, msg2, msg2])
-
 ```
 
 
@@ -1699,10 +1611,8 @@ Let's get some practice with `COUNT`!
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
-
 ```
 
 
@@ -1773,17 +1683,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT COUNT(*)
 FROM people;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1803,7 +1710,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1854,17 +1760,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT COUNT(birthdate)
 FROM people;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1883,7 +1786,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1934,17 +1836,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1966,7 +1865,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -2017,17 +1915,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT COUNT(DISTINCT language)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -2049,7 +1944,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -2100,17 +1994,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT COUNT(DISTINCT country)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -2132,7 +2023,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 

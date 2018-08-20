@@ -50,10 +50,8 @@ You can probably guess what the `MIN` function does! Now it's your turn to try o
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
-
 ```
 
 
@@ -124,17 +122,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT SUM(duration)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -151,7 +146,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -202,17 +196,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT AVG(duration)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -229,7 +220,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -280,17 +270,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT MIN(duration)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -307,7 +294,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -358,17 +344,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT MAX(duration)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -385,7 +368,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -420,10 +402,8 @@ Good work. Aggregate functions are important to understand, so let's get some mo
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
-
 ```
 
 
@@ -494,17 +474,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT SUM(gross)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -521,7 +498,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -572,17 +548,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT AVG(gross)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -599,7 +572,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -650,17 +622,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT MIN(gross)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -677,7 +646,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -728,17 +696,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT MAX(gross)
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -755,7 +720,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -800,10 +764,8 @@ Now it's your turn!
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
-
 ```
 
 
@@ -875,18 +837,15 @@ WHERE ___ >= ___;
 `@solution`
 
 ```{sql}
-
 SELECT SUM(gross)
 FROM films
 WHERE release_year >= 2000;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -908,7 +867,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -960,18 +918,15 @@ WHERE ___ LIKE 'A%';
 `@solution`
 
 ```{sql}
-
 SELECT AVG(gross)
 FROM films
 where title LIKE 'A%';
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -998,7 +953,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1050,18 +1004,15 @@ WHERE ___ = ___;
 `@solution`
 
 ```{sql}
-
 SELECT MIN(gross)
 FROM films
 WHERE release_year = 1994;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1083,7 +1034,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1135,18 +1085,15 @@ WHERE ___ BETWEEN ___ AND ___;
 `@solution`
 
 ```{sql}
-
 SELECT MAX(gross)
 FROM films
 WHERE release_year BETWEEN 2000 AND 2012;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 temp = sel.check_node('Call')
@@ -1172,7 +1119,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1238,18 +1184,14 @@ Run a query in the editor to the right.
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
-
 ```
 
 
 `@sample_code`
 
 ```{sql}
-
 -- You can test out queries here!
-
 ```
 
 
@@ -1263,12 +1205,10 @@ connect('postgresql', 'films')
 `@sct`
 
 ```{python}
-
 success_msg = 'Correct!'
 msg2 = "Incorrect, try out the query in the editor!"
 
 Ex().test_mc(3,[msg2, msg2, success_msg, msg2])
-
 ```
 
 
@@ -1328,10 +1268,8 @@ Aliases are helpful for making results more readable!
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
-
 ```
 
 
@@ -1402,17 +1340,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT title, gross - budget AS net_profit
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 title = test_column('title').has_equal_ast('Did you select the `title` column correctly?')
@@ -1441,7 +1376,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1492,17 +1426,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT title, duration / 60.0 AS duration_hours
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 title = test_column('title', msg='Did you select the `title` column correctly?')
@@ -1530,7 +1461,6 @@ Ex().test_correct(alias, [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1581,17 +1511,14 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT AVG(duration) / 60.0 AS avg_duration_hours  
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 # TODO: come back to this with better solution once sqlwhat is patched
 sel = check_node('SelectStmt')
 
@@ -1615,7 +1542,6 @@ Ex().test_correct(alias, [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1669,20 +1595,16 @@ The above now gives the correct answer of `450.0` as now the numerator of the di
 `@pre_exercise_code`
 
 ```{python}
-
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
-
 ```
 
 
 `@sample_code`
 
 ```{sql}
-
 -- get the count(deathdate) and multiply by 100.0
 -- then divide by count(*)
-
 ```
 
 
@@ -1746,19 +1668,16 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 -- get the count(deathdate) and multiply by 100.0
 -- then divide by count(*) 
 SELECT COUNT(deathdate) * 100.0 / COUNT(*) AS percentage_dead
 FROM people;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 alias = test_column('percentage_dead', match='exact', msg='Did you alias your result as `percentage_dead`?')
@@ -1793,7 +1712,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1845,18 +1763,15 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT MAX(release_year) - MIN(release_year)
 AS difference
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
@@ -1888,7 +1803,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
@@ -1940,18 +1854,15 @@ FROM ___;
 `@solution`
 
 ```{sql}
-
 SELECT (MAX(release_year) - MIN(release_year)) / 10.0
 AS number_of_decades
 FROM films;
-
 ```
 
 
 `@sct`
 
 ```{python}
-
 sel = check_node('SelectStmt')
 
 from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
@@ -1993,7 +1904,6 @@ Ex().test_correct(check_result(), [
     test_ncols(),
     test_error()
 ])
-
 ```
 
 
