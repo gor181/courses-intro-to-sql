@@ -98,7 +98,7 @@ Run the query in the editor and check out the resulting table in the query resul
 
 <hr>
 
-Who is the second person listed in the query result? asdf adfa a adsfa sdf
+Who is the second person listed in the query result?
 
 
 `@instructions`
