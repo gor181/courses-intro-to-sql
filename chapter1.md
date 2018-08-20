@@ -170,7 +170,7 @@ ze answer
 `@pre_exercise_code`
 
 ```{python}
-some code LOL
+
 ```
 
 
