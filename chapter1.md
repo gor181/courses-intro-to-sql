@@ -43,16 +43,42 @@ From looking at the tabs, who is the first person listed in the `people` table?
 Look at the `people` tab under the editor! asdf adf
 
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
+
 ```{python}
 msg1 = 'Nope, look at the `people` table!'
 correct = 'Correct!'
 
 Ex().test_mc(3,[msg1, msg1, correct, msg1])
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Onboarding | Query Result
@@ -85,20 +111,42 @@ Who is the second person listed in the query result?
 Run the code in the editor and look at the query result tab under the editor!
 
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 ```
+
+
 `@sample_code`
+
 ```{sql}
 SELECT name FROM people;
 ```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
+
 ```{python}
 msg1 = 'Nope, look at the query result tab!'
 correct = 'Correct!'
 
 Ex().test_mc(2, [msg1, correct, msg1, msg1])
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Insert exercise title here
@@ -115,6 +163,43 @@ ze question
 
 `@instructions`
 ze answer
+
+`@hint`
+
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
 
 ---
 
@@ -151,27 +236,45 @@ Submit the code to the right, check out the errors, then fix them!
 In the editor, change line 2 to `SELECT 'DataCamp <3 SQL'`.
 
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 ```
+
+
 `@sample_code`
+
 ```{sql}
 -- Try running me!
 'DataCamp <3 SQL'
 AS result;
 ```
+
+
 `@solution`
+
 ```{sql}
 -- Try running me!
 SELECT 'DataCamp <3 SQL'
 AS result;
 ```
+
+
 `@sct`
+
 ```{python}
 Ex().test_student_typed('SELECT|select', msg='You need to add `SELECT` at the start of line 2!')
 Ex().test_has_columns()
 Ex().test_error()
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Beginning your SQL journey
@@ -213,7 +316,29 @@ How many fields does the employees table above contain?
 `@hint`
 Remember that in database lingo, a column is called a *field*. How many fields does the table contain?
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
+
 ```{python}
 msg1 = "Incorrect, a table contains information about one type of entity, but generally has multiple fields."
 msg2 = "Sorry, try again!"
@@ -222,6 +347,14 @@ success_msg = "Correct! The table contains four columns, or fields."
 
 Ex().test_mc(4, [msg1, msg2, msg3, success_msg])
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Onboarding | Bullet Exercises
@@ -238,15 +371,47 @@ key: 81eb00a53d
 Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 ```
+
+
 `@sample_code`
+
 ```{sql}
 SELECT 'SQL'
 AS result;
 ```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -282,11 +447,15 @@ Submit the query!
 
 
 `@solution`
+
 ```{sql}
 SELECT 'SQL'
 AS result;
 ```
+
+
 `@sct`
+
 ```{python}
 Ex().test_error()
 
@@ -295,6 +464,8 @@ Ex().test_student_typed('SQL', msg="Don't modify the query!", fixed=True)
 Ex().test_has_columns()
 Ex().check_result()
 ```
+
+
 `@possible_answers`
 
 
@@ -337,11 +508,15 @@ Change the code and submit the query!
 
 
 `@solution`
+
 ```{sql}
 SELECT 'SQL is'
 AS result;
 ```
+
+
 `@sct`
+
 ```{python}
 Ex().test_error()
 
@@ -350,6 +525,8 @@ Ex().test_student_typed('SQL is', msg="Did you change the query correctly?", fix
 Ex().test_has_columns()
 Ex().check_result()
 ```
+
+
 `@possible_answers`
 
 
@@ -392,11 +569,15 @@ Change the code and submit the query!
 
 
 `@solution`
+
 ```{sql}
 SELECT 'SQL is cool!'
 AS result;
 ```
+
+
 `@sct`
+
 ```{python}
 Ex().test_error()
 
@@ -405,6 +586,8 @@ Ex().test_student_typed('SQL is cool!', msg="Did you change the query correctly?
 Ex().test_has_columns()
 Ex().check_result()
 ```
+
+
 `@possible_answers`
 
 
@@ -447,11 +630,47 @@ It's also good practice (but not necessary for the exercises in this course) to 
 Remember, you can see the results of executing your query in the __query result__ tab to the right!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -490,11 +709,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT release_year
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -510,6 +733,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -555,11 +780,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -575,6 +804,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -620,11 +851,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT name
 FROM people;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -640,6 +875,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -688,11 +925,47 @@ LIMIT 10;
 Before getting started with the instructions below, check out the column names in the `films` table by clicking on the `films` tab to the right!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -731,11 +1004,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 from sqlwhat_ext import check_result2
 
@@ -753,6 +1030,8 @@ Ex().test_correct(check_result2(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -798,11 +1077,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 from sqlwhat_ext import check_result2
 
@@ -823,6 +1106,8 @@ Ex().test_correct(check_result2(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -868,11 +1153,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year, country
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 from sqlwhat_ext import check_result2
 
@@ -896,6 +1185,8 @@ Ex().test_correct(check_result2(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -941,11 +1232,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT *
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -961,6 +1256,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -992,11 +1289,47 @@ FROM films;
 Remember, you can check out the data in the tables by clicking on the tabs to the right under the editor!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'roles'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1035,11 +1368,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT DISTINCT country
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1057,6 +1394,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1102,11 +1441,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT DISTINCT certification
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1125,6 +1468,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1170,11 +1515,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT DISTINCT role
 FROM roles;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1193,6 +1542,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1236,20 +1587,42 @@ How many records are contained in the `reviews` table?
 Run a query to count the number of records in the `reviews` table!
 
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 ```
+
+
 `@sample_code`
+
 ```{sql}
 -- You can test out queries here!
 ```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
+
 ```{python}
 success_msg = 'Correct!'
 msg2 = "Use the syntax provided in the example. Be sure to swap out `people` for `reviews`!"
 
 Ex().test_mc(3,[msg2, msg2, success_msg, msg2, msg2])
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Practice with COUNT
@@ -1283,11 +1656,47 @@ FROM people;
 Let's get some practice with `COUNT`!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1326,11 +1735,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT COUNT(*)
 FROM people;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1352,6 +1765,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1397,11 +1812,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT COUNT(birthdate)
 FROM people;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1422,6 +1841,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1467,11 +1888,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1495,6 +1920,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1540,11 +1967,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT COUNT(DISTINCT language)
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1568,6 +1999,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1613,11 +2046,15 @@ FROM ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT COUNT(DISTINCT country)
 FROM films;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1641,6 +2078,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1664,6 +2103,43 @@ key: f627c8eb1a
 
 `@instructions`
 soemthing
+
+`@hint`
+
+
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
 
 ---
 

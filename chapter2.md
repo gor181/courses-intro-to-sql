@@ -55,13 +55,43 @@ WHERE release_year > 2000;
 `@hint`
 If you're stuck, refer to the list of comparison operators above!
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
+
 ```{python}
 success_msg = "Correct!"
 msg2 = "Incorrect. `>` means *strictly* greater than and *not* equal to."
 
 Ex().test_mc(2, [msg2, success_msg, msg2, msg2])
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## Simple filtering of numeric values
@@ -89,11 +119,47 @@ Now it's your turn to use the `WHERE` clause to filter numeric values!
 asdf
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -133,12 +199,16 @@ WHERE ___ = ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT *
 FROM films
 WHERE release_year = 2016;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -159,6 +229,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -205,12 +277,16 @@ WHERE ___ < ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT COUNT(*)
 FROM films
 WHERE release_year < 2000;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -236,6 +312,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -282,12 +360,16 @@ WHERE ___ > ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
 WHERE release_year > 2000;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -311,6 +393,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -347,11 +431,47 @@ Now it's your turn to practice using `WHERE` with text values!
 **Important: in PostgreSQL (the version of SQL we're using), you must use single quotes with `WHERE`.**
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -391,12 +511,16 @@ WHERE ___ = '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT *
 FROM films
 WHERE language = 'French';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -417,6 +541,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -463,12 +589,16 @@ WHERE ___ = '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT name, birthdate
 FROM people
 WHERE birthdate = '1974-11-11';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -492,6 +622,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -538,12 +670,16 @@ WHERE ___ = '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT COUNT(*)
 FROM films
 WHERE language = 'Hindi';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -569,6 +705,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -615,12 +753,16 @@ WHERE ___ = '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT *
 FROM films
 WHERE certification = 'R';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -642,6 +784,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -685,11 +829,47 @@ WHERE release_year > 1994 AND < 2000;
 You can add as many `AND` conditions as you need!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -730,13 +910,17 @@ AND ___ = '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
 WHERE release_year < 2000
 AND language = 'Spanish';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -763,6 +947,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -810,13 +996,17 @@ AND ___ = '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT *
 FROM films
 WHERE release_year > 2000
 AND language = 'Spanish';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -840,6 +1030,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -888,6 +1080,7 @@ AND ___ = '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT *
 FROM films
@@ -895,7 +1088,10 @@ WHERE release_year > 2000
 AND release_year < 2010
 AND language = 'Spanish';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -922,6 +1118,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -983,7 +1181,29 @@ What does the `OR` operator do?
 `@hint`
 Think about records that meet condition1 **and** condition2.
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
+
 ```{python}
 success_msg = 'Correct!'
 msg1 = 'Incorrect. `OR` does not display rows that meet **all** of the specified conditions.'
@@ -991,6 +1211,14 @@ msg2 = 'Incorrect. `OR` does not display rows that meet **none** of the specifie
 
 Ex().test_mc(1, [success_msg, msg1, msg2])
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## WHERE AND OR (2)
@@ -1021,11 +1249,47 @@ Now you'll write a query to get the title and release year of films released in 
 It looks like a lot, but you can build the query up one step at a time to get comfortable with the underlying concept in each step. Let's go!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1065,12 +1329,16 @@ WHERE ___ >= 1990 AND ___ < 2000;
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
 WHERE release_year >= 1990 AND release_year < 2000;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1097,6 +1365,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1144,13 +1414,17 @@ AND (___ = 'French' OR ___ = 'Spanish');
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
 WHERE (release_year >= 1990 AND release_year < 2000)
 AND (language = 'French' OR language = 'Spanish');
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1184,6 +1458,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1232,6 +1508,7 @@ AND ___ > ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
@@ -1239,7 +1516,10 @@ WHERE (release_year >= 1990 AND release_year < 2000)
 AND (language = 'French' OR language = 'Spanish')
 AND gross > 2000000;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1275,6 +1555,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1327,7 +1609,29 @@ What does the `BETWEEN` keyword do?
 `@hint`
 Think about looking for values **between** a beginning and end point.
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
+
 ```{python}
 success_msg = 'Correct!'
 numeric = 'Incorrect. `BETWEEN` does not just filter numeric values.'
@@ -1336,6 +1640,14 @@ lst = 'Incorrect!'
 
 Ex().test_mc(4, [numeric, text, lst, success_msg])
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## WHERE IN
@@ -1373,11 +1685,47 @@ WHERE age IN (2, 4, 6, 8, 10);
 Try using the `IN` operator yourself!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1418,13 +1766,17 @@ AND ___ > ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
 WHERE release_year IN (1990, 2000)
 AND duration > 120;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1455,6 +1807,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1501,12 +1855,16 @@ WHERE ___ IN ('___', '___', '___');
 
 
 `@solution`
+
 ```{sql}
 SELECT title, language
 FROM films
 WHERE language IN ('English', 'Spanish', 'French');
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1529,6 +1887,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1575,12 +1935,16 @@ WHERE ___ IN ('NC-17', '___');
 
 
 `@solution`
+
 ```{sql}
 SELECT title, certification
 FROM films
 WHERE certification IN ('NC-17', 'R');
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1604,6 +1968,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1656,7 +2022,29 @@ What does `NULL` represent?
 `@hint`
 Remember, `NULL` represents values which are missing or unknown.
 
+`@pre_exercise_code`
+
+```{python}
+
+```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
 `@sct`
+
 ```{python}
 corrupt = 'Incorrect. We can not be sure that a `NULL` value is actually corrupt.'
 success_msg = 'Correct! `NULL` is used to represent unknown values.'
@@ -1665,6 +2053,14 @@ invalid = 'Incorrect!'
 
 Ex().test_mc(2, [corrupt, success_msg, empty, invalid])
 ```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ---
 
 ## NULL and IS NULL
@@ -1680,11 +2076,47 @@ key: 84411d78ab
 Now that you know what `NULL` is and what it's used for, it's time for some practice!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films', 'people'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1724,12 +2156,16 @@ WHERE ___ IS NULL;
 
 
 `@solution`
+
 ```{sql}
 SELECT name
 FROM people
 WHERE deathdate IS NULL;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1748,6 +2184,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1794,12 +2232,16 @@ WHERE ___ ___ ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title
 FROM films
 WHERE budget IS NULL;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1818,6 +2260,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1864,12 +2308,16 @@ WHERE language ___ ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT COUNT(title)
 FROM films
 WHERE language IS NULL;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -1893,6 +2341,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -1937,11 +2387,47 @@ You can also use the `NOT LIKE` operator to find records that *don't* match the 
 Got it? Let's practice!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['people'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -1981,12 +2467,16 @@ WHERE ___ LIKE '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT name
 FROM people
 WHERE name LIKE 'B%';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -2011,6 +2501,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -2057,12 +2549,16 @@ WHERE ___ ___ '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT name
 FROM people
 WHERE name LIKE '_r%';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -2087,6 +2583,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -2133,12 +2631,16 @@ WHERE ___ NOT LIKE '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT name
 FROM people
 WHERE name NOT LIKE 'A%';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -2167,6 +2669,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -2200,11 +2704,47 @@ AND nationality = 'USA';
 Take a go at using `BETWEEN` with `AND` on the films data to get the title and release year of all Spanish language films released between 1990 and 2000 (inclusive) with budgets over $100 million. We have broken the problem into smaller steps so that you can build the query as you go along!
 
 
+`@instructions`
+
+
+`@hint`
+
+
 `@pre_exercise_code`
+
 ```{python}
 connect('postgresql', 'films')
 set_options(visible_tables = ['films'])
 ```
+
+
+`@sample_code`
+
+```{sql}
+
+```
+
+
+`@solution`
+
+```{sql}
+
+```
+
+
+`@sct`
+
+```{python}
+
+```
+
+
+`@possible_answers`
+
+
+`@feedback`
+
+
 ***
 
 
@@ -2244,12 +2784,16 @@ WHERE ___ BETWEEN ___ AND ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
 WHERE release_year BETWEEN 1990 AND 2000;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -2277,6 +2821,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -2324,13 +2870,17 @@ AND ___ > ___;
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
 WHERE release_year BETWEEN 1990 AND 2000
 AND budget > 100000000;
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -2365,6 +2915,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -2413,6 +2965,7 @@ AND ___ = '___';
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
@@ -2420,7 +2973,10 @@ WHERE release_year BETWEEN 1990 AND 2000
 AND budget > 100000000
 AND language = 'Spanish';
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -2458,6 +3014,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
@@ -2506,6 +3064,7 @@ AND (___ = '___' OR ___ = '___');
 
 
 `@solution`
+
 ```{sql}
 SELECT title, release_year
 FROM films
@@ -2513,7 +3072,10 @@ WHERE release_year BETWEEN 1990 AND 2000
 AND budget > 100000000
 AND (language = 'Spanish' OR language = 'French');
 ```
+
+
 `@sct`
+
 ```{python}
 sel = check_node('SelectStmt')
 
@@ -2553,6 +3115,8 @@ Ex().test_correct(check_result(), [
     test_error()
 ])
 ```
+
+
 `@possible_answers`
 
 
