@@ -2,9 +2,7 @@
 title: Welcome to the course!
 key: f05d06ad7807cf476fdb5f674174c9d5
 video_link:
-
   hls: https://videos.datacamp.com/transcoded/1946_intro-to-sql/v1/hls-ch1_1.master.m3u8
-
   mp4: https://videos.datacamp.com/transcoded_mp4/1946_intro-to-sql/v1/ch1_1.mp4
 transformations:
   translateX: 55
@@ -13,12 +11,11 @@ transformations:
 
 ---
 ## Welcome to the course!
-  
+
 ```yaml
 type: "TitleSlide"
 key: "7ad662bca6"
 ```
-
 
 `@lower_third`
 
@@ -38,12 +35,11 @@ Now let's get started! asdf asdfas fasdfas adsfa dfaf
 
 ---
 ## added a slide
-  
+
 ```yaml
 type: "FullSlide"
 key: "218ea0f9f5"
 ```
-
 
 `@part1`
 one 
@@ -57,12 +53,11 @@ this is a test
 
 ---
 ## one more slide
-  
+
 ```yaml
 type: "FullImageSlide"
 key: "9350264393"
 ```
-
 
 `@part1`
 part 1
@@ -74,12 +69,11 @@ part 1
 
 ---
 ## Final Slide
-  
+
 ```yaml
 type: "FinalSlide"
 key: "4ccb7cd500"
 ```
-
 
 `@script`
 
