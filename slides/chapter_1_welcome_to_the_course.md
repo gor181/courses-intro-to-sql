@@ -12,11 +12,6 @@ transformations:
 ---
 ## Welcome to the course!
 
-
-
-
-
-
 ```yaml
 type: "TitleSlide"
 key: "7ad662bca6"
@@ -25,7 +20,7 @@ key: "7ad662bca6"
 `@lower_third`
 
 name: Nick Carchedi
-title: Instructor
+title: Instructor asdf
 
 
 `@script`
