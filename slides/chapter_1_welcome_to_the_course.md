@@ -12,6 +12,11 @@ transformations:
 ---
 ## Welcome to the course!
 
+
+
+
+
+
 ```yaml
 type: "TitleSlide"
 key: "7ad662bca6"
