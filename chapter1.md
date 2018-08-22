@@ -27,6 +27,7 @@ skills: 1
 key: e456699517   
 ```
 
+asdf
 
 If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-introduction-to-r) or [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), you'll be familiar with the interface. For SQL, however, there are a few new features you should be aware of. asdfasdf
 
