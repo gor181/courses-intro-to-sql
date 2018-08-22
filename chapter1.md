@@ -17,7 +17,7 @@ key: dcdbb24914
 f05d06ad7807cf476fdb5f674174c9d5
 ---
 
-## Onboarding | Tables asdf
+## Onboarding | Tables
 
 ```yaml
 type: MultipleChoiceExercise 
