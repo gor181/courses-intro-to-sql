@@ -42,9 +42,6 @@ From looking at the tabs, who is the first person listed in the `people` table?
 `@hint`
 Look at the `people` tab under the editor! asdf adf
 
-`@invalid_key`
-Evena a value...
-
 `@pre_exercise_code`
 
 ```{python}
@@ -57,6 +54,7 @@ connect('postgresql', 'films')
 ```{sql}
 
 ```
+
 
 `@solution`
 
