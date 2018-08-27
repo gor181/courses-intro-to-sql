@@ -206,7 +206,7 @@ ze answer
 ## Onboarding | Errors
 
 ```yaml
-type: ConsoleExercise 
+type: NormalExercise 
 lang: sql
 xp: 100 
 skills: 1
