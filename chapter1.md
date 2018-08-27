@@ -20,7 +20,7 @@ f05d06ad7807cf476fdb5f674174c9d5
 ## Onboarding | Tables
 
 ```yaml
-type: MultipleChoiceExercise 
+type: ConsoleExercise 
 lang: sql
 xp: 50 
 skills: 1
