@@ -15,8 +15,6 @@ key: b883e7079f
 
 Often, you will want to perform some calculation on the data in a database. SQL provides a few functions, called *aggregate functions*, to help you out with this.
 
-some example edit.
-
 For example,
 
 ```
@@ -130,22 +128,14 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-sum_call = temp.check_field('name').has_equal_ast('Are you calling the `SUM` function?')
-sum_args = temp.check_field('args').has_equal_ast('Are you using using `SUM` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    sum_call,
-    sum_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `SUM(duration)`?"
+Ex().check_correct(
+    check_column('sum').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -204,22 +194,14 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-avg_call = temp.check_field('name').has_equal_ast('Are you calling the `AVG` function?')
-avg_args = temp.check_field('args').has_equal_ast('Are you using using `AVG` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    avg_call,
-    avg_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `AVG(duration)`?"
+Ex().check_correct(
+    check_column('avg').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -278,22 +260,14 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-min_call = temp.check_field('name').has_equal_ast('Are you calling the `MIN` function?')
-min_args = temp.check_field('args').has_equal_ast('Are you using using `MIN` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    min_call,
-    min_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `MIN(duration)`?"
+Ex().check_correct(
+    check_column('min').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -352,22 +326,16 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
+custom_msg="Have you used `MAX(duration)`?"
+Ex().check_correct(
+    check_column('max').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 
-temp = sel.check_node('Call')
-max_call = temp.check_field('name').has_equal_ast('Are you calling the `MAX` function?')
-max_args = temp.check_field('args').has_equal_ast('Are you using using `MAX` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    max_call,
-    max_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().success_msg("Sequelistic!")
 ```
 
 
@@ -482,22 +450,14 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-sum_call = temp.check_field('name').has_equal_ast('Are you calling the `SUM` function?')
-sum_args = temp.check_field('args').has_equal_ast('Are you using using `SUM` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    sum_call,
-    sum_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `SUM(gross)`?"
+Ex().check_correct(
+    check_column('sum').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -556,22 +516,14 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-avg_call = temp.check_field('name').has_equal_ast('Are you calling the `AVG` function?')
-avg_args = temp.check_field('args').has_equal_ast('Are you using using `AVG` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    avg_call,
-    avg_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `AVG(gross)`?"
+Ex().check_correct(
+    check_column('avg').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -630,22 +582,14 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-min_call = temp.check_field('name').has_equal_ast('Are you calling the `MIN` function?')
-min_args = temp.check_field('args').has_equal_ast('Are you using using `MIN` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    min_call,
-    min_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `MIN(gross)`?"
+Ex().check_correct(
+    check_column('min').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -704,22 +648,16 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
+custom_msg="Have you used `MAX(gross)`?"
+Ex().check_correct(
+    check_column('max').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 
-temp = sel.check_node('Call')
-max_call = temp.check_field('name').has_equal_ast('Are you calling the `MAX` function?')
-max_args = temp.check_field('args').has_equal_ast('Are you using using `MAX` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    max_call,
-    max_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().success_msg("Well done! Don't forget about these functions. You'll find yourself using them over and over again to get a quick grasp of the data in a SQL database.")
 ```
 
 
@@ -846,27 +784,15 @@ WHERE release_year >= 2000;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-sum_call = temp.check_field('name').has_equal_ast('Are you calling the `SUM` function?')
-sum_args = temp.check_field('args').has_equal_ast('Are you using using `SUM` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-where_clause = sel.check_field('where_clause')
-
-where_release_year = where_clause.has_equal_ast(sql='release_year >= 2000', start='expression', exact=False, msg='Did you check the `release_year` correctly?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    where_release_year,
-    sum_call,
-    sum_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `SUM(gross)`?"
+Ex().check_correct(
+    check_column('sum').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast(),
+        check_edge('where_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -927,32 +853,15 @@ where title LIKE 'A%';
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-avg_call = temp.check_field('name').has_equal_ast('Are you calling the `AVG` function?')
-avg_args = temp.check_field('args').has_equal_ast('Are you using using `AVG` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-where_clause = sel.check_field('where_clause')
-
-left_like = where_clause.check_field('left').has_equal_ast('Are you using `title` with `LIKE`?')
-op_like = where_clause.check_field('op').has_equal_ast('Are you using the `LIKE` operator in your `WHERE` clause?')
-
-right_like = where_clause.check_field('right').has_equal_ast("Are you using `LIKE` with `'A%'`?")
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    left_like,
-    op_like,
-    right_like,
-    avg_call,
-    avg_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `AVG(gross)`?"
+Ex().check_correct(
+    check_column('avg').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast(),
+        check_edge('where_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -1013,27 +922,15 @@ WHERE release_year = 1994;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-temp = sel.check_node('Call')
-min_call = temp.check_field('name').has_equal_ast('Are you calling the `MIN` function?')
-min_args = temp.check_field('args').has_equal_ast('Are you using using `MIN` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-where_clause = sel.check_field('where_clause')
-
-where_release_year = where_clause.has_equal_ast(sql='release_year = 1994', start='expression', exact=False, msg='Did you check the `release_year` correctly?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    where_release_year,
-    min_call,
-    min_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+custom_msg="Have you used `MIN(gross)`?"
+Ex().check_correct(
+    check_column('min').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast(),
+        check_edge('where_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -1094,31 +991,17 @@ WHERE release_year BETWEEN 2000 AND 2012;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
+custom_msg="Have you used `MAX(gross)`?"
+Ex().check_correct(
+    check_column('max').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('Call', missing_msg=custom_msg).has_equal_ast(incorrect_msg=custom_msg),
+        check_edge('from_clause').has_equal_ast(),
+        check_edge('where_clause').has_equal_ast()
+    )
+)
 
-temp = sel.check_node('Call')
-max_call = temp.check_field('name').has_equal_ast('Are you calling the `MAX` function?')
-max_args = temp.check_field('args').has_equal_ast('Are you using using `MAX` on the right column?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-where_clause = sel.check_field('where_clause')
-
-between_left = where_clause.check_field('left').has_equal_ast('Are you using `release_year` with `BETWEEN`?')
-between_op1 = where_clause.check_field('right', 0).has_equal_ast('Check the first part of your `BETWEEN`!')
-between_op2 = where_clause.check_field('right', 1).has_equal_ast('Check the second part of your `BETWEEN`!')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    between_left,
-    between_op1,
-    between_op2,
-    max_call,
-    max_args,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().success_msg("Nice. Can you see how SQL basically provides you a bunch of building blocks that you can combine in all kinds of ways? Hence the name: Structured Query Language.")
 ```
 
 
@@ -1145,7 +1028,7 @@ key: 7b8b54b64d
 In addition to using aggregate functions, you can perform basic arithmetic with symbols like `+`, `-`, `*`, and `/`.
 
 So, for example, this gives a result of `12`:
- adsfasdf
+
 ```
 SELECT (4 * 3);
 ```
@@ -1205,10 +1088,9 @@ connect('postgresql', 'films')
 `@sct`
 
 ```{python}
-success_msg = 'Correct!'
-msg2 = "Incorrect, try out the query in the editor!"
-
-Ex().test_mc(3,[msg2, msg2, success_msg, msg2])
+correct = 'Correct!'
+icm = "Incorrect, read the exercise once more and try out the query in the editor!"
+Ex().has_chosen(3, [icm, icm, correct, icm])
 ```
 
 
@@ -1348,34 +1230,16 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-title = test_column('title').has_equal_ast('Did you select the `title` column correctly?')
-
-alias = test_column('net_profit', match='exact', msg='Did you alias your result as `net_profit`?')
-
-alias_eqn = sel.check_node('AliasExpr').check_node('BinaryExpr')
-
-left_eqn = alias_eqn.check_field('left').has_equal_ast('Are you using the `gross` column?')
-
-right_eqn = alias_eqn.check_field('right').has_equal_ast('Are you using the `budget` column?')
-
-op_eqn = alias_eqn.check_field('op').has_equal_ast('Are you subtracting `budget` from `gross`?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    alias_eqn,
-    left_eqn,
-    op_eqn,
-    right_eqn,
-    alias,
-    title,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().check_correct(
+    multi(
+        check_column('title').has_equal_value(),
+        check_column('net_profit').has_equal_value()
+    ),
+    check_node('SelectStmt').multi(
+        check_node('AliasExpr').has_equal_ast(),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -1434,33 +1298,16 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-title = test_column('title', msg='Did you select the `title` column correctly?')
-
-alias = test_column('duration_hours', match='exact', msg='Did you alias your result as `duration_hours`?', digits=4)
-
-alias_eqn = sel.check_node('AliasExpr').check_node('BinaryExpr')
-
-left_eqn = alias_eqn.check_field('left').has_equal_ast('Are you using the `duration` column?')
-
-right_eqn = alias_eqn.check_field('right').has_equal_ast('Are you dividing the `duration` column by `60.0`?')
-
-op_eqn = alias_eqn.check_field('op').has_equal_ast('Are you dividing by `60.0`?')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(alias, [
-    from_clause,
-    left_eqn,
-    op_eqn,
-    right_eqn,
-    alias,
-    title,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().check_correct(
+    multi(
+        check_column('title').has_equal_value(),
+        check_column('duration_hours').has_equal_value()
+    ),
+    check_node('SelectStmt').multi(
+        check_node('AliasExpr').has_equal_ast(),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -1519,29 +1366,15 @@ FROM films;
 `@sct`
 
 ```{python}
-# TODO: come back to this with better solution once sqlwhat is patched
-sel = check_node('SelectStmt')
+Ex().check_correct(
+    check_column('avg_duration_hours').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('AliasExpr').has_equal_ast(),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 
-alias = test_column('avg_duration_hours', match='exact', msg='Did you alias your result as `avg_duration_hours`?', digits=4)
-
-avg1 = test_student_typed('AVG\(duration\)\s+\/\s+60.0', msg='Are you calling `AVG` correctly?')
-avg2 = test_student_typed('AVG\(duration\s+\/\s+60.0\)', msg='Are you calling `AVG` correctly?')
-avg3 = test_student_typed('AVG\(duration\/60.0\)', msg='Are you calling `AVG` correctly?')
-avg4 = test_student_typed('AVG\(duration\/60.0\)', msg='Are you calling `AVG` correctly?')
-
-
-avg_call = test_or(avg1, avg2, avg3, avg4)
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(alias, [
-    from_clause,
-    avg_call,
-    alias,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().success_msg("Boooom!")
 ```
 
 
@@ -1583,7 +1416,7 @@ So when you're dividing make sure at least one of your numbers has a decimal pla
 SELECT 45 * 100.0 / 10;
 ```
 
-The above now gives the correct answer of `450.0` as now the numerator of the division (`45 * 100.0`) is a decimal!
+The above now gives the correct answer of `450.0` since the numerator (`45 * 100.0`) of the division is now a decimal!
 
 
 `@instructions`
@@ -1678,40 +1511,16 @@ FROM people;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-alias = test_column('percentage_dead', match='exact', msg='Did you alias your result as `percentage_dead`?')
-
-alias_eqn = sel.check_node('AliasExpr').check_node('BinaryExpr')
-
-left_eqn = alias_eqn.check_node('BinaryExpr')
-
-right_eqn = alias_eqn.check_node('Call').has_equal_ast('Are you dividing by `COUNT(*)`?')
-
-temp = left_eqn.check_field('left')
-
-count_call = temp.check_field('name').has_equal_ast('Are you using the `COUNT` function for the top of your fraction?')
-
-count_args = temp.check_field('args').has_equal_ast('Are you using `COUNT` on the right column?')
-
-op_eqn = left_eqn.check_field('op').has_equal_ast('Are you multiplying `COUNT(deathdate)` by `100.00`?')
-
-right_left_eqn = left_eqn.check_field('right').has_equal_ast('Make sure to multiply the top by `100.0`!')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    count_call,
-    count_args,
-    op_eqn,
-    right_left_eqn,
-    right_eqn,
-    alias,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().check_correct(
+    check_column('percentage_dead').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_correct(
+            check_node('AliasExpr').has_equal_ast(),
+            has_code('100\.0', incorrect_msg="Make sure to use `100.0` to calculate the percentage!")
+        ),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -1772,37 +1581,13 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
-
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-alias = test_column('difference', match='exact', msg='Did you alias your result as `difference`?')
-
-alias_eqn = sel.check_node('AliasExpr').check_node('BinaryExpr')
-
-left_eqn = alias_eqn.check_field('left')
-right_eqn = alias_eqn.check_field('right')
-
-max_call = left_eqn.check_field('name').has_equal_ast('Did you use `MAX` function to get the oldest film?')
-max_args = left_eqn.check_field('args').has_equal_ast('Are you using `MAX` on the right column?')
-
-min_call = right_eqn.check_field('name').has_equal_ast('Did you use the `MIN` function to get the newest film?')
-min_args = right_eqn.check_field('args').has_equal_ast('Are you using `MIN` on the right column?')
-
-op_eqn = alias_eqn.check_field('op').has_equal_ast('Are you subtracting the most recent year from the least recent year?')
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    max_call,
-    max_args,
-    op_eqn,
-    min_call,
-    min_args,
-    alias,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().check_correct(
+    check_column('difference').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('AliasExpr').has_equal_ast(),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 ```
 
 
@@ -1863,47 +1648,15 @@ FROM films;
 `@sct`
 
 ```{python}
-sel = check_node('SelectStmt')
+Ex().check_correct(
+    check_column('number_of_decades').has_equal_value(),
+    check_node('SelectStmt').multi(
+        check_node('AliasExpr').has_equal_ast(),
+        check_edge('from_clause').has_equal_ast()
+    )
+)
 
-from_clause = sel.check_field('from_clause').has_equal_ast('Is your `FROM` clause correct?')
-
-alias = test_column('number_of_decades', match='exact', msg='Did you alias your result as `number_of_decades`?')
-
-alias_eqn = sel.check_node('AliasExpr').check_node('BinaryExpr')
-
-left_eqn = alias_eqn.check_field('left')
-
-max_node = left_eqn.check_field('left')
-
-max_call = max_node.check_field('name').has_equal_ast('Did you use the `MAX` function to get the most recent year?')
-max_args = max_node.check_field('args').has_equal_ast('Did you use `MAX` on the right column?')
-
-min_node = left_eqn.check_field('right')
-
-min_call = min_node.check_field('name').has_equal_ast('Did you use the `MIN` function to get the least recent year?')
-min_args = min_node.check_field('args').has_equal_ast('Did you use `MIN` on the right column?')
-
-op_eqn = left_eqn.check_field('op').has_equal_ast('Are you subtracting the newest year from the oldest year?')
-
-other_op = alias_eqn.check_field('op').has_equal_ast("Don't forget to divide by `10.0`!")
-
-ten = alias_eqn.check_field('right').has_equal_ast('Did you divide by `10.0`?')
-
-
-Ex().test_correct(check_result(), [
-    from_clause,
-    max_call,
-    max_args,
-    op_eqn,
-    min_call,
-    min_args,
-    other_op,
-    ten,
-    alias,
-    test_has_columns(),
-    test_ncols(),
-    test_error()
-])
+Ex().success_msg("We're at the end of chapter 3! In chapter 4, you will learn about sorting, grouping and joins. Head over there quickly!")
 ```
 
 
@@ -1911,6 +1664,4 @@ Ex().test_correct(check_result(), [
 
 
 `@feedback`
-
-
 
