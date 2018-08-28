@@ -280,7 +280,7 @@ Ex().test_error()
 ## Beginning your SQL journey
 
 ```yaml
-type: PlainMultipleChoiceExercise 
+type: PureMultipleChoiceExercise 
 lang: sql
 xp: 50 
 key: a1f556e63f   
