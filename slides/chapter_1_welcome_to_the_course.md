@@ -5,9 +5,9 @@ video_link:
   hls: https://videos.datacamp.com/transcoded/1946_intro-to-sql/v1/hls-ch1_1.master.m3u8
   mp4: https://videos.datacamp.com/transcoded_mp4/1946_intro-to-sql/v1/ch1_1.mp4
 transformations:
-  translateX: 55
-  translateY: 0
-  scale: 1.2
+  translateX: 60
+  translateY: -1
+  scale: 1.1
 
 ---
 ## Welcome to the course!
