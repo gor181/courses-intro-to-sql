@@ -7,7 +7,7 @@ video_link:
 transformations:
   translateX: 55
   translateY: 0
-  scale: 1
+  scale: 1.2
 
 ---
 ## Welcome to the course!
