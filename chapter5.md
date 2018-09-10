@@ -6,13 +6,12 @@ description: 'Testing the standardization'
 ## 4.4 MB datasets
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: f4e4dacd43
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: f4e4dacd43   
 ```
-
 
 This exercise uses a 4.4 MB dataset.
 
@@ -22,7 +21,6 @@ This exercise uses a 4.4 MB dataset.
 
 here's something newwwwwww
 
-
 `@instructions`
 Preview the dataset.
 
@@ -30,34 +28,26 @@ Preview the dataset.
 Some hint.
 
 `@pre_exercise_code`
-
 ```{r}
 library(tidyverse)
 billboard_eighth <- read_csv("https://s3.amazonaws.com/assets.datacamp.com/production/repositories/3140/datasets/billboard_eighth.csv")
 ```
 
-
 `@sample_code`
-
 ```{r}
 billboard_eighth
 ```
-
 
 `@solution`
-
 ```{r}
 billboard_eighth
 ```
 
-
 `@sct`
-
 ```{r}
 # Update this to something more informative.
 success_msg("Nice!")
 ```
-
 
 `@possible_answers`
 
@@ -70,16 +60,14 @@ success_msg("Nice!")
 ## 10.1 MB dataset
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: 48f0714614
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: 48f0714614   
 ```
 
-
 This exercise uses a 10.1 MB dataset.
-
 
 `@instructions`
 Preview the dataset.
@@ -88,34 +76,26 @@ Preview the dataset.
 Some hint.
 
 `@pre_exercise_code`
-
 ```{r}
 library(tidyverse)
 billboard_quarter <- read_csv("https://s3.amazonaws.com/assets.datacamp.com/production/repositories/3140/datasets/billboard_quarter.csv")
 ```
 
-
 `@sample_code`
-
 ```{r}
 billboard_quarter
 ```
-
 
 `@solution`
-
 ```{r}
 billboard_quarter
 ```
 
-
 `@sct`
-
 ```{r}
 # Update this to something more informative.
 success_msg("Nice!")
 ```
-
 
 `@possible_answers`
 
@@ -128,16 +108,14 @@ success_msg("Nice!")
 ## 20.2 MB dataset
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: 90709f1dc0
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: 90709f1dc0   
 ```
 
-
 This exercise uses a 20.2 MB dataset.
-
 
 `@instructions`
 Preview the dataset.
@@ -146,34 +124,26 @@ Preview the dataset.
 Some hint.
 
 `@pre_exercise_code`
-
 ```{r}
 library(tidyverse)
 billboard_half <- read_csv("https://s3.amazonaws.com/assets.datacamp.com/production/repositories/3140/datasets/billboard_half.csv")
 ```
 
-
 `@sample_code`
-
 ```{r}
 billboard_half
 ```
-
 
 `@solution`
-
 ```{r}
 billboard_half
 ```
 
-
 `@sct`
-
 ```{r}
 # Update this to something more informative.
 success_msg("Nice!")
 ```
-
 
 `@possible_answers`
 
@@ -186,14 +156,12 @@ success_msg("Nice!")
 ## 41.6 MB dataset
 
 ```yaml
-type: NormalExercise 
+type: NormalExercise
+key: b0451dd812
 lang: r
-xp: 100 
+xp: 100
 skills: 1
-key: b0451dd812   
 ```
-
-
 
 
 
@@ -204,35 +172,27 @@ Adding them back.
 Some hint.
 
 `@pre_exercise_code`
-
 ```{r}
 library(tidyverse)
 billboard_full <- read_csv("https://s3.amazonaws.com/assets.datacamp.com/production/repositories/3140/datasets/billboard_full.csv")
 ```
 
-
 `@sample_code`
-
 ```{r}
 billboard_full
 ```
-
 
 `@solution`
-
 ```{r}
 billboard_full
 ```
 
-
 `@sct`
-
 ```{r}
 # Update this to something more informative.
 success_msg("Nice!")
 ```
 
-
 `@possible_answers`
 
 
@@ -244,12 +204,10 @@ success_msg("Nice!")
 ## Insert exercise title here
 
 ```yaml
-type: NormalExercise 
-xp: 100 
-key: f627c8eb1a   
+type: NormalExercise
+key: f627c8eb1a
+xp: 100
 ```
-
-
 
 
 
@@ -260,32 +218,24 @@ key: f627c8eb1a
 
 
 `@pre_exercise_code`
-
 ```{python}
 
 ```
-
 
 `@sample_code`
-
 ```{sql}
 
 ```
-
 
 `@solution`
-
 ```{sql}
 
 ```
 
-
 `@sct`
-
 ```{python}
 
 ```
-
 
 `@possible_answers`
 
@@ -298,12 +248,10 @@ key: f627c8eb1a
 ## Insert exercise title here
 
 ```yaml
-type: NormalExercise 
-xp: 100 
-key: ea0e7cd088   
+type: NormalExercise
+key: ea0e7cd088
+xp: 100
 ```
-
-
 
 
 
@@ -314,32 +262,24 @@ key: ea0e7cd088
 
 
 `@pre_exercise_code`
-
 ```{python}
 
 ```
-
 
 `@sample_code`
-
 ```{sql}
 
 ```
-
 
 `@solution`
-
 ```{sql}
 
 ```
 
-
 `@sct`
-
 ```{python}
 
 ```
-
 
 `@possible_answers`
 
@@ -352,12 +292,10 @@ key: ea0e7cd088
 ## Insert exercise title here
 
 ```yaml
-type: PureMultipleChoiceExercise 
-xp: 50 
-key: 9e75c2ca75   
+type: PureMultipleChoiceExercise
+key: 9e75c2ca75
+xp: 50
 ```
-
-
 
 
 
@@ -368,32 +306,24 @@ key: 9e75c2ca75
 
 
 `@pre_exercise_code`
-
 ```{python}
 
 ```
-
 
 `@sample_code`
-
 ```{sql}
 
 ```
-
 
 `@solution`
-
 ```{sql}
 
 ```
 
-
 `@sct`
-
 ```{python}
 
 ```
-
 
 `@possible_answers`
 
@@ -406,12 +336,10 @@ key: 9e75c2ca75
 ## Insert exercise title here
 
 ```yaml
-type: NormalExercise 
-xp: 100 
-key: 0f287d6950   
+type: NormalExercise
+key: 0f287d6950
+xp: 100
 ```
-
-
 
 
 
@@ -422,36 +350,26 @@ test
 test
 
 `@pre_exercise_code`
-
 ```{python}
 
 ```
-
 
 `@sample_code`
-
 ```{sql}
 
 ```
-
 
 `@solution`
-
 ```{sql}
 
 ```
 
-
 `@sct`
-
 ```{python}
 
 ```
-
 
 `@possible_answers`
 
 
 `@feedback`
-
-
