@@ -3,11 +3,6 @@ title: 'Filtering rows'
 description: 'This chapter builds on the first by teaching you how to filter tables for rows satisfying some criteria of interest. You''ll learn how to use basic comparison operators, combine multiple criteria, match patterns in text, and much more.'
 ---
 
-
-
-
-
-
 ## Filtering results
 
 ```yaml
@@ -17,7 +12,7 @@ lang: sql
 xp: 50
 ```
 
-Congrats on finishing the first chapter! You now know how to select columns and perform basic counts. This chapter will focus on filtering your results.
+Congrats on finishing the first chapter! You now know how to select columns and perform basic counts. This chapter will focus on filtering your result.
 
 In SQL, the `WHERE` keyword allows you to filter based on both text and numeric values in a table. There are a few different comparison operators you can use:
 
