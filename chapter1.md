@@ -13,25 +13,10 @@ xp: 50
 skills: 1
 ```
 
-
-
-
-
-
-
-
 `@projector_key`
 f05d06ad7807cf476fdb5f674174c9d5
 
 ---
-
-
-
-
-
-
-
-
 
 ## Onboarding | Tables
 
