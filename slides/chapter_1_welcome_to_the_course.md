@@ -10,7 +10,7 @@ transformations:
   scale: 1.1
 
 ---
-## Welcome to the course! test
+## Welcome to the course!
 
 ```yaml
 type: "TitleSlide"
