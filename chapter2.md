@@ -1,135 +1,405 @@
 ---
-title: 'Filtering rows'
-description: 'This chapter builds on the first by teaching you how to filter tables for rows satisfying some criteria of interest. You''ll learn how to use basic comparison operators, combine multiple criteria, match patterns in text, and much more.'
+title: 'Time is Money (Key Financial Concepts)'
+description: 'An overview of time-value of money and related concepts'
 ---
 
-## Filtering results
+## The Time Value of Money
+
+```yaml
+type: VideoExercise
+key: 914a515259
+lang: r
+xp: 50
+skills: 1
+```
+
+`@projector_key`
+45e2e5d84c406807e36be938c5597438
+
+---
+
+## Calculating PV
+
+```yaml
+type: NormalExercise
+key: 1e9448baae
+lang: r
+xp: 100
+skills: 1
+```
+
+Congratulations! You are going to receive $100 at some point in the future. Assume the discount rate is 8%. Let's explore how much the present value of this future cashflow varies by when you receive the cashflow.
+
+`@instructions`
+- Assign `fv` and `r` to be the future value ($100) and the discount rate (8%), respectively
+- Use the present value formula to calculate `pv_1` and `pv_5` (the present value of the cashflow if you will receive it's future value in 1 or 5 years, respectively)
+- Subtract `pv_5` from `pv_1` to see how much value is lost by delaying receipt of the cashflow for 4 years
+
+`@hint`
+- Did you set `fv` to 100 and `r` to 0.08 (**not** 8!)
+- Recall our present value formula is `pv <- fv / (1 + r)^n`
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+# Assign input variables
+fv <- ___
+r <- ___
+
+# Calculate PV if receive FV in 1 year
+pv_1 <- ___
+pv_1
+
+# Calculate PV if receive FV in 5 years
+pv_5 <- ___
+pv_5
+
+# Calculate difference
+pv_1 - pv_5
+```
+
+`@solution`
+```{r}
+# Assign input variables
+fv <- 100
+r <- 0.08
+
+# Calculate PV if receive FV in 1 year
+pv_1 <- fv / (1 + r)
+pv_1
+
+# Calculate PV if receive FV in 5 years
+pv_5 <- fv / (1 + r)^5
+pv_5
+
+# Calculate difference
+pv_1 - pv_5
+```
+
+`@sct`
+```{r}
+success_msg("Nice work! Isn't it amazing how fast that value declined?")
+```
+
+`@possible_answers`
+
+
+`@feedback`
+
+
+---
+
+## Writing a PV function
+
+```yaml
+type: NormalExercise
+key: eff730f1d6
+lang: r
+xp: 100
+skills: 1
+```
+
+Since we need to calculate present value (pv) frequently, it's helpful to write a function.
+
+Below, we define a `calc_pv` function which takes as arguments the future value `fv`, the discount rate `r`, and the number of statements `n` in the future at which the future value will be received. 
+
+Inside the curly brackets, we need to tell our function what to assign the the present value `pv`. Once that is in place, the last line of our function definition returns this computed present value.
+
+After you define your function, we can test it out on both a *single* set of parameters and also a *vector* of parameters. To see this, we will calculate `pv_range`, which will show us the present value of a fixed future receipt discounted over a range of time periods.
+
+`@instructions`
+- We have provided the function header for `calc_pv()`. Fill out the body with the PV formula we learned. As in the video:
+- Try out your function for a future value of 100, a discount rate of 8%, and 1 time period in the future
+- Test out your funcion on a vector of different time periods by defining `n_range` as the sequence of numbers from 1 to 10 (using syntax `min:max`) and then calling `calc_pv()` replacing `n` with `n_range`
+
+`@hint`
+Make sure `calc_pv` is returning `pv` and not just assigning it (as in provided sample code)
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+# Define PV function
+calc_pv <- function(fv, r, n){
+    pv <-
+    pv
+}
+
+# Use PV function for 1 input
+calc_pv(100, 0.08, _)
+
+# Use PV function for range of inputs
+n_range <-
+pv_range <- calc_pv(100, 0.08, ___)
+pv_range
+```
+
+`@solution`
+```{r}
+# Define PV function
+calc_pv <- function(fv, r, n){
+  pv <- fv / (1+r)^n
+  pv
+}
+
+# Use PV function for 1 input
+calc_pv(100, 0.08, 5)
+
+# Use PV function for range of inputs
+n_range <- 1:10
+pv_range <- calc_pv(100, 0.08, n_range)
+pv_range
+```
+
+`@sct`
+```{r}
+success_msg("Good job! We will be calculating PV a lot, so having a function will make our lives so much easier!")
+```
+
+`@possible_answers`
+
+
+`@feedback`
+
+
+---
+
+## Visualizing PV by Time Delay
+
+```yaml
+type: NormalExercise
+key: 63448466a5
+lang: r
+xp: 100
+skills: 1
+```
+
+Value decreases quickly as cashflows are delayed further into the future! Let's visualize this relationship using `ggplot2`. 
+
+To use `ggplot2`, it will be easier for us to do all our calculations within a dataframe. To do this, we will build us the `present_values` dataframe which will contain columns for `n`, the number of time periods into the future when we will receive $100, and `pv`, the present value of that $100 at an 8% interest rate.
+
+`dplyr`, `ggplot2`, and your `calc_pv()` function have already been loaded to the environment.
+
+`@instructions`
+- `dplyr::mutate()` will add a new column to our dataset. Complete the definition of a new `pv` column where `fv` is the future value of $100, `r` is the discount rate of 8%, and `n` is the column created by `data.frame( n = 1:10 )`
+- Complete the code for the `aes()` parameter of `ggplot()`. To plot present value versus time, specify `x` to be the number of periods and `y` to be the present value
+
+`@hint`
+- You can reference column `n` just like `n_range` in the last exercise
+- Be sure to check your parantheses are balanced!
+
+`@pre_exercise_code`
+```{r}
+library(dplyr)
+library(ggplot2)
+
+calc_pv <- function(fv, r, n){
+  
+  pv <- fv / (1+r)^n
+  pv
+  
+}
+```
+
+`@sample_code`
+```{r}
+# Calculate present values in dataframe
+present_values <- data.frame( n = 1:10 ) %>% mutate(pv = ___ )
+
+# Plot relationship between time periods versus present value
+ggplot(present_values, 
+       aes(x = ___, y = ___ )) + # ADD CODE HERE
+  geom_line() +
+  geom_label(aes(label = paste0("$",round(pv,0)))) +
+  ylim(0,100) +
+  labs(
+    title = "Discounted Value of $100 by Year Received",
+    x = "Number of Years in the Future",
+    y = "Present Value ($)"
+  )
+```
+
+`@solution`
+```{r}
+# Calculate present values in dataframe
+present_values <- data.frame( n = 1:10 ) %>% mutate(pv = calc_pv(100, 0.08, n))
+         
+# Plot relationship between time periods versus present value
+ggplot(present_values, 
+       aes(x = n, y = pv)) +
+  geom_line() +
+  geom_label(aes(label = paste0("$",round(pv,0)))) +
+  ylim(0,100) +
+  labs(
+    title = "Discounted Value of $100 by Year Received",
+    x = "Number of Years in the Future",
+    y = "Present Value ($)"
+  )
+```
+
+`@sct`
+```{r}
+success_msg("Very interesting! It's good to remember that the effect of discounting is definitely not linear.")
+```
+
+`@possible_answers`
+
+
+`@feedback`
+
+
+---
+
+## Effect of Time on Discounting
 
 ```yaml
 type: PureMultipleChoiceExercise
-key: bfc80ff2e5
-lang: sql
+key: 51cbb3c5d6
 xp: 50
+skills: 1
 ```
 
-Congrats on finishing the first chapter! You now know how to select columns and perform basic counts. This chapter will focus on filtering your result.
-
-In SQL, the `WHERE` keyword allows you to filter based on both text and numeric values in a table. There are a few different comparison operators you can use:
-
-- `=` equal
-- `<>` not equal
-- `<` less than
-- `>` greater than
-- `<=` less than or equal to
-- `>=` greater than or equal to
-
-For example, you can filter text records such as `title`. The following code returns all films with the title `'Metropolis'`:
-
-```
-SELECT title
-FROM films
-WHERE title = 'Metropolis';
-```
-
-Notice that the `WHERE` clause always comes after the `FROM` statement!
-
-**Note that in this course we will use `<>` and not `!=` for the not equal operator, as per the SQL standard.**
-
-<hr>
-What does the following query return?
-
-```
-SELECT title
-FROM films
-WHERE release_year > 2000;
-```
+Based on our present value formula and the plot you just made, which of the following is true?:
 
 `@instructions`
 
 
 `@hint`
-If you're stuck, refer to the list of comparison operators above!
+- Recall the shape of the plot you just made. It was curved like the first half of the letter "U"
 
 `@pre_exercise_code`
-```{python}
+```{r}
 
 ```
 
 `@sample_code`
-```{sql}
+```{r}
 
 ```
 
 `@solution`
-```{sql}
+```{r}
 
 ```
 
 `@sct`
-```{python}
+```{r}
 
 ```
 
 `@possible_answers`
-- Films released before the year 2000
-- [Films released after the year 2000]
-- Films released after the year 2001
-- Films released in 2000
+- The effect of discounting is constant over time
+- [The slope of discounting is more severe for longer time periods but decreasingly so]
+- The slope of discounting is more severe for longer time periods but increasingly so
+- The slope of discounting is more severe for shorter time periods but decreasingly so
+- The slope of discounting is more severe for shorter time periods but increasingly so
 
 `@feedback`
-- Incorrect. `>` means *strictly* greater than and *not* equal to.
-- Correct!
-- Incorrect. `>` means *strictly* greater than and *not* equal to.
-- Incorrect. `>` means *strictly* greater than and *not* equal to.
+success_msg("Good job! We can definitely see why companies would be interested in getting cash sooner rather than later")
 
 ---
 
-## Simple filtering of numeric values
+## Using Different Discount Rates
 
 ```yaml
-type: BulletExercise
-key: b90db25f34
-lang: sql
+type: VideoExercise
+key: ae5b4f62cc
+lang: r
+xp: 50
+skills: 1
+```
+
+`@projector_key`
+5863fcc2cd5a5ce956980c15e4d42ad2
+
+---
+
+## PV by Discount Rate and Time Delay
+
+```yaml
+type: NormalExercise
+key: d662c3df67
+lang: r
 xp: 100
+skills: 1
 ```
 
-As you learned in the previous exercise, the `WHERE` clause can also be used to filter numeric records, such as years or ages.
+We just saw how cashflows respond to discounting over different time periods. Let's now explore how they respond to different discount rates.
 
-For example, the following query selects all details for films with a budget over ten thousand dollars:
+Again, we will create a `present_values` dataframe containing PVs for different combinations of inputs. First, we will use `expand.grid()` to create combinations of time periods (`n`) ranging from 1:10 and discount rates (`r`) ranging from 5% to 12% by 1% increments. Then, we will make a similar plot as before, but now with a separate trend line for each discount rae.
 
-```
-SELECT *
-FROM films
-WHERE budget > 10000;
-```
-
-Now it's your turn to use the `WHERE` clause to filter numeric values!
+`dplyr`, `ggplot2`, and your `calc_pv` function have already been loaded.
 
 `@instructions`
-
+- Use `expand.grid()` to create all possible combinations of the time periods and rates (already filled in for you)
+- Use `mutate()` and your `calc_pv()` function to calculate the present value of $100 for each combination
+- To your plot's `aes()` argument, specify that the color of each line (`col = `) should be based on discretized discount rate (`factor(r)`)
 
 `@hint`
-
+- `expand.grid()` can take multiple vectors as inputs. It then creates a `data.frame` with one row per combination
+- You can pass `factor(r)` directly into the `aes()` function
 
 `@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['films'])
+```{r}
+library(dplyr)
+library(ggplot2)
+
+calc_pv <- function(fv, r, n){
+  
+  pv <- fv / (1+r)^n
+  pv
+  
+}
 ```
 
 `@sample_code`
-```{sql}
-
+```{r}
+# Calculate present values over range of time periods and discount rates
+present_values <- 
+  ___.___( n = 1:10, r = seq(0.05,0.12,0.01)) %>%
+  mutate(pv = calc_pv(100, r, n))
+     
+# Plot present value versus time delay with a separate colored line for each rate
+ggplot(present_values, aes(x = n, y = pv, col = ___)) +
+  geom_line() +
+  ylim(0,100) +
+  labs(
+    title = "Discounted Value of $100 by Year Received",
+    x = "Number of Years in the Future",
+    y = "Present Value ($)",
+    col = "Discount Rate"
+  )
 ```
 
 `@solution`
-```{sql}
-
+```{r}
+# Calculate present values over range of time periods and discount rates
+present_values <- 
+  expand.grid( n = 1:10, r = seq(0.05,0.12,0.01)) %>%
+  mutate(pv = calc_pv(100, r, n))
+     
+# Plot present value versus time delay with a separate colored line for each rate
+ggplot(present_values, aes(x = n, y = pv, col = factor(r))) +
+  geom_line() +
+  ylim(0,100) +
+  labs(
+    title = "Discounted Value of $100 by Year Received",
+    x = "Number of Years in the Future",
+    y = "Present Value ($)",
+    col = "Discount Rate"
+  )
 ```
 
 `@sct`
-```{python}
-
+```{r}
+success_msg("Wow! As time period increases, large discount rates decrease our value much faster.")
 ```
 
 `@possible_answers`
@@ -137,888 +407,117 @@ set_options(visible_tables = ['films'])
 
 `@feedback`
 
-
-***
-
-```yaml
-type: NormalExercise
-key: 8a4615ada8
-xp: 35
-```
-
-
-
-`@instructions`
-Get all details for all films released in 2016.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ = ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT *
-FROM films
-WHERE release_year = 2016;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Now, check if all columns are correct
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_node('Star', missing_msg="Are you using `SELECT *` to select _all_ columns?")
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 5e6e1c74c6
-xp: 35
-```
-
-
-
-`@instructions`
-Get the number of films released before 2000.
-
-`@hint`
-```
-SELECT ___(*)
-FROM ___
-WHERE ___ < ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT COUNT(*)
-FROM films
-WHERE release_year < 2000;
-```
-
-`@sct`
-```{python}
-cnt_msg = "Are you using `COUNT(*)`?"
-Ex().check_correct(
-    check_column('count').has_equal_value(),
-    check_node('SelectStmt').multi(
-        check_node('Call', missing_msg=cnt_msg).check_edge('name', missing_msg=cnt_msg),
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: d66f3d41b7
-xp: 30
-```
-
-
-
-`@instructions`
-Get the title and release year of films released after 2000.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ > ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year > 2000;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-
-Ex().success_msg("Great job! After filtering of numeric values, it's time to explore filtering of text!")
-```
-
-`@possible_answers`
-
-
-`@feedback`
 
 ---
 
-## Simple filtering of text
-
-```yaml
-type: BulletExercise
-key: b90db25f33
-lang: sql
-xp: 100
-```
-
-Remember, the `WHERE` clause can also be used to filter text results, such as names or countries.
-
-For example, this query gets the titles of all films which were filmed in China:
-
-```
-SELECT title
-FROM films
-WHERE country = 'China';
-```
-
-Now it's your turn to practice using `WHERE` with text values!
-
-**Important: in PostgreSQL (the version of SQL we're using), you must use single quotes with `WHERE`.**
-
-`@instructions`
-
-
-`@hint`
-
-
-`@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['films', 'people'])
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
-***
-
-```yaml
-type: NormalExercise
-key: b645308dcd
-xp: 25
-```
-
-
-
-`@instructions`
-Get all details for all French language films.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ = '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT *
-FROM films
-WHERE language = 'French';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_node('Star', missing_msg="Are you using `SELECT *` to select _all_ columns?")
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 051f6fb8ec
-xp: 25
-```
-
-
-
-`@instructions`
-Get the name and birth date of the person born on November 11th, 1974. Remember to use ISO date format (`'1974-11-11'`)!
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ = '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT name, birthdate
-FROM people
-WHERE birthdate = '1974-11-11';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "birthdate, name")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 7b872a3af0
-xp: 25
-```
-
-
-
-`@instructions`
-Get the number of Hindi language films.
-
-`@hint`
-```
-SELECT ___(___)
-FROM ___
-WHERE ___ = '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT COUNT(*)
-FROM films
-WHERE language = 'Hindi';
-```
-
-`@sct`
-```{python}
-cnt_msg = "Are you using `COUNT(*)`?"
-Ex().check_correct(
-    check_column('count').has_equal_value(),
-    check_node('SelectStmt').multi(
-        check_node('Call', missing_msg=cnt_msg).check_edge('name', missing_msg=cnt_msg),
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 2c87504f11
-xp: 25
-```
-
-
-
-`@instructions`
-Get all details for all films with an R certification.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ = '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT *
-FROM films
-WHERE certification = 'R';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Now, check if all columns are correct
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_node('Star', missing_msg="Are you using `SELECT *` to select _all_ columns?")
-)
-
-Ex().success_msg("Wonderful! Let's look at combining different conditions now!")
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
----
-
-## WHERE AND
-
-```yaml
-type: BulletExercise
-key: 5bda32d7c8
-lang: sql
-xp: 100
-```
-
-Often, you'll want to select data based on multiple conditions. You can build up your `WHERE` queries by combining multiple conditions with the `AND` keyword.
-
-For example,
-
-```
-SELECT title
-FROM films
-WHERE release_year > 1994
-AND release_year < 2000;
-```
-
-gives you the titles of films released between 1994 and 2000.
-
-Note that you need to specify the column name separately for every `AND` condition, so the following would be invalid:
-
-```
-SELECT title
-FROM films
-WHERE release_year > 1994 AND < 2000;
-```
-
-You can add as many `AND` conditions as you need!
-
-`@instructions`
-
-
-`@hint`
-
-
-`@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['films'])
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
-***
-
-```yaml
-type: NormalExercise
-key: 7ccf93b215
-xp: 35
-```
-
-
-
-`@instructions`
-Get the title and release year for all Spanish language films released before 2000.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ < ___
-AND ___ = '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year < 2000
-AND language = 'Spanish';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            has_equal_ast(sql = "release_year < 2000"),
-            has_equal_ast(sql = "language = 'Spanish'")
-        )
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: e703c95e46
-xp: 35
-```
-
-
-
-`@instructions`
-Get all details for Spanish language films released after 2000.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ > ___
-AND ___ = '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT *
-FROM films
-WHERE release_year > 2000
-AND language = 'Spanish';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            has_equal_ast(sql = "release_year > 2000"),
-            has_equal_ast(sql = "language = 'Spanish'")
-        )
-    )
-)
-
-# Now, check if all columns are correct
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_node('Star', missing_msg="Are you using `SELECT *` to select _all_ columns?")
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 7f2ba5c82f
-xp: 30
-```
-
-
-
-`@instructions`
-Get all details for Spanish language films released after 2000, but before 2010.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ > ___
-AND ___ < ___
-AND ___ = '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT *
-FROM films
-WHERE release_year > 2000
-AND release_year < 2010
-AND language = 'Spanish';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            has_equal_ast(sql = "release_year > 2000"),
-            has_equal_ast(sql = "release_year > 2010"),
-            has_equal_ast(sql = "language = 'Spanish'")
-        )
-    )
-)
-
-# Now, check if all columns are correct
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_node('Star', missing_msg="Are you using `SELECT *` to select _all_ columns?")
-)
-
-Ex().success_msg("Great work! Being able to combine conditions with `AND` will prove to be very useful if you only want your query to return a specific subset of records!")
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
----
-
-## WHERE AND OR
+## Effect of Rate on Discounting
 
 ```yaml
 type: PureMultipleChoiceExercise
-key: 227814cb5d
-lang: sql
+key: 4f378744b6
 xp: 50
+skills: 1
 ```
 
-What if you want to select rows based on multiple conditions where some but not _all_ of the conditions need to be met? For this, SQL has the `OR` operator.
-
-For example, the following returns all films released in *either* 1994 or 2000:
-
-```
-SELECT title
-FROM films
-WHERE release_year = 1994
-OR release_year = 2000;
-```
-
-Note that you need to specify the column for every `OR` condition, so the following is invalid:
-
-```
-SELECT title
-FROM films
-WHERE release_year = 1994 OR 2000;
-```
-
-When combining `AND` and `OR`, be sure to enclose the individual clauses in parentheses, like so:
-
-```
-SELECT title
-FROM films
-WHERE (release_year = 1994 OR release_year = 1995)
-AND (certification = 'PG' OR certification = 'R');
-```
-
-Otherwise, due to SQL's precedence rules, you may not get the results you're expecting!
-
-<hr>
-What does the `OR` operator do?
+Based on the present value formula we have learned and the plot you just made, which of the following is true?
 
 `@instructions`
 
 
 `@hint`
-Think about records that meet condition1 **and** condition2.
+- Recall your plot: different lines (discount rates) were closer together at short time periods and "spread out" over larger time periods
 
 `@pre_exercise_code`
-```{python}
+```{r}
 
 ```
 
 `@sample_code`
-```{sql}
+```{r}
 
 ```
 
 `@solution`
-```{sql}
+```{r}
 
 ```
 
 `@sct`
-```{python}
+```{r}
 
 ```
 
 `@possible_answers`
-- [Display only rows that meet at least **one** of the specified conditions.]
-- Display only rows that meet **all** of the specified conditions.
-- Display only rows that meet **none** of the specified conditions.
+- Higher discount rates lead to higher present values with a larger effect over a longer time period
+- [Higher discount rates lead to lower present values with a larger effect over a longer time period]
+- Higher discount rates lead to higher present values with a smaller effect over a longer time period
+- Higher discount rates lead to lower present values  with a smaller effect over a longer time period
 
 `@feedback`
-- Correct!
-- Incorrect. `OR` does not only display rows that meet **all** of the specified conditions.
-- Incorrect. `OR` does not display rows that meet **none** of the specified conditions.
+```{r}
+success_msg("You're getting great intuition on the time value of money!")
+```
 
 ---
 
-## WHERE AND OR (2)
+## Rates of Different Durations
 
 ```yaml
-type: TabExercise
-key: ecc1838fc7
-lang: sql
+type: NormalExercise
+key: e330791f36
+lang: r
 xp: 100
+skills: 1
 ```
 
-You now know how to select rows that meet __some__ but not __all__ conditions by combining `AND` and `OR`.
-
-For example, the following query selects all films that were released in 1994 or 1995 which had a rating of PG or R.
-
-```
-SELECT title
-FROM films
-WHERE (release_year = 1994 OR release_year = 1995)
-AND (certification = 'PG' OR certification = 'R');
-```
-
-<hr>
-
-Now you'll write a query to get the title and release year of films released in the 90s which were in French or Spanish and which took in more than $2M gross.
-
-It looks like a lot, but you can build the query up one step at a time to get comfortable with the underlying concept in each step. Let's go!
+We've seen how sensitive valuations are to different discount rates. It's clearly important that we are always using the *correct* rate in our analysis. One common mistake is to use a discount rate that corresponds to a different unit of time than how our time unit is measured.
 
 `@instructions`
-
+- Assign the monthly discount rate (`r1_mth`) to 0.5%
+- Given `r1_mth`, add the right exponents to the code to compute the corresponding quarterly (`r1_quart`), semiannual (`r1_semi`, and annual (`r1_ann`) rates
+- Assign the annual discount rate (`r2_ann`) to 8.0%
+- Given `r2_ann`, add the right exponents to the code to compute the corresponding monthly (`r2_month`) and quarterly (`r2_quart`)
 
 `@hint`
-
+- Remember to specify `r1_mth` and `r2_ann` as decimals (e.g. 0.08) not percentages (e.g. 8)
+- Exponents need are the values that answer: how many (time periods of my current rate) fit into one (time period of my target rate)?
 
 `@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['films'])
+```{r}
+
 ```
 
 `@sample_code`
-```{sql}
+```{r}
+# Convert monthly to other time periods
+r1_mth <-
+r1_quart <- (1 + r1_mth)^___ - 1
+r1_semi <- (1 + r1_mth)^___ - 1
+r1_ann <- (1 + r1_mth)^___ - 1
 
+# Convert years to other time periods
+r2_ann <-
+r2_mth <- (1 + r2_ann)^(___) - 1
+r2_quart <- (1 + r2_ann)^(___) - 1
 ```
 
 `@solution`
-```{sql}
+```{r}
+# Convert monthly to other time periods
+r1_mth <- 0.005
+r1_quart <- (1 + r1_mth)^3 - 1
+r1_semi <- (1 + r1_mth)^6 - 1
+r1_ann <- (1 + r1_mth)^12 - 1
 
+# Convert years to other time periods
+r2_ann <- 0.08
+r2_mth <- (1 + r2_ann)^(1/12) - 1
+r2_quart <- (1 + r2_ann)^(1/4) - 1
 ```
 
 `@sct`
-```{python}
-
+```{r}
+success_msg("Great work! Always make sure you're using the right rate.")
 ```
 
 `@possible_answers`
@@ -1026,344 +525,157 @@ set_options(visible_tables = ['films'])
 
 `@feedback`
 
-
-***
-
-```yaml
-type: NormalExercise
-key: 510b387baa
-xp: 35
-```
-
-
-
-`@instructions`
-Get the title and release year for films released in the 90s.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ >= 1990 AND ___ < 2000;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year >= 1990 AND release_year < 2000;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            has_equal_ast(sql = "release_year >= 1990"),
-            has_equal_ast(sql = "release_year < 2000"),
-            has_code("AND")
-        )
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 969ed73542
-xp: 35
-```
-
-
-
-`@instructions`
-Now, build on your query to filter the records to only include French or Spanish language films.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE (___ >= 1990 AND ___ < 2000)
-AND (___ = 'French' OR ___ = 'Spanish');
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE (release_year >= 1990 AND release_year < 2000)
-AND (language = 'French' OR language = 'Spanish');
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            has_equal_ast(sql = "release_year >= 1990"),
-            has_equal_ast(sql = "release_year < 2000"),
-            has_code("AND"),
-            has_equal_ast(sql = "language = 'French'"),
-            has_equal_ast(sql = "language = 'Spanish'"),
-            has_code("OR")
-        )
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: d961856c7a
-xp: 30
-```
-
-
-
-`@instructions`
-Finally, restrict the query to only return films that took in more than $2M gross.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE (___ >= 1990 AND ___ < 2000)
-AND (___ = '___' OR ___ = '___')
-AND ___ > ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE (release_year >= 1990 AND release_year < 2000)
-AND (language = 'French' OR language = 'Spanish')
-AND gross > 2000000;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            has_equal_ast(sql = "release_year >= 1990"),
-            has_equal_ast(sql = "release_year < 2000"),
-            has_code("AND"),
-            has_equal_ast(sql = "language = 'French'"),
-            has_equal_ast(sql = "language = 'Spanish'"),
-            has_code("OR"),
-            has_equal_ast(sql = 'gross > 2000000')
-        )
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-
-Ex().success_msg("That was pretty involved!")
-```
-
-`@possible_answers`
-
-
-`@feedback`
 
 ---
 
-## BETWEEN
+## Real versus Nominal Rates
 
 ```yaml
-type: PureMultipleChoiceExercise
-key: a1827199e2
-lang: sql
+type: NormalExercise
+key: 0b7cc4bde4
+lang: r
+xp: 100
+skills: 1
+```
+
+Recall that we want to discount real (no inflation) cashflows with the real discount rate or nominal (with inflation) cashflows with the nominal discount rate. Generally, we get to work with real cashflows, but we might not always be so lucky.
+
+`@instructions`
+- Set the real discount rate (`r1_real`) to 8%, the inflation rate (`inflation1`) to 3%, and calulate the corresponding nominal discount rate (`r1_nom`)
+- Set the nominal discount rate (`r2_nom`) to 20%, the inflation rate (`inflation2`) to 5%, and calculate the corresponding real discount rate (`r2_real`)
+- Be sure to leave the parentheses around the lines defining `r1_nom` and `r2_real` so your results are also output to the console
+
+`@hint`
+- Remember to express any percentages in decimal form
+- Recall that `Nominal Rate = (1 + Real Rate) * (1 + Inflation Rate) - 1`
+
+`@pre_exercise_code`
+```{r}
+
+```
+
+`@sample_code`
+```{r}
+# Convert real to nominal
+r1_real <- 
+inflation1 <- 
+(r1_nom <- ) 
+
+# Convert nominal to real
+r2_nom <-
+inflation2 <-
+(r2_real <- )
+```
+
+`@solution`
+```{r}
+# Convert real to nominal
+r1_real <- 0.08
+inflation1 <- 0.03
+r1_nom <- (1 + r1_real)*(1+inflation1) - 1
+
+# Convert nominal to real
+r2_nom <- 0.2
+inflation2 <- 0.05
+r2_real <- (1+r2_nom)/(1+inflation2) - 1
+```
+
+`@sct`
+```{r}
+success_msg("Cool! Now you know how to convert back and forth between all sorts of rates.")
+```
+
+`@possible_answers`
+
+
+`@feedback`
+
+
+---
+
+## Discounting Multiple Cashflows
+
+```yaml
+type: VideoExercise
+key: de68189af5
+lang: r
 xp: 50
+skills: 1
 ```
 
-As you've learned, you can use the following query to get titles of all films released in and between 1994 and 2000:
-
-```
-SELECT title
-FROM films
-WHERE release_year >= 1994
-AND release_year <= 2000;
-```
-
-Checking for ranges like this is very common, so in SQL the `BETWEEN` keyword provides a useful shorthand for filtering values within a specified range. This query is equivalent to the one above:
-
-```
-SELECT title
-FROM films
-WHERE release_year
-BETWEEN 1994 AND 2000;
-```
-
-It's important to remember that `BETWEEN` is _inclusive_, meaning the beginning and end values are included in the results!
-
-<hr>
-What does the `BETWEEN` keyword do?
-
-`@instructions`
-
-
-`@hint`
-Think about looking for values **between** a beginning and end point.
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-- Filter numeric values
-- Filter text values
-- Filter values in a specified list
-- [Filter values in a specified range]
-
-`@feedback`
-- Incorrect. `BETWEEN` does not just filter numeric values.
-- Incorrect. `BETWEEN` does not just filter text values.
-- Incorrect!
-- Correct!
+`@projector_key`
+60ef4abe4d69a50b8cd5d39a0885491f
 
 ---
 
-## BETWEEN (2)
+## Selling a Car (Calculation)
 
 ```yaml
-type: TabExercise
-key: 9c11f67712
-lang: sql
+type: NormalExercise
+key: f35750e0ee
+lang: r
 xp: 100
+skills: 1
 ```
 
-Similar to the `WHERE` clause, the `BETWEEN` clause can be used with multiple `AND` and `OR` operators, so you can build up your queries and make them even more powerful!
+Imagine you are seeling your car and have received two offers:
 
-For example, suppose we have a table called `kids`. We can get the names of all kids between the ages of 2 and 12 from the United States:
+- Buyer A will pay you $5,000 today
+- Buyer B will pay you $1,000 per year for the next six years, starting *one year from now*
 
-```
-SELECT name
-FROM kids
-WHERE age BETWEEN 2 AND 12
-AND nationality = 'USA';
-```
-
-Take a go at using `BETWEEN` with `AND` on the films data to get the title and release year of all Spanish language films released between 1990 and 2000 (inclusive) with budgets over $100 million. We have broken the problem into smaller steps so that you can build the query as you go along!
+Regardless of which offer you take, you will reinvest your profits for a 6% annual return. Let's evaluate which offer is better.
 
 `@instructions`
-
+- Define `cashflow_b` as a vector with entries for cashflows for years 0 to 6 for option B. `cashflow_a` is provided.
+- Use your preloaded `calc_pv()` function to calculate `disc_cashflow_b` as a vector where each entry is the present value of option B's discounted cashflows. `disc_cashflow_a` is provided.
+- Calculate and report `pv_b`, the sum of your discounted cashflows for option B. `pv_a` is provided.
 
 `@hint`
-
+If you need to remember how your `calc_pv` function works, simply type `calc_pv` with *no arguments or parentheses* in the console
 
 `@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['films'])
+```{r}
+calc_pv <- function(fv, r, n){
+  
+  pv <- fv / (1+r)^n
+  pv
+  
+}
 ```
 
 `@sample_code`
-```{sql}
+```{r}
+# define cashflows
+cashflow_a <- c(5000, rep(0,6))
+cashflow_b <- c(0, rep(___,_))
 
+# calculate pv for each time period
+disc_cashflow_a <- calc_pv(cashflow_a, 0.06, 0:6)
+disc_cashflow_b <- 
+
+# calculate and report total present value for each option
+(pv_a <- sum(disc_cashflow_a))
+(pv_b <- sum(___))
 ```
 
 `@solution`
-```{sql}
+```{r}
+# define cashflows
+cashflow_a <- c(5000, rep(0,6))
+cashflow_b <- c(0, rep(1000,6))
 
+# calculate pv for each time period
+disc_cashflow_a <- calc_pv(cashflow_a, 0.06, 0:6)
+disc_cashflow_b <- calc_pv(cashflow_b, 0.06, 0:6)
+
+# calculate and report total present value for each option
+(pv_a <- sum(disc_cashflow_a))
+(pv_b <- sum(disc_cashflow_b))
 ```
 
 `@sct`
-```{python}
-
+```{r}
+success_msg("Nice work! Isn't it easy to apply what you learned to one statement to many statements?")
 ```
 
 `@possible_answers`
@@ -1371,649 +683,148 @@ set_options(visible_tables = ['films'])
 
 `@feedback`
 
-
-***
-
-```yaml
-type: NormalExercise
-key: 9252da136b
-xp: 25
-```
-
-
-
-`@instructions`
-Get the title and release year of all films released between 1990 and 2000 (inclusive).
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ BETWEEN ___ AND ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year BETWEEN 1990 AND 2000;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            check_edge('left').has_equal_ast(),
-            check_edge('right', 0).has_equal_ast(),
-            check_edge('right', 1).has_equal_ast()
-        )
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: d21a4bec02
-xp: 25
-```
-
-
-
-`@instructions`
-Now, build on your previous query to select only films that have budgets over $100 million.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ BETWEEN ___ AND ___
-AND ___ > ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year BETWEEN 1990 AND 2000
-AND budget > 100000000;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast(sql='budget > 100000000')
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 9087bf33ac
-xp: 25
-```
-
-
-
-`@instructions`
-Now restrict the query to only return Spanish language films.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ BETWEEN ___ AND ___
-AND ___ > ___
-AND ___ = '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year BETWEEN 1990 AND 2000
-AND budget > 100000000
-AND language = 'Spanish';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast(sql="language = 'Spanish'")
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 73d020dfab
-xp: 25
-```
-
-
-
-`@instructions`
-Finally, modify to your previous query to include all Spanish language *or* French language films with the same criteria as before. Don't forget your parentheses!
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ BETWEEN ___ AND ___
-AND ___ > ___
-AND (___ = '___' OR ___ = '___');
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year BETWEEN 1990 AND 2000
-AND budget > 100000000
-AND (language = 'Spanish' OR language = 'French');
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast(sql="language = 'French'")
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-
-Ex().success_msg("Well done! Off to the next filtering operator!")
-```
-
-`@possible_answers`
-
-
-`@feedback`
 
 ---
 
-## WHERE IN
+## Selling a Car (Decision)
 
 ```yaml
-type: BulletExercise
-key: 4fc7e638f8
-lang: sql
-xp: 100
-```
-
-As you've seen, `WHERE` is very useful for filtering results. However, if you want to filter based on many conditions, `WHERE` can get unwieldy. For example:
-
-```
-SELECT name
-FROM kids
-WHERE age = 2
-OR age = 4
-OR age = 6
-OR age = 8
-OR age = 10;
-```
-
-Enter the `IN` operator! The `IN` operator allows you to specify multiple values in a `WHERE` clause, making it easier and quicker to specify multiple `OR` conditions! Neat, right?
-
-So, the above example would become simply:
-
-```
-SELECT name
-FROM kids
-WHERE age IN (2, 4, 6, 8, 10);
-```
-
-Try using the `IN` operator yourself!
-
-`@instructions`
-
-
-`@hint`
-
-
-`@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['films'])
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
-***
-
-```yaml
-type: NormalExercise
-key: dc7674d358
-xp: 35
-```
-
-
-
-`@instructions`
-Get the title and release year of all films released in 1990 or 2000 that were longer than two hours. Remember, duration is in minutes!
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE release_year IN (___, ___)
-AND ___ > ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, release_year
-FROM films
-WHERE release_year IN (1990, 2000)
-AND duration > 120;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            check_edge('left').has_equal_ast(),
-            check_edge('right').has_equal_ast()
-        )
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 3a84c097d2
-xp: 35
-```
-
-
-
-`@instructions`
-Get the title and language of all films which were in English, Spanish, or French.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ IN ('___', '___', '___');
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, language
-FROM films
-WHERE language IN ('English', 'Spanish', 'French');
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "language, title")
-    )
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 3c947b0d2d
-xp: 30
-```
-
-
-
-`@instructions`
-Get the title and certification of all films with an NC-17 or R certification.
-
-`@hint`
-```
-SELECT ___, ___
-FROM ___
-WHERE ___ IN ('NC-17', '___');
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title, certification
-FROM films
-WHERE certification IN ('NC-17', 'R');
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "certification, title")
-    )
-)
-
-Ex().success_msg("Your SQL vocabulary is growing by the minute!")
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
----
-
-## Introduction to NULL and IS NULL
-
-```yaml
-type: PureMultipleChoiceExercise
-key: 5cf67b42b3
-lang: sql
+type: MultipleChoiceExercise
+key: 15fc7e7e3f
+lang: r
 xp: 50
+skills: 1
 ```
 
-In SQL, `NULL` represents a missing or unknown value. You can check for `NULL` values using the expression `IS NULL`. For example, to count the number of missing birth dates in the `people` table:
+Recall that you have the following options to sell your car:
 
-```
-SELECT COUNT(*)
-FROM people
-WHERE birthdate IS NULL;
-```
+- Buyer A will pay you $5,000 today
+- Buyer B will pay you $1,000 per year for the next six years, starting *one year from now*
 
-As you can see, `IS NULL` is useful when combined with `WHERE` to figure out what data you're missing.
+That is, in non-discounted dollar terms, buyer B will pay you $6,000 while buyer A will only pay you $5,000. However, you also know that any cash you receive, you can immediately invest at a 6% interest rate. 
 
-Sometimes, you'll want to filter out missing values so you only get results which are not `NULL`. To do this, you can use the `IS NOT NULL` operator.
+In the last exercise, you calculated the present values of these options (`pv_a` and `pv_b`, respectively) which are saved in your environment. 
 
-For example, this query gives the names of all people whose birth dates are *not* missing in the `people` table.
-
-```
-SELECT name
-FROM people
-WHERE birthdate IS NOT NULL;
-```
-
-<hr>
-What does `NULL` represent?
+To whom should you sell your car and why?
 
 `@instructions`
-
+- Buyer B because I ultimately get $6,000 instead of $5,000 that Buyer A is offering
+- [Buyer A because the present value of Buyer A's offer is higher]
+- Buyer B because the present value of Buyer B's offer is higher
 
 `@hint`
-Remember, `NULL` represents values which are missing or unknown.
+- We should make decisions based on present value and not just stated dollars
 
 `@pre_exercise_code`
-```{python}
-
+```{r}
+pv_a <- 5000
+pv_b <- 4917.324
 ```
 
 `@sample_code`
-```{sql}
+```{r}
 
 ```
 
 `@solution`
-```{sql}
+```{r}
 
 ```
 
 `@sct`
-```{python}
-
+```{r}
+msg1 <- "Careful! We want to make decisions on the present value not the future value."
+msg2 <- "Great job! It's always important to disount your cashflows before making a financial decision."
+msg3 <- "Not quite... double check the values you computed in the console."
+test_mc(2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 `@possible_answers`
-- A corrupt entry
-- [A missing value]
-- An empty string
-- An invalid value
+
 
 `@feedback`
-- Incorrect. We can not be sure that a `NULL` value is actually corrupt.
-- Correct! `NULL` is used to represent unknown values.
-- Incorrect. An empty string is not the same as a `NULL` value.
-- Incorrect!
+
 
 ---
 
-## NULL and IS NULL
+## Licensing a Software (Calculation)
 
 ```yaml
-type: BulletExercise
-key: 84411d78ab
-lang: sql
+type: NormalExercise
+key: e5fcd15fc7
+lang: r
 xp: 100
+skills: 1
 ```
 
-Now that you know what `NULL` is and what it's used for, it's time for some practice!
+Your corporation is considering switching software vendors. For each license:
+
+- the current software license costs $500 per year
+- the new software has a one-time fixed cost of $2,200 per license in the present but only $300 per year in subsequent years
+
+The two software products are substitutes (they do an equally good job at meeting the same need) and whichever one is chosen will be used for the next 10 years. After 10 years, either contact would expire.
+
+Let's assume an 12% discount rate and consider which offer is better. We will do the following calculations on a *per-license* basis. To assist you, the `dplyr` library and your `calc_pv()` function have already been loaded to the environment.
 
 `@instructions`
-
+- Set `cashflow_new` to a vector representing cashflows of switching to the new vendor 
+- Create a new column in the `options` dataframe which takes as its values the values of `cashflow_old` and `cashflow_new`
+- Use `group_by()` function to group `options` by `option`
+- `summarize` the cashflows of each option. Let `sum_cashflow` be the "naive" sum of raw values and `sum_disc_cashflow` be the sum of the present values, obtained with `calc_pv()`
 
 `@hint`
-
+- Remember to include both fixed and variable parts of the cost in `cashflow_new`
+- Note that cashflows here are *negative* because they are *expenses* to the company
+- Because cashflows are negative, we will prefer the option with the *smaller* absolute value
 
 `@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['films', 'people'])
+```{r}
+library(dplyr)
+
+calc_pv <- function(fv, r, n){
+  
+  pv <- fv / (1+r)^n
+  pv
+  
+}
 ```
 
 `@sample_code`
-```{sql}
-
+```{r}
+cashflow_old <- rep(-500, 11)
+cashflow_new <- ___
+options <- 
+    data.frame( time = rep(0:10, 2),
+                option = c(rep("Old",11),rep("New",11)),
+                cashflow = c(___, ___) )
+                
+# caculate total expenditure with and without discounting
+options %>%
+    group_by(___) %>%
+    summarize( sum_cashflow = ___,
+               sum_disc_cashflow = ___ )
 ```
 
 `@solution`
-```{sql}
-
+```{r}
+# define cashflows
+cashflow_old <- rep(-500, 11)
+cashflow_new <- c(-2200, rep(-300,10))
+options <- 
+    data.frame( time = rep(0:10, 2),
+                option = c(rep("Old",11),rep("New",11)),
+                cashflow = c(cashflow_old, cashflow_new) )
+                
+# caculate total expenditure with and without discounting
+options %>%
+    group_by(option) %>%
+    summarize( sum_cashflow = sum(cashflow),
+               sum_disc_cashflow = sum(calc_pv(cashflow, 0.12, time)) )
 ```
 
 `@sct`
-```{python}
-
+```{r}
+success_msg("Super! As we start to compare more options, it can be really handy to keep everything in a dataframe.")
 ```
 
 `@possible_answers`
@@ -2021,427 +832,58 @@ set_options(visible_tables = ['films', 'people'])
 
 `@feedback`
 
-
-***
-
-```yaml
-type: NormalExercise
-key: 3c646ada87
-xp: 35
-```
-
-
-
-`@instructions`
-Get the names of people who are still alive, i.e. whose death date is missing.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ IS NULL;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT name
-FROM people
-WHERE deathdate IS NULL;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 3c646ada89
-xp: 35
-```
-
-
-
-`@instructions`
-Get the title of every film which doesn't have a budget associated with it.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ ___ ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT title
-FROM films
-WHERE budget IS NULL;
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 3c646ada88
-xp: 30
-```
-
-
-
-`@instructions`
-Get the number of films which don't have a language associated with them.
-
-`@hint`
-```
-SELECT ___(___)
-FROM ___
-WHERE language ___ ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT COUNT(*)
-FROM films
-WHERE language IS NULL;
-```
-
-`@sct`
-```{python}
-cnt_msg = "Are you using `COUNT(*)`?"
-Ex().check_correct(
-    check_column('count').has_equal_value(),
-    check_node('SelectStmt').multi(
-        check_node('Call', missing_msg=cnt_msg).check_edge('name', missing_msg=cnt_msg),
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-Ex().success_msg("Alright! Are you ready for a last type of operator?")
-```
-
-`@possible_answers`
-
-
-`@feedback`
 
 ---
 
-## LIKE and NOT LIKE
+## Licensing a Software (Decision)
 
 ```yaml
-type: BulletExercise
-key: 84411d78ac
-lang: sql
-xp: 100
+type: MultipleChoiceExercise
+key: 15fb520615
+lang: r
+xp: 50
+skills: 1
 ```
 
-As you've seen, the `WHERE` clause can be used to filter text data. However, so far you've only been able to filter by specifying the exact text you're interested in. In the real world, often you'll want to search for a *pattern* rather than a specific text string.
+The summary table you created in the last exercise - comparing the old versus new software vendors - is loaded in the enviornment as `options_summary`.
 
-In SQL, the `LIKE` operator can be used in a `WHERE` clause to search for a pattern in a column. To accomplish this, you use something called a _wildcard_ as a placeholder for some other values. There are two wildcards you can use with `LIKE`:
-
-The `%` wildcard will match zero, one, or many characters in text. For example, the following query matches companies like `'Data'`, `'DataC'` `'DataCamp'`, `'DataMind'`, and so on:
-
-```
-SELECT name
-FROM companies
-WHERE name LIKE 'Data%';
-```
-
-The `_` wildcard will match a _single_ character. For example, the following query matches companies like `'DataCamp'`, `'DataComp'`, and so on:
-
-```
-SELECT name
-FROM companies
-WHERE name LIKE 'DataC_mp';
-```
-
-You can also use the `NOT LIKE` operator to find records that *don't* match the pattern you specify.
-
-Got it? Let's practice!
+When you inspect the results, you will see that the new software looks "cheaper" on a naive basis when you directly sum the cashflows (`sum_cashflow`). However, it becomes the more expensive option after we account for discounting (`sum_disc_cashflow`). What causes this disparity?
 
 `@instructions`
-
+- The new software had greatest expenses backloaded (occuring further from present time) versus the current offering
+- The new software had greatest expenses frontloaded (occuring closer to present time) versus the current offering
+- The new software has the same flow of expenses as the current offering
 
 `@hint`
-
+- For revenues, we prefer *larger* (in absolute value) present values
+- For expenses, we prefer *smaller* (in absolute value) present values
 
 `@pre_exercise_code`
-```{python}
-connect('postgresql', 'films')
-set_options(visible_tables = ['people'])
+```{r}
+library(tibble)
+
+options_summary <- 
+tribble(~option, ~sum_cashflow, ~sum_disc_cashflow,
+    "New",        -5200,         -3895.067,
+    "Old",        -5500,         -3325.112 )
 ```
 
 `@sample_code`
-```{sql}
+```{r}
 
 ```
 
 `@solution`
-```{sql}
+```{r}
 
 ```
 
 `@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
-***
-
-```yaml
-type: NormalExercise
-key: 9e3c3ef68f
-xp: 35
-```
-
-
-
-`@instructions`
-Get the names of all people whose names begin with 'B'. The pattern you need is `'B%'`.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ LIKE '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT name
-FROM people
-WHERE name LIKE 'B%';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 606b667e1c
-xp: 35
-```
-
-
-
-`@instructions`
-Get the names of people whose names have 'r' as the second letter. The pattern you need is `'_r%'`.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ ___ '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT name
-FROM people
-WHERE name LIKE '_r%';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-***
-
-```yaml
-type: NormalExercise
-key: 2e4f49a528
-xp: 30
-```
-
-
-
-`@instructions`
-Get the names of people whose names don't start with A. The pattern you need is `'A%'`.
-
-`@hint`
-```
-SELECT ___
-FROM ___
-WHERE ___ NOT LIKE '___';
-```
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-SELECT name
-FROM people
-WHERE name NOT LIKE 'A%';
-```
-
-`@sct`
-```{python}
-# First check if the WHERE clause was correct
-Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast()
-    )
-)
-
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
-
-Ex().success_msg("This concludes the second chapter of the intro to SQL course. Rush over to chapter 3 if you want to learn more about aggregate functions!")
+```{r}
+msg1 <- "Not quite! Based on the time value or money, would you rather have to pay more expenses earlier or later?"
+msg2 <- "Correct! High costs or low profits at the beginning of a cashflow stream cause major swings in its overall value."
+msg3 <- "Nope. Reread the description of the two cost structures."
+test_mc(2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 `@possible_answers`
