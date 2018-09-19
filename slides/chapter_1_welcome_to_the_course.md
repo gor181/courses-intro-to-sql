@@ -42,7 +42,7 @@ key: "9350264393"
 ```
 
 `@part1`
-part 1
+part 2
 
 
 `@script`
