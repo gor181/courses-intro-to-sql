@@ -30,7 +30,7 @@ Most of the world's data live in databases, so learning how to access and unlock
 
 This course will give you a basic introduction to SQL. We hope you enjoy it.
 
-Now let's get started! asdf asdfas fasdfas adsfa dfaf
+Now let's get started!
 
 
 ---
