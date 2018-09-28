@@ -28,39 +28,13 @@ xp: 50
 
 For valuing a *project* versus *company*, we want to only consider the **incremental** revenue generated and costs incurred.  Consider the Tidyverse Cafe's possible expansion into nitro coffee. Which of the following costs is **NOT** incremental (and, thus, should not be included in our model)?
 
-`@instructions`
-
-
 `@hint`
 
 
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sample_code`
-```{r}
-
-```
-
-`@solution`
-```{r}
-
-```
-
-`@sct`
-```{r}
-
-```
-
 `@possible_answers`
-- Coffee kegs to use with the nitro machine
-- Maintenance for the nitro machine
-- [WiFi network for customers]
-- Additional labor needed to clean the machine
 
-`@feedback`
+
+`@feedbacks`
 - This cost is incremental and directly related to the proposed project.
 - This cost is incremental and directly related to the proposed project.
 - This is not incremental. This is an overall cost of running the business but not specifically related to the project.
@@ -153,12 +127,6 @@ cashflow_statement <-
 ```{r}
 success_msg("Nice work! We have now built a complete cashflow statement and can visualize any of the line items with the code provided in the Instructions. Now let's learn something new about exploring financial model outputs.")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -255,12 +223,6 @@ scenarios <-
 ```{r}
 success_msg("Nice work! This type of representation will make it much easier to rapidly analyze our results, as we will practice in the next lesson.")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -404,12 +366,6 @@ select(scenario_analysis, scenario, npv)
 success_msg("Good job! While these outcomes don't give us a clear sense of what's the most likely to happen in a probabilistic sense, it is helpful and informative to understand a reasonable range of potential valuations for our project.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Visualizing scenario analysis
@@ -474,12 +430,6 @@ ggplot(data = scenario_analysis,
 ```{r}
 success_msg("Looking good! Visually, we can notice that our possible upside is much greater than the potential downside of the pessimistic outcome. Of course, if the pessimistic scenario was 90% likely and the optimistic and realistic scenarios were each only 5% likely, our venture still might seem questionable. Here, we don't have a sense of relative likelihood, but in real life we hopefully would.")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -607,12 +557,6 @@ sensitivity <-
 success_msg("Nice work conducting sensitivity analysis! You can examine the top of your output using head(sensitivity). However, you may notice the output is a dataframe that is a bit dense. To see just how big it is, run nrow(sensitivity). In the next exercise, we will plot our results for a more immediately interpretable view.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Plotting univariate sensitivity
@@ -710,12 +654,6 @@ ggplot(sensitivity,
 success_msg("Good job! What do you notice in the resulting plot? Which assumptions seem to have the most influence on our overall value? (The ones with the steeper slope)")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Communicating Cashflow Concepts
@@ -811,12 +749,6 @@ tidy_cashflow
 success_msg("Great job! That's one tidy cashflow. Bear in mind, though, that real-life cashflows can start out much messier than this. Some good packages to learn about when confronted with more challenging cases are tidyxl and unpivotr.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Untidying a cashflow
@@ -894,12 +826,6 @@ untidy_cashflow
 success_msg("Nice work! It's important to be flexible and wrangle data into different formats - especially when working on cross-disciplinary teams.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Waterfall diagrams
@@ -913,12 +839,6 @@ xp: 100
 We discussed how waterfall diagrams are a popular way to visualize different line items on a cashflow. For better or worse, these are also a good opportunity to practice some *serious* data wrangling. Precisely what wrangling is needed will vary by exactly what you are trying  to show.  In this exercise, we will begin to explore projected cashflow for the Tidyverse Cafe's product line expansion.  We will work  step-by-step through the process of making a waterfall diagram depicting the components of net income. 
 
 The `income_stmt_summary` dataset has been provided for you with the data already partially summarized. Each line item is summed across all statements into a single entry, including the correct sign (+ for revenue, - for expenses.)
-
-`@instructions`
-
-
-`@hint`
-
 
 `@pre_exercise_code`
 ```{r}
@@ -955,22 +875,6 @@ waterfall_data <-
 
 ```
 
-`@solution`
-```{r}
-
-```
-
-`@sct`
-```{r}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
 ***
 
 ```yaml
@@ -978,8 +882,6 @@ type: NormalExercise
 key: 4625e0ad1e
 xp: 35
 ```
-
-
 
 `@instructions`
 Although we have already aggregated  `income_stmt_summary` for you, some more wrangling is needed.
@@ -991,11 +893,6 @@ Although we have already aggregated  `income_stmt_summary` for you, some more wr
 `@hint`
 - The `default = ` option in the `lag()` function tells R what to do when there is no previous value to take
 - Extract the `Value` column of `income_stmt_summary` using R's `$` operator (e.g. `dataset$column`)
-
-`@pre_exercise_code`
-```{r}
-
-```
 
 `@sample_code`
 ```{r}
@@ -1032,11 +929,6 @@ waterfall_summary <-
 success_msg("Alright! Now we have everything that we need. Time to start putting the pieces together.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -1044,8 +936,6 @@ type: NormalExercise
 key: 51db95beec
 xp: 35
 ```
-
-
 
 `@instructions`
 Now that you've created `waterfall_items` and `waterfall_summary`, let's combine them to get the final dataframe we need for our plot.
@@ -1056,11 +946,6 @@ Now that you've created `waterfall_items` and `waterfall_summary`, let's combine
 `@hint`
 - Note that unlike base R's `rbind()` function, `dplyr::bind_rows()` will match based on variable name and allow us to combine `waterfall_items` and `waterfall_summary` despite their different numbers of columns.
 - To turn metric into a factor, we need to specify that it's `levels` are aligned with it's current values/order (accessible with `.$Metric`)
-
-`@pre_exercise_code`
-```{r}
-
-```
 
 `@sample_code`
 ```{r}
@@ -1085,11 +970,6 @@ waterfall_data <-
 success_msg("Now that we have our wrangled dataset, onto the plot!")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -1097,8 +977,6 @@ type: NormalExercise
 key: ea69fe6769
 xp: 30
 ```
-
-
 
 `@instructions`
 Finally -- it's time to plot the `waterfall_data` dataframe! We've provided a lot of the styling for you, but it's up to you to set up the core plot. 
@@ -1109,11 +987,6 @@ Finally -- it's time to plot the `waterfall_data` dataframe! We've provided a lo
 `@hint`
 - Check `?ggplot::geom_rect` and `?ggplot2::geom_hline` documentation to refresh your memory
 - The argument name needed for `geom_hline` is `yintercept`
-
-`@pre_exercise_code`
-```{r}
-
-```
 
 `@sample_code`
 ```{r}
@@ -1155,11 +1028,6 @@ ggplot(waterfall_data, aes(fill = (end > start))) +
 ```{r}
 success_msg("Nice work! Now you can take all your hard work and big ideas to that board meeting.")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
 
 ---
 

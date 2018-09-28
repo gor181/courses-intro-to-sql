@@ -34,7 +34,7 @@ For this course, you'll be using a database containing information on almost 500
 
 From looking at the tabs, who is the first person listed in the `people` table? from editor
 
-`@instructions`
+`@possible_answers`
 - Kanye West
 - Biggie Smalls
 - 50 Cent
@@ -48,16 +48,6 @@ Look at the `people` tab under the editor!
 connect('postgresql', 'films')
 ```
 
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-
-```
-
 `@sct`
 ```{python}
 patt = '%s is nowhere to be seen in the `people` table. Have another look!'
@@ -67,12 +57,6 @@ msg3 = "That's correct! Head over to the next exercise to see how we can answer 
 msg4 = patt % "Jay Z"
 Ex().has_chosen(3,[msg1, msg2, msg3, msg4])
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -94,7 +78,7 @@ Run the query in the editor and check out the resulting table in the query resul
 
 Who is the second person listed in the query result?
 
-`@instructions`
+`@possible_answers`
 - Kanye West
 - A. Michael Baldwin
 - 50 Cent
@@ -108,16 +92,6 @@ Run the code in the editor and look at the query result tab under the editor!
 connect('postgresql', 'films')
 ```
 
-`@sample_code`
-```{sql}
-SELECT name FROM people;
-```
-
-`@solution`
-```{sql}
-
-```
-
 `@sct`
 ```{python}
 patt = "If you execute the query that was already provided with the 'Run Code' button, you will see that %s is not the second person listed in the query result."
@@ -127,12 +101,6 @@ msg3 = "50 Cent is the first person listed in the query result. We're looking fo
 msg4 = patt % "Jay Z"
 Ex().has_chosen(2, [msg1, msg2, msg3, msg4])
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -194,12 +162,6 @@ Ex().check_column('result').has_equal_value()
 Ex().success_msg("Excellent error editing! You can feel safe experimenting with code in the editor &ndash; you'll always get feedback if something goes wrong.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Onboarding | Bullet Exercises
@@ -214,12 +176,6 @@ skills: 1
 
 Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
 
-`@instructions`
-
-
-`@hint`
-
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -231,22 +187,6 @@ SELECT 'SQL'
 AS result;
 ```
 
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
 ***
 
 ```yaml
@@ -255,18 +195,11 @@ key: 157ee8d1ad
 xp: 35
 ```
 
-
-
 `@instructions`
 Submit the query in the editor! Don't worry, you'll learn how it works soon.
 
 `@hint`
 Submit the query!
-
-`@pre_exercise_code`
-```{python}
-
-```
 
 `@sample_code`
 ```{sql}
@@ -284,11 +217,6 @@ AS result;
 Ex().check_column('result').has_equal_value()
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -297,18 +225,11 @@ key: 764f82129d
 xp: 35
 ```
 
-
-
 `@instructions`
 Now change `'SQL'` to `'SQL is'` and click Submit!
 
 `@hint`
 Change the code and submit the query!
-
-`@pre_exercise_code`
-```{python}
-
-```
 
 `@sample_code`
 ```{sql}
@@ -329,11 +250,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -342,18 +258,11 @@ key: 1496605dac
 xp: 30
 ```
 
-
-
 `@instructions`
 Finally, change `'SQL is'` to `'SQL is cool!'` and click Submit!
 
 `@hint`
 Change the code and submit the query!
-
-`@pre_exercise_code`
-```{python}
-
-```
 
 `@sample_code`
 ```{sql}
@@ -374,11 +283,6 @@ Ex().check_correct(
 )
 Ex().success_msg("Well done! The time has come to actually fetch information from tables now!")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
 
 ---
 
@@ -411,39 +315,13 @@ The table of employees might look something like this:
 
 How many fields does the employees table above contain?
 
-`@instructions`
-
-
 `@hint`
 Remember that in database lingo, a column is called a *field*. How many fields does the table contain?
 
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
 `@possible_answers`
-- 1
-- 2
-- 3
-- [4]
 
-`@feedback`
+
+`@feedbacks`
 - Incorrect, a table contains information about one type of entity, but generally has multiple fields.
 - Sorry, try again!
 - Incorrect, the table contains three records, but how many fields does it have?
@@ -482,12 +360,6 @@ It's also good practice (but not necessary for the exercises in this course) to 
 
 Remember, you can see the results of executing your query in the __query result__ tab to the right!
 
-`@instructions`
-
-
-`@hint`
-
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -499,22 +371,6 @@ set_options(visible_tables = ['films', 'people'])
 
 ```
 
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
 ***
 
 ```yaml
@@ -523,8 +379,6 @@ key: a41cc766d5
 xp: 35
 ```
 
-
-
 `@instructions`
 Select the `title` column from the `films` table.
 
@@ -532,11 +386,6 @@ Select the `title` column from the `films` table.
 ```
 SELECT ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -561,11 +410,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -574,8 +418,6 @@ key: 4a74270ecd
 xp: 35
 ```
 
-
-
 `@instructions`
 Select the `release_year` column from the `films` table.
 
@@ -583,11 +425,6 @@ Select the `release_year` column from the `films` table.
 ```
 SELECT ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -612,11 +449,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -625,8 +457,6 @@ key: 323bd5ddf5
 xp: 30
 ```
 
-
-
 `@instructions`
 Select the `name` of each person in the `people` table.
 
@@ -634,11 +464,6 @@ Select the `name` of each person in the `people` table.
 ```
 SELECT ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -662,11 +487,6 @@ Ex().check_correct(
     )   
 )
 ```
-
-`@possible_answers`
-
-
-`@feedback`
 
 ---
 
@@ -707,12 +527,6 @@ LIMIT 10;
 
 Before getting started with the instructions below, check out the column names in the `films` table by clicking on the `films` tab to the right!
 
-`@instructions`
-
-
-`@hint`
-
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -724,22 +538,6 @@ set_options(visible_tables = ['films'])
 
 ```
 
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
 ***
 
 ```yaml
@@ -748,8 +546,6 @@ key: d561b4df97
 xp: 25
 ```
 
-
-
 `@instructions`
 Get the title of every film from the `films` table.
 
@@ -757,11 +553,6 @@ Get the title of every film from the `films` table.
 ```
 SELECT ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -786,11 +577,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -799,8 +585,6 @@ key: 917d7dc533
 xp: 25
 ```
 
-
-
 `@instructions`
 Get the title and release year for every film.
 
@@ -808,11 +592,6 @@ Get the title and release year for every film.
 ```
 SELECT ___, ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -841,11 +620,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -854,8 +628,6 @@ key: eeba078a00
 xp: 25
 ```
 
-
-
 `@instructions`
 Get the title, release year and country for every film.
 
@@ -863,11 +635,6 @@ Get the title, release year and country for every film.
 ```
 SELECT ___, ___, ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -898,11 +665,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -911,8 +673,6 @@ key: dac27d9aad
 xp: 25
 ```
 
-
-
 `@instructions`
 Get all columns from the `films` table.
 
@@ -920,11 +680,6 @@ Get all columns from the `films` table.
 ```
 SELECT *
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -949,11 +704,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ---
 
 ## SELECT DISTINCT
@@ -976,12 +726,6 @@ FROM films;
 
 Remember, you can check out the data in the tables by clicking on the tabs to the right under the editor!
 
-`@instructions`
-
-
-`@hint`
-
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -993,22 +737,6 @@ set_options(visible_tables = ['films', 'roles'])
 
 ```
 
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
 ***
 
 ```yaml
@@ -1017,8 +745,6 @@ key: e6b81711f1
 xp: 35
 ```
 
-
-
 `@instructions`
 Get all the unique countries represented in the `films` table.
 
@@ -1026,11 +752,6 @@ Get all the unique countries represented in the `films` table.
 ```
 SELECT DISTINCT ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -1058,11 +779,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -1071,8 +787,6 @@ key: 2cb9a4bf6a
 xp: 35
 ```
 
-
-
 `@instructions`
 Get all the different film certifications from the `films` table.
 
@@ -1080,11 +794,6 @@ Get all the different film certifications from the `films` table.
 ```
 SELECT DISTINCT ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -1112,11 +821,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -1125,8 +829,6 @@ key: 26835d3029
 xp: 30
 ```
 
-
-
 `@instructions`
 Get the different types of film roles from the `roles` table.
 
@@ -1134,11 +836,6 @@ Get the different types of film roles from the `roles` table.
 ```
 SELECT DISTINCT ___
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -1166,11 +863,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ---
 
 ## Learning to COUNT
@@ -1194,7 +886,7 @@ FROM people;
 <hr>
 How many records are contained in the `reviews` table?
 
-`@instructions`
+`@possible_answers`
 - 9,468
 - 8,397
 - 4,968
@@ -1209,28 +901,12 @@ Run a query to count the number of records in the `reviews` table!
 connect('postgresql', 'films')
 ```
 
-`@sample_code`
-```{sql}
--- You can test out queries here!
-```
-
-`@solution`
-```{sql}
-
-```
-
 `@sct`
 ```{python}
 crm = 'Correct!'
 icm = "Use the syntax provided in the example. Be sure to swap out `people` for `reviews`!"
 Ex().has_chosen(3, [icm, icm, crm, icm, icm])
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -1263,12 +939,6 @@ FROM people;
 
 Let's get some practice with `COUNT`!
 
-`@instructions`
-
-
-`@hint`
-
-
 `@pre_exercise_code`
 ```{python}
 connect('postgresql', 'films')
@@ -1280,22 +950,6 @@ set_options(visible_tables = ['films', 'people'])
 
 ```
 
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
-
-`@possible_answers`
-
-
-`@feedback`
-
-
 ***
 
 ```yaml
@@ -1304,8 +958,6 @@ key: 4688067e3e
 xp: 20
 ```
 
-
-
 `@instructions`
 Count the number of rows in the `people` table.
 
@@ -1313,11 +965,6 @@ Count the number of rows in the `people` table.
 ```
 SELECT COUNT(___)
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -1345,11 +992,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -1358,8 +1000,6 @@ key: 497ffa962e
 xp: 20
 ```
 
-
-
 `@instructions`
 Count the number of (non-missing) birth dates in the `people` table.
 
@@ -1367,11 +1007,6 @@ Count the number of (non-missing) birth dates in the `people` table.
 ```
 SELECT ___(___)
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -1399,11 +1034,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -1412,8 +1042,6 @@ key: 50c903a00a
 xp: 20
 ```
 
-
-
 `@instructions`
 Count the number of unique birth dates in the `people` table.
 
@@ -1421,11 +1049,6 @@ Count the number of unique birth dates in the `people` table.
 ```
 SELECT ___(DISTINCT ___)
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -1455,11 +1078,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -1468,8 +1086,6 @@ key: 511052cbbe
 xp: 20
 ```
 
-
-
 `@instructions`
 Count the number of unique languages in the `films` table.
 
@@ -1477,11 +1093,6 @@ Count the number of unique languages in the `films` table.
 ```
 SELECT ___(DISTINCT ___)
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -1511,11 +1122,6 @@ Ex().check_correct(
 )
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
 ***
 
 ```yaml
@@ -1524,8 +1130,6 @@ key: 9e1147efe5
 xp: 20
 ```
 
-
-
 `@instructions`
 Count the number of unique countries in the `films` table.
 
@@ -1533,11 +1137,6 @@ Count the number of unique countries in the `films` table.
 ```
 SELECT ___(DISTINCT ___)
 FROM ___;
-```
-
-`@pre_exercise_code`
-```{python}
-
 ```
 
 `@sample_code`
@@ -1566,11 +1165,6 @@ Ex().check_correct(
     )
 )
 ```
-
-`@possible_answers`
-
-
-`@feedback`
 
 ---
 

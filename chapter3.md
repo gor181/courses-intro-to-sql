@@ -78,12 +78,6 @@ payback_period
 success_msg("Nice work! You can run `payback_period` in the console to see at what period you would expect to break even. However, recall that this metric can be misleading because it isn't accounting for the factor that our future cashflows are worth less.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Write Payback Period Function
@@ -149,12 +143,6 @@ calc_payback(cashflows) == 2
 ```{r}
 success_msg("Nice work! But payback period can be deceptive, what would change if we were considering discounting?")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -234,12 +222,6 @@ payback_period_disc
 success_msg("Discounting makes quite a difference - even with a relatively low reinvement rate! Next, we will focus on some metrics that do include its impact natively.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## NPV, IRR, and Profitability Index
@@ -317,12 +299,6 @@ calc_npv <- function(cashflows, r) {
 ```{r}
 success_msg("Nice work! NPV remains one of the 'gold standard' metrics for evaluating projects, and now you have your own function to do it. ")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -406,12 +382,6 @@ calc_irr(cashflows)
 success_msg("Alright! Our function worked well on this example; however, IRR has some quirks. How will our function perform in less ideal circumstances?")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Applying the IRR Decision Rule
@@ -425,39 +395,13 @@ skills: 1
 
 Previously, we calculated that the IRR for our first stream of cashflows was 8.3%. Which of the following is not suggested by the IRR decision rule?
 
-`@instructions`
-
-
 `@hint`
 - Recall that IRR is called the "hurdle" rate because its a hurdle that an initiative needs to *exceed* to be worthwhile
 
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sample_code`
-```{r}
-
-```
-
-`@solution`
-```{r}
-
-```
-
-`@sct`
-```{r}
-
-```
-
 `@possible_answers`
-- The project only breaks even if the discount rate is greater than 8.3%
-- The project is not profitable if the discount rate is greater than 8.3%
-- The project is profitable if the discount rate is less than 8.3%
-- [The project is not profitable if the discount rate is less than 8.3%]
 
-`@feedback`
+
+`@feedbacks`
 - This is incorrect. Please review slides to remember how IRR relates to discount rate.
 - This is incorrect. Please review slides to remember how IRR relates to discount rate.
 - This is incorrect. Please review slides to remember how IRR relates to discount rate.
@@ -540,12 +484,6 @@ calc_profitability_index(init_investment, cashflows, 0.06)
 success_msg("Great work! The profitability index here is greater than 1, so this looks like a value-creating investment!")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Terminal value
@@ -626,12 +564,6 @@ terminal_value_3
 ```{r}
 success_msg("Nice work! Consider how much variation there is in the terminal value estimates. Relative to our final-year cashflow of $500 does this seem like a lot or a little? Are you surprised how different the values can be when we assume 10%, 1%, or -5% year-over-year change?")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -746,12 +678,6 @@ npv3
 success_msg("Note that they aren't exactly zero due to numerical approximation, but no CFO is going to make capital budgetting decisions on a numerical difference less than a cup of coffee!")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Pitfalls of IRR
@@ -860,12 +786,6 @@ ggplot(npv_by_rates, aes(x = rates, y = npv1))+
 ```{r}
 success_msg("IRR can be a useful summary metric, but when there are either no roots or multiple roots, it's logic starts to break down.Also note that while our calc_irr() function has reasonable behavior in such cases, it would be much better to proactively check for possible errors within our function and provide users with a more helpful error message. This is outside of our scope, but do check out DataCamp's course on writing functions in R.")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -991,12 +911,6 @@ ggplot(cashflow_comparison,
 ```{r}
 success_msg("Good work! Based on this plot project 4 is never profitable, but any of projects 1, 2, and 3 would appear to be profitable. However, which is the most profitable depends on which metric we use. Project 1 has the highest IRR, but project 3 undoubtedly produces the largest NPV. However, this is because it requires the highest initial investment. This example shows how different metrics capture different aspects of value. It's always good to keep their strengths and weaknesses in mind and to examine multiple metrics.")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 

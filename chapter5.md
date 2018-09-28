@@ -49,12 +49,6 @@ billboard_eighth
 success_msg("Nice!")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## 10.1 MB dataset
@@ -96,12 +90,6 @@ billboard_quarter
 # Update this to something more informative.
 success_msg("Nice!")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -145,12 +133,6 @@ billboard_half
 success_msg("Nice!")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## 41.6 MB dataset
@@ -193,12 +175,6 @@ billboard_full
 success_msg("Nice!")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Insert exercise title here
@@ -236,12 +212,6 @@ xp: 100
 ```{python}
 
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -281,12 +251,6 @@ xp: 100
 
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Insert exercise title here
@@ -299,36 +263,13 @@ xp: 50
 
 
 
-`@instructions`
-
-
 `@hint`
 
-
-`@pre_exercise_code`
-```{python}
-
-```
-
-`@sample_code`
-```{sql}
-
-```
-
-`@solution`
-```{sql}
-
-```
-
-`@sct`
-```{python}
-
-```
 
 `@possible_answers`
 
 
-`@feedback`
+`@feedbacks`
 
 
 ---
@@ -368,8 +309,3 @@ test
 ```{python}
 
 ```
-
-`@possible_answers`
-
-
-`@feedback`

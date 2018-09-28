@@ -85,12 +85,6 @@ pv_1 - pv_5
 success_msg("Nice work! Isn't it amazing how fast that value declined?")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Writing a PV function
@@ -162,12 +156,6 @@ pv_range
 ```{r}
 success_msg("Good job! We will be calculating PV a lot, so having a function will make our lives so much easier!")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -249,12 +237,6 @@ ggplot(present_values,
 success_msg("Very interesting! It's good to remember that the effect of discounting is definitely not linear.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Effect of Time on Discounting
@@ -268,40 +250,13 @@ skills: 1
 
 Based on our present value formula and the plot you just made, which of the following is true?:
 
-`@instructions`
-
-
 `@hint`
 - Recall the shape of the plot you just made. It was curved like the first half of the letter "U"
 
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sample_code`
-```{r}
-
-```
-
-`@solution`
-```{r}
-
-```
-
-`@sct`
-```{r}
-
-```
-
 `@possible_answers`
-- The effect of discounting is constant over time
-- [The slope of discounting is more severe for longer time periods but decreasingly so]
-- The slope of discounting is more severe for longer time periods but increasingly so
-- The slope of discounting is more severe for shorter time periods but decreasingly so
-- The slope of discounting is more severe for shorter time periods but increasingly so
 
-`@feedback`
+
+`@feedbacks`
 success_msg("Good job! We can definitely see why companies would be interested in getting cash sooner rather than later")
 
 ---
@@ -402,12 +357,6 @@ ggplot(present_values, aes(x = n, y = pv, col = factor(r))) +
 success_msg("Wow! As time period increases, large discount rates decrease our value much faster.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Effect of Rate on Discounting
@@ -421,39 +370,13 @@ skills: 1
 
 Based on the present value formula we have learned and the plot you just made, which of the following is true?
 
-`@instructions`
-
-
 `@hint`
 - Recall your plot: different lines (discount rates) were closer together at short time periods and "spread out" over larger time periods
 
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sample_code`
-```{r}
-
-```
-
-`@solution`
-```{r}
-
-```
-
-`@sct`
-```{r}
-
-```
-
 `@possible_answers`
-- Higher discount rates lead to higher present values with a larger effect over a longer time period
-- [Higher discount rates lead to lower present values with a larger effect over a longer time period]
-- Higher discount rates lead to higher present values with a smaller effect over a longer time period
-- Higher discount rates lead to lower present values  with a smaller effect over a longer time period
 
-`@feedback`
+
+`@feedbacks`
 ```{r}
 success_msg("You're getting great intuition on the time value of money!")
 ```
@@ -520,12 +443,6 @@ r2_quart <- (1 + r2_ann)^(1/4) - 1
 success_msg("Great work! Always make sure you're using the right rate.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Real versus Nominal Rates
@@ -584,12 +501,6 @@ r2_real <- (1+r2_nom)/(1+inflation2) - 1
 ```{r}
 success_msg("Cool! Now you know how to convert back and forth between all sorts of rates.")
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -678,12 +589,6 @@ disc_cashflow_b <- calc_pv(cashflow_b, 0.06, 0:6)
 success_msg("Nice work! Isn't it easy to apply what you learned to one statement to many statements?")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Selling a Car (Decision)
@@ -707,7 +612,7 @@ In the last exercise, you calculated the present values of these options (`pv_a`
 
 To whom should you sell your car and why?
 
-`@instructions`
+`@possible_answers`
 - Buyer B because I ultimately get $6,000 instead of $5,000 that Buyer A is offering
 - [Buyer A because the present value of Buyer A's offer is higher]
 - Buyer B because the present value of Buyer B's offer is higher
@@ -721,16 +626,6 @@ pv_a <- 5000
 pv_b <- 4917.324
 ```
 
-`@sample_code`
-```{r}
-
-```
-
-`@solution`
-```{r}
-
-```
-
 `@sct`
 ```{r}
 msg1 <- "Careful! We want to make decisions on the present value not the future value."
@@ -738,12 +633,6 @@ msg2 <- "Great job! It's always important to disount your cashflows before makin
 msg3 <- "Not quite... double check the values you computed in the console."
 test_mc(2, feedback_msgs = c(msg1, msg2, msg3))
 ```
-
-`@possible_answers`
-
-
-`@feedback`
-
 
 ---
 
@@ -827,12 +716,6 @@ options %>%
 success_msg("Super! As we start to compare more options, it can be really handy to keep everything in a dataframe.")
 ```
 
-`@possible_answers`
-
-
-`@feedback`
-
-
 ---
 
 ## Licensing a Software (Decision)
@@ -849,7 +732,7 @@ The summary table you created in the last exercise - comparing the old versus ne
 
 When you inspect the results, you will see that the new software looks "cheaper" on a naive basis when you directly sum the cashflows (`sum_cashflow`). However, it becomes the more expensive option after we account for discounting (`sum_disc_cashflow`). What causes this disparity?
 
-`@instructions`
+`@possible_answers`
 - The new software had greatest expenses backloaded (occuring further from present time) versus the current offering
 - The new software had greatest expenses frontloaded (occuring closer to present time) versus the current offering
 - The new software has the same flow of expenses as the current offering
@@ -868,16 +751,6 @@ tribble(~option, ~sum_cashflow, ~sum_disc_cashflow,
     "Old",        -5500,         -3325.112 )
 ```
 
-`@sample_code`
-```{r}
-
-```
-
-`@solution`
-```{r}
-
-```
-
 `@sct`
 ```{r}
 msg1 <- "Not quite! Based on the time value or money, would you rather have to pay more expenses earlier or later?"
@@ -885,8 +758,3 @@ msg2 <- "Correct! High costs or low profits at the beginning of a cashflow strea
 msg3 <- "Nope. Reread the description of the two cost structures."
 test_mc(2, feedback_msgs = c(msg1, msg2, msg3))
 ```
-
-`@possible_answers`
-
-
-`@feedback`
