@@ -34,12 +34,6 @@ For this course, you'll be using a database containing information on almost 500
 
 From looking at the tabs, who is the first person listed in the `people` table? from editor
 
-`@possible_answers`
-- Kanye West
-- Biggie Smalls
-- 50 Cent
-- Jay Z
-
 `@hint`
 Look at the `people` tab under the editor!
 
@@ -57,6 +51,12 @@ msg3 = "That's correct! Head over to the next exercise to see how we can answer 
 msg4 = patt % "Jay Z"
 Ex().has_chosen(3,[msg1, msg2, msg3, msg4])
 ```
+
+`@possible_answers`
+- Kanye West
+- Biggie Smalls
+- 50 Cent
+- Jay Z
 
 ---
 
@@ -78,12 +78,6 @@ Run the query in the editor and check out the resulting table in the query resul
 
 Who is the second person listed in the query result?
 
-`@possible_answers`
-- Kanye West
-- A. Michael Baldwin
-- 50 Cent
-- Jay Z
-
 `@hint`
 Run the code in the editor and look at the query result tab under the editor!
 
@@ -101,6 +95,12 @@ msg3 = "50 Cent is the first person listed in the query result. We're looking fo
 msg4 = patt % "Jay Z"
 Ex().has_chosen(2, [msg1, msg2, msg3, msg4])
 ```
+
+`@possible_answers`
+- Kanye West
+- A. Michael Baldwin
+- 50 Cent
+- Jay Z
 
 ---
 
@@ -195,6 +195,8 @@ key: 157ee8d1ad
 xp: 35
 ```
 
+
+
 `@instructions`
 Submit the query in the editor! Don't worry, you'll learn how it works soon.
 
@@ -224,6 +226,8 @@ type: NormalExercise
 key: 764f82129d
 xp: 35
 ```
+
+
 
 `@instructions`
 Now change `'SQL'` to `'SQL is'` and click Submit!
@@ -257,6 +261,8 @@ type: NormalExercise
 key: 1496605dac
 xp: 30
 ```
+
+
 
 `@instructions`
 Finally, change `'SQL is'` to `'SQL is cool!'` and click Submit!
@@ -321,7 +327,7 @@ Remember that in database lingo, a column is called a *field*. How many fields d
 `@possible_answers`
 
 
-`@feedbacks`
+`@feedback`
 - Incorrect, a table contains information about one type of entity, but generally has multiple fields.
 - Sorry, try again!
 - Incorrect, the table contains three records, but how many fields does it have?
@@ -379,6 +385,8 @@ key: a41cc766d5
 xp: 35
 ```
 
+
+
 `@instructions`
 Select the `title` column from the `films` table.
 
@@ -418,6 +426,8 @@ key: 4a74270ecd
 xp: 35
 ```
 
+
+
 `@instructions`
 Select the `release_year` column from the `films` table.
 
@@ -456,6 +466,8 @@ type: NormalExercise
 key: 323bd5ddf5
 xp: 30
 ```
+
+
 
 `@instructions`
 Select the `name` of each person in the `people` table.
@@ -546,6 +558,8 @@ key: d561b4df97
 xp: 25
 ```
 
+
+
 `@instructions`
 Get the title of every film from the `films` table.
 
@@ -584,6 +598,8 @@ type: NormalExercise
 key: 917d7dc533
 xp: 25
 ```
+
+
 
 `@instructions`
 Get the title and release year for every film.
@@ -627,6 +643,8 @@ type: NormalExercise
 key: eeba078a00
 xp: 25
 ```
+
+
 
 `@instructions`
 Get the title, release year and country for every film.
@@ -672,6 +690,8 @@ type: NormalExercise
 key: dac27d9aad
 xp: 25
 ```
+
+
 
 `@instructions`
 Get all columns from the `films` table.
@@ -745,6 +765,8 @@ key: e6b81711f1
 xp: 35
 ```
 
+
+
 `@instructions`
 Get all the unique countries represented in the `films` table.
 
@@ -787,6 +809,8 @@ key: 2cb9a4bf6a
 xp: 35
 ```
 
+
+
 `@instructions`
 Get all the different film certifications from the `films` table.
 
@@ -828,6 +852,8 @@ type: NormalExercise
 key: 26835d3029
 xp: 30
 ```
+
+
 
 `@instructions`
 Get the different types of film roles from the `roles` table.
@@ -886,13 +912,6 @@ FROM people;
 <hr>
 How many records are contained in the `reviews` table?
 
-`@possible_answers`
-- 9,468
-- 8,397
-- 4,968
-- 9,837
-- 9,864
-
 `@hint`
 Run a query to count the number of records in the `reviews` table!
 
@@ -907,6 +926,13 @@ crm = 'Correct!'
 icm = "Use the syntax provided in the example. Be sure to swap out `people` for `reviews`!"
 Ex().has_chosen(3, [icm, icm, crm, icm, icm])
 ```
+
+`@possible_answers`
+- 9,468
+- 8,397
+- 4,968
+- 9,837
+- 9,864
 
 ---
 
@@ -958,6 +984,8 @@ key: 4688067e3e
 xp: 20
 ```
 
+
+
 `@instructions`
 Count the number of rows in the `people` table.
 
@@ -1000,6 +1028,8 @@ key: 497ffa962e
 xp: 20
 ```
 
+
+
 `@instructions`
 Count the number of (non-missing) birth dates in the `people` table.
 
@@ -1041,6 +1071,8 @@ type: NormalExercise
 key: 50c903a00a
 xp: 20
 ```
+
+
 
 `@instructions`
 Count the number of unique birth dates in the `people` table.
@@ -1086,6 +1118,8 @@ key: 511052cbbe
 xp: 20
 ```
 
+
+
 `@instructions`
 Count the number of unique languages in the `films` table.
 
@@ -1129,6 +1163,8 @@ type: NormalExercise
 key: 9e1147efe5
 xp: 20
 ```
+
+
 
 `@instructions`
 Count the number of unique countries in the `films` table.

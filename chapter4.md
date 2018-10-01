@@ -34,7 +34,7 @@ For valuing a *project* versus *company*, we want to only consider the **increme
 `@possible_answers`
 
 
-`@feedbacks`
+`@feedback`
 - This cost is incremental and directly related to the proposed project.
 - This cost is incremental and directly related to the proposed project.
 - This is not incremental. This is an overall cost of running the business but not specifically related to the project.
@@ -883,6 +883,8 @@ key: 4625e0ad1e
 xp: 35
 ```
 
+
+
 `@instructions`
 Although we have already aggregated  `income_stmt_summary` for you, some more wrangling is needed.
 
@@ -937,6 +939,8 @@ key: 51db95beec
 xp: 35
 ```
 
+
+
 `@instructions`
 Now that you've created `waterfall_items` and `waterfall_summary`, let's combine them to get the final dataframe we need for our plot.
 
@@ -977,6 +981,8 @@ type: NormalExercise
 key: ea69fe6769
 xp: 30
 ```
+
+
 
 `@instructions`
 Finally -- it's time to plot the `waterfall_data` dataframe! We've provided a lot of the styling for you, but it's up to you to set up the core plot. 

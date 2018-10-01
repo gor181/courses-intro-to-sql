@@ -269,7 +269,7 @@ xp: 50
 `@possible_answers`
 
 
-`@feedbacks`
+`@feedback`
 
 
 ---

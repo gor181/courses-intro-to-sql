@@ -401,7 +401,7 @@ Previously, we calculated that the IRR for our first stream of cashflows was 8.3
 `@possible_answers`
 
 
-`@feedbacks`
+`@feedback`
 - This is incorrect. Please review slides to remember how IRR relates to discount rate.
 - This is incorrect. Please review slides to remember how IRR relates to discount rate.
 - This is incorrect. Please review slides to remember how IRR relates to discount rate.
