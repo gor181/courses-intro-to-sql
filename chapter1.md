@@ -1214,3 +1214,23 @@ xp: 50
 
 `@projector_key`
 2a62504de8d697533661c67d700c5033
+
+---
+
+## Insert exercise title here
+
+```yaml
+type: PureMultipleChoiceExercise
+key: 6e030434c2
+xp: 50
+```
+
+A Pure multiple choice ex
+
+`@hint`
+
+
+`@possible_answers`
+this text apparently gets deleted
+
+`@feedback`
