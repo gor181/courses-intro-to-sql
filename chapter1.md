@@ -1217,13 +1217,20 @@ xp: 50
 
 ---
 
-## Insert exercise title here
+## Some multi choice exercise
 
 ```yaml
 type: PureMultipleChoiceExercise
 key: 6e030434c2
 xp: 50
 ```
+
+
+
+
+
+
+
 
 A Pure multiple choice ex
 
