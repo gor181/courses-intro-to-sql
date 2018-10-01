@@ -1228,18 +1228,23 @@ xp: 50
 When you have mixed data in long format and are generating lags with `shift()`, why is it important to use a `by` clause?
 
 `@instructions`
-- asdf
+
 
 `@hint`
 - Try drawing a little `data.table` on a sheet of paper. Add columns `"month"`, `"country"`, and `"exports"` and a few months of sample data for 2 countries. Try to draw what you think `shift()` does with the `"exports"` vector when you ask it to compute a one-month lag.
+
+
 
 `@possible_answers`
 - [to avoid data leakage across categories.]
 - `data.table` requires it because of internal details of that library.
 - it tells `shift()` how many periods to lag _by_.
 - because of science.
-
-`@feedback`
+   
+   
+   
+   
+`@feedbacks`
 - Correct! This is one of those places where your code can fail silently, so be vigilant!
 - This is not correct. A `by` clause is not strictly required when using `shift()`
 - This is not correct. `shift()` using the `n` argument inside its function call to indicate how many periods to lag by.
