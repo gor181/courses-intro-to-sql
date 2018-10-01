@@ -18,8 +18,6 @@ f05d06ad7807cf476fdb5f674174c9d5
 
 ---
 
-
-
 ## Onboarding | Tables
 
 ```yaml
@@ -106,8 +104,6 @@ Ex().has_chosen(2, [msg1, msg2, msg3, msg4])
 
 ---
 
-
-
 ## Onboarding | Errors
 
 ```yaml
@@ -167,8 +163,6 @@ Ex().success_msg("Excellent error editing! You can feel safe experimenting with 
 ```
 
 ---
-
-
 
 ## Onboarding | Bullet Exercises
 
@@ -1236,12 +1230,8 @@ A Pure multiple choice ex
 `@hint`
 
 
-
-
 `@possible_answers`
 this text apparently gets deleted
-
-
 
 `@feedback`
 - boy
