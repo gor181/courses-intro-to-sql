@@ -1225,13 +1225,6 @@ key: 6e030434c2
 xp: 50
 ```
 
-
-
-
-
-
-
-
 A Pure multiple choice ex
 
 `@hint`
