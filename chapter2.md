@@ -612,6 +612,11 @@ In the last exercise, you calculated the present values of these options (`pv_a`
 
 To whom should you sell your car and why?
 
+`@possible_answers`
+- Buyer B because I ultimately get $6,000 instead of $5,000 that Buyer A is offering
+- [Buyer A because the present value of Buyer A's offer is higher]
+- Buyer B because the present value of Buyer B's offer is higher
+
 `@hint`
 - We should make decisions based on present value and not just stated dollars
 
@@ -628,11 +633,6 @@ msg2 <- "Great job! It's always important to disount your cashflows before makin
 msg3 <- "Not quite... double check the values you computed in the console."
 test_mc(2, feedback_msgs = c(msg1, msg2, msg3))
 ```
-
-`@possible_answers`
-- Buyer B because I ultimately get $6,000 instead of $5,000 that Buyer A is offering
-- [Buyer A because the present value of Buyer A's offer is higher]
-- Buyer B because the present value of Buyer B's offer is higher
 
 ---
 
@@ -732,6 +732,11 @@ The summary table you created in the last exercise - comparing the old versus ne
 
 When you inspect the results, you will see that the new software looks "cheaper" on a naive basis when you directly sum the cashflows (`sum_cashflow`). However, it becomes the more expensive option after we account for discounting (`sum_disc_cashflow`). What causes this disparity?
 
+`@possible_answers`
+- The new software had greatest expenses backloaded (occuring further from present time) versus the current offering
+- The new software had greatest expenses frontloaded (occuring closer to present time) versus the current offering
+- The new software has the same flow of expenses as the current offering
+
 `@hint`
 - For revenues, we prefer *larger* (in absolute value) present values
 - For expenses, we prefer *smaller* (in absolute value) present values
@@ -753,8 +758,3 @@ msg2 <- "Correct! High costs or low profits at the beginning of a cashflow strea
 msg3 <- "Nope. Reread the description of the two cost structures."
 test_mc(2, feedback_msgs = c(msg1, msg2, msg3))
 ```
-
-`@possible_answers`
-- The new software had greatest expenses backloaded (occuring further from present time) versus the current offering
-- The new software had greatest expenses frontloaded (occuring closer to present time) versus the current offering
-- The new software has the same flow of expenses as the current offering
