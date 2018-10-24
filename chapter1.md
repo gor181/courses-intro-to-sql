@@ -30,7 +30,7 @@ skills: 1
 
 If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-introduction-to-r) or [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), you'll be familiar with the interface. For SQL, however, there are a few new features you should be aware of.
 
-For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs. adf
+For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs.
 
 From looking at the tabs, who is the first person listed in the `people` table? from editor
 
@@ -55,7 +55,7 @@ msg1 = patt % "Kanye West"
 msg2 = patt % "Biggie Smalls"
 msg3 = "That's correct! Head over to the next exercise to see how we can answer a similar question with code!"
 msg4 = patt % "Jay Z"
-Ex().has_chosen(3,[msg1, msg2, msg3, msg4])
+Ex().has_chosen(3,[msg1, msg2, msg3, msg4])	
 ```
 
 ---
