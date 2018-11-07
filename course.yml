@@ -6,7 +6,6 @@ description: "The role of a data scientist is to turn raw data into actionable i
   data from these databases using a language called SQL (pronounced <em>ess-que-ell</em>, or
   <em>sequel</em>). This course teaches you everything you need to know to begin working with
   databases today!"
-programming_language: sql
 difficulty_level: 0
 from: 'postgresql-base-prod:22'
 practice_pool_id: 328
