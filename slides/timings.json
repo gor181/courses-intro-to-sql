@@ -1,5 +1,69 @@
 {
-  "slides/chapter_1_welcome_to_the_course.md": [],
+  "slides/chapter_1_welcome_to_the_course.md": [
+    {
+      "timing": 0,
+      "state": {
+        "indexh": 0,
+        "indexf": -1
+      }
+    },
+    {
+      "timing": 0.04553038448366549,
+      "state": {
+        "indexh": 0,
+        "indexf": 0
+      }
+    },
+    {
+      "timing": 0.264676950038778,
+      "state": {
+        "indexh": 1,
+        "indexf": -1
+      }
+    },
+    {
+      "timing": 0.49857811047665807,
+      "state": {
+        "indexh": 2,
+        "indexf": -1
+      }
+    },
+    {
+      "timing": 0.702102642274387,
+      "state": {
+        "indexh": 2,
+        "indexf": 0
+      }
+    },
+    {
+      "timing": 0.7476578884640114,
+      "state": {
+        "indexh": 2,
+        "indexf": 1
+      }
+    },
+    {
+      "timing": 0.8007881790083945,
+      "state": {
+        "indexh": 2,
+        "indexf": 2
+      }
+    },
+    {
+      "timing": 0.8462982343015354,
+      "state": {
+        "indexh": 2,
+        "indexf": 3
+      }
+    },
+    {
+      "timing": 0.8918190030845745,
+      "state": {
+        "indexh": 3,
+        "indexf": -1
+      }
+    }
+  ],
   "slides/chapter_1_6de94be8faac1a73db092e7589cde70d.md": [
     {
       "timing": 0,
