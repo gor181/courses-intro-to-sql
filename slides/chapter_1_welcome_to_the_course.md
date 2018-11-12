@@ -58,15 +58,13 @@ key: "218ea0f9f5"
 ```
 
 `@part1`
-one 
-
-two {{1}}
+one {{1}}
 
 two {{2}}
 
 two {{3}}
 
-fouuur
+four {{4}}
 
 
 `@script`
