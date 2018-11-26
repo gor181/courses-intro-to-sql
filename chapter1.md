@@ -32,7 +32,7 @@ If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-intro
 
 For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs.
 
-From looking at the tabs, who is the first person listed in the `people` table? Testing. a
+From looking at the tabs, who is the first person listed in the `people` table? Testing.
 
 `@possible_answers`
 - Kanye West
@@ -41,7 +41,7 @@ From looking at the tabs, who is the first person listed in the `people` table? 
 - Jay Z
 
 `@hint`
-Look at the `people` tab under the editor!adsf
+Look at the `people` tab under the editor!
 
 `@pre_exercise_code`
 ```{python}
