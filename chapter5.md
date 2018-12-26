@@ -309,3 +309,16 @@ test
 ```{python}
 
 ```
+
+---
+
+## A new vid ex for testing
+
+```yaml
+type: VideoExercise
+key: 225a064c01
+xp: 50
+```
+
+`@projector_key`
+6e217f5d1b2186d2e4161cddd817ea58
