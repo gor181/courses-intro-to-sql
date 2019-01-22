@@ -1,4 +1,4 @@
-some test more test even more ok
+some test more test even 
 BASE_DIR=$(pwd)
 #NYCBIKES_DATA="https://assets.datacamp.com/course/sql/nycbikes15.zip"
 #NYCBIKES_REPO="https://assets.datacamp.com/course/tmp_fixme_filip/nycbikes15_db_scripts.zip"
