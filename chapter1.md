@@ -35,7 +35,7 @@ For this course, you'll be using a database containing information on almost 500
 
 From looking at the tabs, who is the first person listed in the `people` table? 
 
-1. ## `_**`_**_Testing._**_[](url)`![](image-url)**_[](url)`![](image-url)
+1. ## `_**`_**_Testing._**_[](url)`![](image-url)**_[](url)`![](image-url) asdf
 
 `@possible_answers`
 - Kanye West
