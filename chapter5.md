@@ -1,6 +1,8 @@
 ---
 title: TEST
 description: 'Testing the standardization'
+attachments:
+    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/development/course_5555/slides/chapter5.pdf'
 ---
 
 ## 4.4 MB datasets

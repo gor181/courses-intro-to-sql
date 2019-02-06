@@ -1,6 +1,8 @@
 ---
 title: 'Time is Money (Key Financial Concepts)'
 description: 'An overview of time-value of money and related concepts'
+attachments:
+    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/development/course_5555/slides/chapter2.pdf'
 ---
 
 ## The Time Value of Money

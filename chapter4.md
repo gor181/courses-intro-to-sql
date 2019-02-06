@@ -1,6 +1,8 @@
 ---
 title: 'Understanding Outcomes'
 description: 'Piecing it altogether with sensitivty and scenario analysis'
+attachments:
+    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/development/course_5555/slides/chapter4.pdf'
 ---
 
 ## Building a Business Case

@@ -1,6 +1,8 @@
 ---
 title: 'Prioritizing Profitability (Financial Metrics)'
 description: 'Understanding different ways to summarize cashflow output'
+attachments:
+    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/development/course_5555/slides/chapter3.pdf'
 ---
 
 ## Profitability Metrics, Payback Period
