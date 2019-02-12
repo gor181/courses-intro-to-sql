@@ -2,8 +2,6 @@
 title: 'Selecting columns'
 description: 'This chapter provides a brief introduction to working with relational databases. You''ll learn about their structure, how to talk about them using database lingo, and how to begin an analysis by using simple SQL commands to select and summarize columns from database tables.'
 free_preview: true
-attachments:
-    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/development/course_5555/slides/chapter1.pdf'
 ---
 
 ## Welcome to the asdf
