@@ -17,7 +17,8 @@
     {
       "timing": 0.44183643423292623,
       "state": {
-        "indexh": 1
+        "indexh": 1,
+        "indexf": -1
       }
     }
   ],
