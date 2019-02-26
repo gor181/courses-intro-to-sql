@@ -4,4 +4,4 @@ difficulty_level: 0
 from: "postgresql-base-prod:22"
 practice_pool_id: 328
 programming_language: "sql"
-runtime_config: "java"
+runtime_config: "custom"
