@@ -4,3 +4,5 @@ difficulty_level: 0
 from: "postgresql-base-prod:22"
 practice_pool_id: 328
 programming_language: "sql"
+prerequisites:
+  - 2653
