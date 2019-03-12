@@ -6,7 +6,7 @@ attachments:
     slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/staging/course_5781/slides/chapter1.pdf'
 ---
 
-## Welcome to the asdf
+## Welcome to the
 
 ```yaml
 type: VideoExercise
