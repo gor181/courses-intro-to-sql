@@ -8,9 +8,6 @@ attachments:
 
 ## Welcome to the
 
-
-
-
 ```yaml
 type: VideoExercise
 key: dcdbb24914
