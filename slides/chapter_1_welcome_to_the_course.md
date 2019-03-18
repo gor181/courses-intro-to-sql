@@ -34,41 +34,28 @@ Now let's get started!
 
 
 ---
-## one more slide asdf
+## Insert title here... asdf
 
 ```yaml
-type: "FullImageSlide"
-key: "9350264393"
+type: "TwoColumns"
+key: "91013de978"
 ```
 
 `@part1`
-part 2
+asdaaa
+
+
+`@part2`
+
+
+
+`@citations`
+- one
+- t
 
 
 `@script`
 
-
-
----
-## added a slide
-
-```yaml
-type: "FullSlide"
-key: "218ea0f9f5"
-```
-
-`@part1`
-one {{1}}
-
-two {{2}}
-
-three {{3}}
-
-four {{4}}
-
-
-`@script`
-this is a test
 
 
 ---
