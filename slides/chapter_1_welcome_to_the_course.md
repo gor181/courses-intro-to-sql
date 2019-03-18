@@ -17,6 +17,10 @@ type: "TitleSlide"
 key: "7ad662bca6"
 ```
 
+`@part1`
+asdaaa adsf afasdfasdfadsf a
+
+
 `@lower_third`
 
 name: Nick Carchedi
@@ -42,10 +46,11 @@ key: "91013de978"
 ```
 
 `@part1`
-asdaaa adsf afasdfasdfadsf
+asdaaa adsf afasdfasdfadsf asdf
 
 
 `@part2`
+
 
 
 `@script`
