@@ -48,12 +48,6 @@ asdaaa adsf afasdfasdfadsf
 `@part2`
 
 
-
-`@citations`
-- one
-- t
-
-
 `@script`
 
 
