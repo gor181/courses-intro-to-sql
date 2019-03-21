@@ -11,7 +11,7 @@ key: b45dfb6396
 xp: 100
 ```
 
-some exercise 
+some exercise
 
 `@instructions`
 
