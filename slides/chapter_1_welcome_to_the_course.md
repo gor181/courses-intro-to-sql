@@ -18,13 +18,13 @@ key: "7ad662bca6"
 ```
 
 `@part1`
-asdaaa adsf afasdfasdfadsf a
+part 1
 
 
 `@lower_third`
 
 name: Nick Carchedi
-title: Instructor asdf
+title: Instructor
 
 
 `@script`
@@ -38,7 +38,7 @@ Now let's get started!
 
 
 ---
-## Insert title here... asdf
+## Insert title here...
 
 ```yaml
 type: "TwoColumns"
@@ -46,10 +46,14 @@ key: "91013de978"
 ```
 
 `@part1`
-asdaaa adsf afasdfasdfadsf asdf
+some edits
 
 
 `@part2`
+
+
+
+`@citations`
 
 
 
