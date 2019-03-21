@@ -59,6 +59,30 @@ some edits
 
 
 ---
+## Insert title here...
+
+```yaml
+type: "TwoColumns"
+key: "531e8024b1"
+```
+
+`@part1`
+some part1
+
+
+`@part2`
+
+
+
+`@citations`
+
+
+
+`@script`
+
+
+
+---
 ## Final Slide
 
 ```yaml
