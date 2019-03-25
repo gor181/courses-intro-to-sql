@@ -49,11 +49,6 @@ some edits
 
 
 
-`@citations`
-- one
-- two citations
-
-
 `@script`
 
 
@@ -71,10 +66,6 @@ some part1
 
 
 `@part2`
-
-
-
-`@citations`
 
 
 
