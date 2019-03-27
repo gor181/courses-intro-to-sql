@@ -73,6 +73,10 @@ some part1
 
 
 
+`@citations`
+- this is a citation
+
+
 `@script`
 
 
